@@ -1,0 +1,23 @@
+<FilesMatch "\.(bak|inc|lib|sh|tpl|lbi|dwt)$">
+    order deny,allow
+    deny from all
+</FilesMatch>
+
+RewriteEngine On
+
+#RewriteBase /
+RewriteRule ^index\.html$    index\.php [L]
+RewriteRule ^contact\.html$    contact\.php [L]
+RewriteRule ^product_category\.html$    product_category\.php [L]
+RewriteRule ^pages\.html$    pages\.php [L]
+
+RewriteRule ^fuwu\.html$    fuwu\.php [L]
+RewriteRule ^sitemap\.xml$    sitemap\.php [L]
+RewriteRule ^article_category\.html$    article_category\.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css)
+
+# common
+RewriteRule ^([^?]*) include/route.php?route=$1 [L,QSA]
+

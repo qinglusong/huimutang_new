@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$lang.home} - 客户信息</title>
+<link href="templates/public.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="images/jquery.form.min.js"></script>
+<script type="text/javascript" src="images/jquery.autotextarea.js"></script>
+</head>
+<body>
+<div id="dcWrap">
+ {include file="header.htm"}
+ <div id="dcLeft">{include file="menu.htm"}</div>
+ <div id="dcMain">
+
+   <div class="mainBox" style="{$workspace.height}">
+    <!-- {if $rec eq 'default'} 文章列表 -->
+    <h3><a href="{$action_link.href}" class="actionBtn add">{$action_link.text}</a>客户提价信息列表</h3>
+    <div class="filter">
+    
+    
+    </div>
+
+	
+    <div id="list">
+    <form name="action" method="post" action="customer.php">
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+     <tr>
+      <th width="40" align="center">编号</th>
+      <th width="80" align="center">企业名称</th>
+      <th width="80" align="center">联系人</th>
+	  <th width="80" align="center">联系电话</th>
+	  <th width="80" align="center">预算</th>
+      <th width="80" align="center">描述</th>
+	  <th width="80" align="center">提交时间</th>
+	  <th width="80" align="center">ip</th>
+     </tr>
+     <!-- {foreach from=$friend_list item=article} -->
+     <tr>
+      <td align="center">{$article.id}</td>
+      <td align="center">{$article.company_name}</td>
+	  <td align="center">{$article.linkman}</td>
+	  <td align="center">{$article.tel}</td>
+	  <td align="center">{$article.yusuan}</td>
+      <td align="center">{$article.project_desc}</td>
+	  <td align="center">{$article.add_time}</td>
+	  <td align="center">{$article.ip}</td>
+     </tr>
+     <!-- {/foreach} -->
+    </table>
+    
+    </form>
+    </div>
+    <div class="clear"></div>
+    {include file="pager.htm"}
+    <!-- {/if} -->
+    
+   </div>
+ </div>
+ {include file="footer.htm"}
+ </div>
+<!-- {if $rec eq 'default'} 文章列表 -->
+<script type="text/javascript">
+{literal}
+onload = function()
+{
+  document.forms['action'].reset();
+}
+
+
+{/literal}
+</script>
+<!-- {else} -->
+{include file="filebox.htm"}
+<!-- {/if} -->
+</body>
+</html>
