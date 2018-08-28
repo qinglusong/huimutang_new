@@ -148,6 +148,12 @@
        </dd>
       </dl>
 
+      <dl>
+       <dt>英文标题</dt>
+       <dd>
+        <input type="text" name="en_name" value="{$product.en_name}" size="80" class="inpMain" />
+       </dd>
+      </dl>
 
 
       <dl>
@@ -226,6 +232,14 @@
         <textarea name="description" cols="115" rows="3" class="textArea" />{$product.description}</textarea>
        </dd>
       </dl>
+	
+	<dl>
+       <dt>{$lang.sort}</dt>
+       <dd>
+        <input type="text" name="sort_list" value="{$product.sort_list}" size="14" class="inpMain" />
+       </dd>
+      </dl>
+	  
       <dl>
        <input type="hidden" name="token" value="{$token}" />
        <input type="hidden" name="id" value="{$product.id}">

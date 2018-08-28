@@ -427,6 +427,39 @@ class Common extends DbMysql {
 
     /**
      * +----------------------------------------------------------
+     * 获取案例幻灯图片列表
+     * +----------------------------------------------------------
+     */
+    function get_demo_show_list($type = 'pc',$type_id='') {
+        $where = ' WHERE 1=1 ';
+        if ($type) {
+            $where .= " and  type = '$type' ";
+        }
+        
+        if ($type_id) {
+            $where .= " and  type_id = '$type_id'";
+        }
+        $sql = "SELECT * FROM " . $this->table('show') . $where . " ORDER BY sort ASC, id ASC";
+        $query = $this->query($sql);
+        while ($row = $this->fetch_array($query)) {
+            $show_list[] = array (
+                    "id" => $row['id'],
+                    "show_name" => $row['show_name'],
+                    "show_link" => $row['show_link'],
+                    "contents" => $row['contents'],
+                    "slogan" => $row['slogan'],
+                    "style_banner" => $row['style_banner'],
+                    "show_img" => $this->dou_file($row['show_img']),
+                    "sort" => $row['sort'] 
+            );
+        }
+        
+        return $show_list;
+    }
+
+
+    /**
+     * +----------------------------------------------------------
      * 获取友情链接列表
      * +----------------------------------------------------------
      */
@@ -466,6 +499,8 @@ class Common extends DbMysql {
             $item['id'] = $row['id'];
             if ($row['title']) $item['title'] = $row['title'];
             if ($row['name']) $item['name'] = $row['name'];
+            if ($row['en_name']) $item['en_name'] = $row['en_name'];
+            if ($row['price']) $item['price_jieshao'] = $row['price'];
             if (!empty($row['price'])) $item['price'] = $row['price'] > 0 ? $this->price_format($row['price']) : $GLOBALS['_LANG']['price_discuss'];
             if ($row['click']) $item['click'] = $row['click'];
 

@@ -62,16 +62,17 @@ $smarty->assign('show_mobile_list', $show_mobile_list);
 //案例列表
 $demo_list = $dou->get_list('product', 'ALL', $_DISPLAY['home_product'], 'sort DESC');
 $news_list = $dou->get_list('article', 'ALL', $_DISPLAY['home_article'], 'sort DESC');
+//print_r($demo_list);
 $smarty->assign('recommend_product', $demo_list);
 $smarty->assign('recommend_article', $news_list);
 
 
 $smarty->assign('link', $link);
 $smarty->assign('index', $index);
+//print_r($_CFG);
 
 
-
-$smarty->display('index.dwt');
+$smarty->display('index.html');
 
 
 ?>

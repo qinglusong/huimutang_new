@@ -20,15 +20,17 @@ $cat_id = $firewall->get_legal_id('product_category', $_REQUEST['id'], $_REQUEST
 if ($cat_id == -1) {
     $dou->dou_msg($GLOBALS['_LANG']['page_wrong'], ROOT_URL);
 } else {
-    $where = ' WHERE cat_id IN (' . $cat_id . $dou->dou_child_id('product_category', $cat_id) . ')';
-}
+    if($cat_id>0){
+        $where = " WHERE cat_id like '%|".$cat_id."|%'   ";
+    }
     
+}
 // 获取分页信息
 $page = $check->is_number($_REQUEST['page']) ? trim($_REQUEST['page']) : 1;
 $limit = $dou->pager('product', ($_DISPLAY['product'] ? $_DISPLAY['product'] : 10), $page, $dou->rewrite_url('product_category', $cat_id), $where);
 
 /* 获取产品列表 */
-$sql = "SELECT id, cat_id, name, price, content, image, add_time, description FROM " . $dou->table('product') . $where . " ORDER BY id DESC" . $limit;
+$sql = "SELECT id, cat_id, name, price, content, image, add_time, description FROM " . $dou->table('product') . $where . " ORDER BY sort_list ASC,id DESC" . $limit;
 $query = $dou->query($sql);
 
 while ($row = $dou->fetch_array($query)) {
@@ -40,7 +42,11 @@ while ($row = $dou->fetch_array($query)) {
     
     // 格式化价格
     $price = $row['price'] > 0 ? $dou->price_format($row['price']) : $_LANG['price_discuss'];
-    
+    $img_pc_list = array();
+    $img_wap_list = array();
+
+    $img_wap_list = $dou->get_demo_show_list('demom',$row['id']);//移动幻灯片
+    $img_pc_list = $dou->get_demo_show_list('demo',$row['id']);//PC幻灯片
     $product_list[] = array (
             "id" => $row['id'],
             "cat_id" => $row['cat_id'],
@@ -49,13 +55,14 @@ while ($row = $dou->fetch_array($query)) {
             "thumb" => $dou->dou_file($row['image'], true),
             "add_time" => $add_time,
             "description" => $description,
-            "url" => $url 
+            "url" => $url,
+            "img_pc_list"=>$img_pc_list,
+            "img_wap_list"=>$img_wap_list,
     );
 }
 
 // 获取分类信息
-$cate_info = $dou->get_row('product_category', 'cat_id, cat_name, parent_id', "cat_id = '$cat_id'");
-
+$cate_info = $dou->get_row('product_category', '*', "cat_id = '$cat_id'");
 // 赋值给模板-meta和title信息
 $smarty->assign('page_title', $dou->page_title('product_category', $cat_id));
 $smarty->assign('keywords', $cate_info['keywords']);
@@ -69,8 +76,15 @@ $smarty->assign('nav_bottom_list', $dou->get_nav('bottom'));
 // 赋值给模板-数据
 $smarty->assign('ur_here', $dou->ur_here('product_category', $cat_id));
 $smarty->assign('cate_info', $cate_info);
-$smarty->assign('product_category', $dou->get_category('product_category', 0, $cat_id));
+
+//产品分类
+$product_category = $dou->get_category('product_category', 0, $cat_id);
+$smarty->assign('product_category', $product_category);
+
+//产品列表-----------------
 $smarty->assign('product_list', $product_list);
+
+print_r($product_category);
 
 $smarty->display('product_category.dwt');
 ?>

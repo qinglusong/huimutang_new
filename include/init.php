@@ -120,6 +120,7 @@ if (!defined('EXIT_INIT')) {
     }
     
     // 通用信息调用
+    $smarty->assign('site_path','theme/huimutang/images');
     $smarty->assign("lang", $_LANG);
     $smarty->assign("site", $_CFG);
     $smarty->assign("url", $_URL = $dou->dou_url()); // 模块URL

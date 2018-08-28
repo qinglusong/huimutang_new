@@ -48,13 +48,13 @@ if ($rec == 'default') {
     }
     if(is_array($cat_id)){//是数组 form过来的
         foreach($cat_id as $k=>$v){
-            $cat_id_like .=' cat_id like "%_'.$v.'_%" or';
+            $cat_id_like .=' cat_id like "%|'.$v.'|%" or';
         }
         $cat_id_flag_str = implode(',', $cat_id);
     }
     if(is_array($cat_id_flag_arr)){
         foreach($cat_id_flag_arr as $k=>$v){
-            $cat_id_like .=' cat_id like "%_'.$v.'_%" or';
+            $cat_id_like .=' cat_id like "%|'.$v.'|%" or';
         }
     }
 
@@ -176,13 +176,13 @@ elseif ($rec == 'insert') {
     $cat_ids = '';
     if($_POST['cat_id_xiangmu']){
         foreach($_POST['cat_id_xiangmu'] as $k=>$v){
-            $cat_ids .='_'.$v.'_,';
+            $cat_ids .='|'.$v.'|,';
         }
     }
 
     if($_POST['cat_id_hangye']){
         foreach($_POST['cat_id_hangye'] as $k=>$v){
-            $cat_ids .='_'.$v.'_,';
+            $cat_ids .='|'.$v.'|,';
         }
     }
 
@@ -190,7 +190,7 @@ elseif ($rec == 'insert') {
 
     
     
-    $sql = "INSERT INTO " . $dou->table('product') . " (id, cat_id, name, price, defined, content, image ,keywords, description, add_time)" . " VALUES (NULL, '$cat_ids', '$_POST[name]', '$_POST[price]', '$_POST[defined]', '$_POST[content]', '$image', '$_POST[keywords]', '$_POST[description]', '$add_time')";
+    $sql = "INSERT INTO " . $dou->table('product') . " (id, cat_id, name, en_name, price, defined, content, image ,keywords, description, add_time, sort_list)" . " VALUES (NULL, '$cat_ids', '$_POST[name]', '$_POST[en_name]', '$_POST[price]', '$_POST[defined]', '$_POST[content]', '$image', '$_POST[keywords]', '$_POST[description]', '$add_time', '".$_POST['sort_list']."')";
     $dou->query($sql);
     
     $dou->create_admin_log($_LANG['product_add'] . ': ' . $_POST['name']);
@@ -230,7 +230,7 @@ elseif ($rec == 'edit') {
     }
 
     //print_r($product);
-    $cat_ids = str_replace('_', '', $product['cat_id']);
+    $cat_ids = str_replace('|', '', $product['cat_id']);
     $product['cat_ids_arr'] = explode(',', $cat_ids);
     //print_r($cat_ids_arr);
     
@@ -269,19 +269,19 @@ elseif ($rec == 'update') {
     $cat_ids = '';
     if($_POST['cat_id_xiangmu']){
         foreach($_POST['cat_id_xiangmu'] as $k=>$v){
-            $cat_ids .='_'.$v.'_,';
+            $cat_ids .='|'.$v.'|,';
         }
     }
 
     if($_POST['cat_id_hangye']){
         foreach($_POST['cat_id_hangye'] as $k=>$v){
-            $cat_ids .='_'.$v.'_,';
+            $cat_ids .='|'.$v.'|,';
         }
     }
 
     $cat_ids = trim($cat_ids,',');
     
-    $sql = "update " . $dou->table('product') . " SET cat_id = '$cat_ids', name = '$_POST[name]', price = '$_POST[price]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $image . ", keywords = '$_POST[keywords]', description = '$_POST[description]' WHERE id = '$_POST[id]'";
+    $sql = "update " . $dou->table('product') . " SET cat_id = '$cat_ids', name = '$_POST[name]', en_name = '$_POST[en_name]', price = '$_POST[price]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $image . ", keywords = '$_POST[keywords]', description = '$_POST[description]', sort_list='".$_POST['sort_list']."' WHERE id = '$_POST[id]'";
     $dou->query($sql);
     
     $dou->create_admin_log($_LANG['product_edit'] . ': ' . $_POST['name']);

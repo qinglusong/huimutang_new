@@ -3,7 +3,7 @@
  <h3>{$lang.product_tree}</h3>
  <ul>
   <!-- {foreach from=$product_category item=cate} 一级分类 -->
-  <li{if $cate.cur} class="cur"{/if}><a href="{$cate.url}">{$cate.cat_name}</a></li>
+  <li{if $cate.cur} class="cur"{/if}><a href="{$cate.child.0.url}">{$cate.cat_name}</a></li>
   <!-- {if $cate.child} -->
   <ul>
    <!-- {foreach from=$cate.child item=child} 二级分类 -->
