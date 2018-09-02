@@ -1,4 +1,5 @@
 //zoom
+var znum;
 $(window).resize(function () {
     zoom_fun();
 });
@@ -7,15 +8,16 @@ function zoom_fun(){
     // console.log(cw);
     var ch=$(".zoom-div").height();
     if(cw>1920)return;
-    var znum;
     if(cw>750){
         znum=cw/1920;
     }else{
         znum=cw/750;
     }
+
     // console.log(znum,ch);
     $("html").css({"width":cw+"px"});
-    $(".zoom-div").css("height",ch*znum+"px");
+    var h=Math.floor(ch*znum);
+    $(".zoom-div").css("height",h+"px");
 
     $(".zoom-div").css({"transform":"scale(" + znum + ")","transform-origin":"0 0"});
     wow.zoom=znum;

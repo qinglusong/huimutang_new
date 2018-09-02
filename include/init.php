@@ -118,7 +118,6 @@ if (!defined('EXIT_INIT')) {
         echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><div style=\"margin: 200px; text-align: center; font-size: 14px\"><p>" . $_LANG['site_closed'] . "</p><p></p></div>";
         exit();
     }
-    
     // 通用信息调用
     $smarty->assign('site_path','theme/huimutang/images');
     $smarty->assign("lang", $_LANG);
@@ -128,17 +127,19 @@ if (!defined('EXIT_INIT')) {
     $_DISPLAY = unserialize($_CFG['display']); // 显示设置
     $_DEFINED = unserialize($_CFG['defined']); // 自定义属性
 
-    $friend_link_list = $dou->get_friend_link_list();
+    $friend_link_list = $dou->get_friend_link_list();//友情链接
     $smarty->assign('friend_link_list',$friend_link_list);
 
 
     //导航栏
     $middle_nav = $dou->get_nav('middle');
+    //print_r($middle_nav);
     $top_nav = $dou->get_nav('top');//top是主导航右侧的竖线分割的导航
-    $link = $dou->get_link_list();//友情链接
+    //print_r($top_nav);
+    //$link = $dou->get_link_list();//友情链接
     $smarty->assign('nav_top_list',$top_nav );
     $smarty->assign('nav_middle_list', $middle_nav);
-    $smarty->assign('link',$link );
+    //$smarty->assign('link',$link );
     
     // Smarty 过滤器
     function remove_html_comments($source, & $smarty) {

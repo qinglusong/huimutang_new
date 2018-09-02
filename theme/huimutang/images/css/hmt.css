@@ -1,0 +1,75 @@
+.pc_header.white .nav li:nth-child(2) > a{color: #ff5a00}
+.container{padding-top: 150px;justify-content: center;align-items: flex-start;}
+.container .con-l ul{display: block;text-align: right;padding: 7px}
+.container .con-l ul li{margin: 0px 0px 30px}
+.container .con-l ul a{font-size: 13px;color: #717071;font-weight: bold}
+.container .con-l{width: 215px;margin-right: 100px}
+
+.container .con-r{width: 820px;margin-right: 300px;margin-bottom: 110px}
+.container .con-r .title-s{color: #bebfc0;font-size: 21px}
+.container .con-r .title-m{color: #3e3a39;font-size: 48px;margin-bottom: 45px}
+.container .con-r p{font-size: 19px;color: #717071;line-height: 40px}
+.container .con-r .con-img-div{width: 100%;height: 425px;overflow: hidden;}
+.container .con-r .con-img-div img{width: 100%}
+
+@media (max-width: 750px) {
+    .container{padding-top: 0px}
+    .container .m-t-div>p{margin-left: 40px;font-size: 34px;color: #3e3a39;margin-bottom: 50px}
+    .container .m-t-div ul{width: 655px;flex-wrap: wrap;line-height: 75px}
+    .container .m-t-div a{font-size: 32px;color: #717071;width: 200px;margin-right: 45px;font-weight: bold}
+    .container{flex-direction:column;padding-top: 100px;}
+    .container .con-r{width:655px; margin: 0px auto 110px}
+    .bottm-tool{justify-content: space-around;margin-bottom: 90px}
+
+}
+
+.select{color: #ff5d3d!important;}
+
+
+
+
+.right-tool{
+    position: fixed;
+    right: 100px;
+    top: 323px;
+    z-index: 9999;
+}
+.tool-item a{
+    width: 47px;
+    height: 47px;
+    cursor: pointer;
+    z-index: 1051;
+    display: block;
+    text-align: center;
+}
+.tool-item a.left, .tool-item a.right{
+    margin-top: 27px;
+    height: 71px;
+}
+.tool-item a.top{
+    margin-top: 60px;
+}
+.tool-item a i{
+    position: relative;
+    width: 47px;
+    height: 47px;
+    z-index: 2;
+    display: inline-block;
+    background: url("../imgs/news_icon.png") no-repeat -1000px 0;
+}
+.tool-item a.back i{
+    background-position: -2px -77px;
+}
+.tool-item a.left i{
+    background-position: -2px -2px;
+    width: 37px;
+    height: 71px;
+}
+.tool-item a.right i{
+    background-position: -43px -2px;
+    width: 37px;
+    height: 71px;
+}
+.tool-item a.top i{
+    background-position: -53px -77px;
+}

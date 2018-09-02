@@ -160,7 +160,6 @@ elseif ($rec == 'add') {
 
 elseif ($rec == 'insert') {
     // 数据验证
-
     if (empty($_POST['name'])) $dou->dou_msg($_LANG['name'] . $_LANG['is_empty']);
     //if (!$check->is_price($_POST['price'] = trim($_POST['price']))) $dou->dou_msg($_LANG['price_wrong']);
     
@@ -174,15 +173,29 @@ elseif ($rec == 'insert') {
     // CSRF防御令牌验证
     $firewall->check_token($_POST['token']);
     $cat_ids = '';
+    $cat_f_xm_id = false;
+    $cat_f_hy_id = false;
     if($_POST['cat_id_xiangmu']){
         foreach($_POST['cat_id_xiangmu'] as $k=>$v){
             $cat_ids .='|'.$v.'|,';
         }
+        $cat_f_xm_id = true;//项目分类
     }
 
     if($_POST['cat_id_hangye']){
         foreach($_POST['cat_id_hangye'] as $k=>$v){
             $cat_ids .='|'.$v.'|,';
+        }
+        $cat_f_hy_id = true;//行业分类
+    }
+    $cat_f_id = 0;
+    if($cat_f_xm_id && $cat_f_hy_id){
+        $cat_f_id = 3;//两类分类
+    }else{
+        if($cat_f_xm_id){
+            $cat_f_id = 1;//项目分类
+        }elseif($cat_f_hy_id){
+            $cat_f_id = 2;//行业分类
         }
     }
 
@@ -190,7 +203,7 @@ elseif ($rec == 'insert') {
 
     
     
-    $sql = "INSERT INTO " . $dou->table('product') . " (id, cat_id, name, en_name, price, defined, content, image ,keywords, description, add_time, sort_list)" . " VALUES (NULL, '$cat_ids', '$_POST[name]', '$_POST[en_name]', '$_POST[price]', '$_POST[defined]', '$_POST[content]', '$image', '$_POST[keywords]', '$_POST[description]', '$add_time', '".$_POST['sort_list']."')";
+    $sql = "INSERT INTO " . $dou->table('product') . " (id, cat_id,cat_f_id, name, en_name, price, defined, content, image ,keywords, description, add_time, sort_list)" . " VALUES (NULL, '$cat_ids', '$cat_f_id', '$_POST[name]', '$_POST[en_name]', '$_POST[price]', '$_POST[defined]', '$_POST[content]', '$image', '$_POST[keywords]', '$_POST[description]', '$add_time', '".$_POST['sort_list']."')";
     $dou->query($sql);
     
     $dou->create_admin_log($_LANG['product_add'] . ': ' . $_POST['name']);
@@ -265,23 +278,37 @@ elseif ($rec == 'update') {
     
     // CSRF防御令牌验证
     $firewall->check_token($_POST['token']);
-
+    $cat_f_xm_id = false;
+    $cat_f_hy_id = false;
     $cat_ids = '';
     if($_POST['cat_id_xiangmu']){
         foreach($_POST['cat_id_xiangmu'] as $k=>$v){
             $cat_ids .='|'.$v.'|,';
         }
+        $cat_f_xm_id = true;//项目分类
     }
 
     if($_POST['cat_id_hangye']){
         foreach($_POST['cat_id_hangye'] as $k=>$v){
             $cat_ids .='|'.$v.'|,';
         }
+        $cat_f_hy_id = true;//行业分类
+    }
+
+    $cat_f_id = 0;
+    if($cat_f_xm_id && $cat_f_hy_id){
+        $cat_f_id = 3;//两类分类
+    }else{
+        if($cat_f_xm_id){
+            $cat_f_id = 1;//项目分类
+        }elseif($cat_f_hy_id){
+            $cat_f_id = 2;//行业分类
+        }
     }
 
     $cat_ids = trim($cat_ids,',');
     
-    $sql = "update " . $dou->table('product') . " SET cat_id = '$cat_ids', name = '$_POST[name]', en_name = '$_POST[en_name]', price = '$_POST[price]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $image . ", keywords = '$_POST[keywords]', description = '$_POST[description]', sort_list='".$_POST['sort_list']."' WHERE id = '$_POST[id]'";
+    $sql = "update " . $dou->table('product') . " SET cat_id = '$cat_ids', cat_f_id = '$cat_f_id', name = '$_POST[name]', en_name = '$_POST[en_name]', price = '$_POST[price]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $image . ", keywords = '$_POST[keywords]', description = '$_POST[description]', sort_list='".$_POST['sort_list']."' WHERE id = '$_POST[id]'";
     $dou->query($sql);
     
     $dou->create_admin_log($_LANG['product_edit'] . ': ' . $_POST['name']);

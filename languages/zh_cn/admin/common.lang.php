@@ -219,6 +219,11 @@ $_LANG['web_url'] = '网站链接';
 $_LANG['index_company_profile_title'] = '首页公司介绍标题';
 $_LANG['index_company_profile_content'] = '首页公司介绍内容';
 
+$_LANG['index_fuwu_left_top'] = '首页服务左标题';
+$_LANG['index_fuwu_left_bottom'] = '首页服务左内容';
+$_LANG['index_fuwu_right_top'] = '首页服务右标题';
+$_LANG['index_fuwu_right_bottom'] = '首页服务右内容';
+
 $_LANG['core_product'] = '核心产品(英文逗号分隔)';
 $_LANG['ad_title'] = '项目咨询广告语1';
 $_LANG['ad_title_two'] = '项目咨询广告语2';

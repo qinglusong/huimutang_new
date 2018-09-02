@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-08-30 09:48:48
+<?php /* Smarty version 2.6.26, created on 2018-09-02 14:41:54
          compiled from inc/header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'inc/header.tpl', 39, false),)), $this); ?>
@@ -57,7 +57,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'i
  <div class="wrap">
   <ul class="logo">
    <a href="<?php echo $this->_tpl_vars['site']['root_url']; ?>
-"><img src="http://www.3e-d.com/theme/default/images/<?php echo $this->_tpl_vars['site']['site_logo']; ?>
+"><img src="http://localhost/theme/default/images/<?php echo $this->_tpl_vars['site']['site_logo']; ?>
 " alt="<?php echo $this->_tpl_vars['site']['site_name']; ?>
 " title="<?php echo $this->_tpl_vars['site']['site_name']; ?>
 " /></a>

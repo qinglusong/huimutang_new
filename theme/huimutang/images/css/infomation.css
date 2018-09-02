@@ -1,0 +1,10 @@
+.pc_header.white .nav li:nth-child(3) > a{color: black}
+.pc_header.white .nav li:nth-child(5) > a{color: #ff5a00}
+.h-btn-div .btn-back-div{color: black;font-size: 26px}
+.bg_1 .ul-div{width: 880px}
+.class-con{margin-bottom: 100px}
+
+.m-btn-div .m-btn {width: 145px;background-color: white;color: black;font-size: 30px}
+.m-btn-div .m-btn .btn-img-div{display: none}
+.m-btn-div .m-btn.active .btn-img-div{display: block;margin-left: 5px}
+.m-btn-div .m-btn.active{color: #ff5a00}
