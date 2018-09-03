@@ -14,7 +14,10 @@
 define('IN_DOUCO', true);
 
 require (dirname(__FILE__) . '/include/init.php');
-
+// 赋值给模板-meta和title信息
+$smarty->assign('page_title', $dou->page_title('page','','联系我们'));
+$smarty->assign('keywords', $_CFG['site_keywords']);
+$smarty->assign('description', $_CFG['site_description']);
 //print_r($_CFG);
 $smarty->display('contact.html');
 

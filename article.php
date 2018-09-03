@@ -61,5 +61,5 @@ $smarty->assign('lift', $dou->lift('article', $id, $cat_id));
 $smarty->assign('article', $article);
 $smarty->assign('defined', $defined);
 
-$smarty->display('article.dwt');
+$smarty->display('news.html');
 ?>

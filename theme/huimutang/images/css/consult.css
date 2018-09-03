@@ -81,6 +81,7 @@
     .bg_03 .b3-bg1{height: 250px}
     .bg_03 .b3-con .b3-con-c1{margin-top: 30px}
     .bg_03 .b3-con .b3-con-c2{letter-spacing: 5px}
+    .bg_03 .b3-con .b3-con-c2-1{letter-spacing: 0px}
 
     .bg_04 .bg-4-c{flex-direction:column;}
     .bg_04 .bg-4-c-m{width: 750px}
@@ -89,19 +90,23 @@
     .bg_04 .bg-4m-t2{margin-bottom: 20px}
 
     .bg_05 .bg-4-c{flex-wrap: wrap}
-    .bg_05 .bg-4-c .bg-4-c-m{width: 365px;height: 315px}
+    .bg_05 .bg-4-c .bg-4-c-m{width: 365px;height: 315px;margin-bottom: 10px}
 
     .bg_05 .bg-4m-img{height: 200px;width: 100%;overflow: hidden}
-    .bg_05 .bg-4m-t1{font-size: 24px;color: #a5a5a5;margin: 10px 0px 0px}
-    .bg_05 .bg-4m-t2{font-size: 20px;color: #a5a5a5;line-height: 25px; word-wrap: break-word;word-break: break-all;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
+    .bg_05 .bg-4m-t1{font-size: 24px;color: #a5a5a5;margin: 10px 0px 0px;line-height: 28px}
+    .bg_05 .bg-4m-t2{margin: 10px 5px;;font-size: 20px;color: #a5a5a5;height: 60px ;word-wrap: break-word;word-break: break-all;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
 
     .bg_06{height: 955px;background:url(../imgs/m/consult-b2-m.jpg) no-repeat center bottom;padding: 0 20px}
     .bg_06 .bg6-con-div{flex-wrap: wrap}
     .bg_06 .bg6-con {width: 346px;height: 346px;margin-bottom: 10px}
-    .bg_06 .bg6-con >p{margin: -30px 50px;width: 260px;height: 210px;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:6;line-height: 35px;word-break: break-all;font-size: 22px}
+    .bg_06 .bg6-con >p{margin: -30px 50px;width: 260px;height: 210px;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:6;line-height: 35px;word-break: break-all;font-size: 25px}
+
+    .bg_06 .bg6-con h2{font-weight: bold}
 
     .bg_07{flex-wrap: wrap}
     .bg_07 .bg7-txt{margin: auto auto}
+
+    .bg_07 .bg7-txt pre{font-size: 32px;letter-spacing: 2px}
 
     .m-footer-nav{display: block;height: 640px;background-color: #000000;padding: 85px 45px}
     .m-footer-nav div:nth-child(1){margin-bottom: 80px}

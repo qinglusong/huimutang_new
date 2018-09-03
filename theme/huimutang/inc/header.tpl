@@ -1,71 +1,65 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<div id="top">
- <div class="wrap">
-  <!-- {if $open.user} -->
-  <ul class="userTop">
-   <!-- {if $user} --> 
-   <a href="{$url.user}">{$user.user_name}，{$lang.user_welcom_top}</a><s></s><a href="{$url.logout}">{$lang.user_logout}</a> 
-   <!-- {else} --> 
-   <a href="{$url.login}">{$lang.user_login_nav}</a><s></s><a href="{$url.register}">{$lang.user_register_nav}</a> 
-   <!-- {/if} --> 
-  </ul>
-  <!-- {/if} -->
-  <ul class="topNav">
-   <!-- {foreach from=$nav_top_list item=nav} --> 
-   <!-- {if $nav.child} -->
-   <li class="parent"><a href="{$nav.url}">{$nav.nav_name}<s></s></a>
-    <ul>
-     <!-- {foreach from=$nav.child item=child} -->
-     <li><a href="{$child.url}">{$child.nav_name}</a></li>
-     <!-- {/foreach} -->
-    </ul>
-   </li>
-   <!-- {else} -->
-   <li><a href="{$nav.url}"{if $nav.target} target="_blank"{/if}>{$nav.nav_name}</a><s></s></li>
-   <!-- {/if} --> 
-   <!-- {/foreach} -->
-   <li><a href="javascript:AddFavorite('{$site.root_url}', '{$site.site_name}')">{$lang.add_favorite}</a></li>
-  </ul>
- </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>{$page_title}</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/theme/huimutang/images/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.3.0/theme/huimutang/images/js/swiper.min.js"></script>
+    <script type="text/javascript" src="theme/huimutang/images/js/wow.js"></script>
+    <link href="theme/huimutang/images/css/bootstrap.min.css" rel="stylesheet">
+    <link href="theme/huimutang/images/css/animate.min.css" rel="stylesheet">
+    <link href="theme/huimutang/images/css/swiper.css" rel="stylesheet">
+    <link href="theme/huimutang/images/css/tool.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="header zoom-div mobile-show">
+    <div class="flex-show m-title red-border">
+        <div class="m-title-img-div">
+            <a class="pc-show" href="/"><img src="theme/huimutang/images/imgs/logo-red.png" alt="{$site.site_name}" title="{$site.site_name}"></a>
+            <a class="mobile-show" href="/"><img src="theme/huimutang/images/imgs/m/title-img-r.png" alt="{$site.site_name}" title="{$site.site_name}"></a>
+        </div>
+        <div class="flex-show flex-row">
+            <span><a href="tel:02158878218"><img src="theme/huimutang/images/imgs/phone_red.png" alt=""></a></span>
+            <span id="J_MobileNavTrigger3"><img src="theme/huimutang/images/imgs/burger_red.png" alt=""></span>
+        </div>
+    </div>
 </div>
-<div id="header">
- <div class="wrap">
-  <ul class="logo">
-   <a href="{$site.root_url}"><img src="../images/{$site.site_logo}" alt="{$site.site_name}" title="{$site.site_name}" /></a>
-  </ul>
-  <ul class="search">
-   <div class="searchBox">
-    <form name="search" id="search" method="get" action="{$site.root_url}">
-     <label for="keyword">{$lang.search_cue}</label>
-     <input name="s" type="text" class="keyword" title="{$lang.search_product_cue}" autocomplete="off" onclick="formClick(this,'{$lang.search_product}')" value="{if $keyword}{$keyword|escape}{else}{$lang.search_product}{/if}" size="32" maxlength="128">
-     <input type="submit" class="btnSearch" value="{$lang.btn_submit}">
-    </form>
-   </div>
-  </ul>
- </div>
-</div>
-<div id="mainNav">
- <ul class="wrap">
-  <li{if $index.cur} class="cur"{/if}><a href="{$site.root_url}" class="first">{$lang.home}</a></li>
-  <!-- {foreach from=$nav_middle_list name=nav_middle_list item=nav} --> 
-  <li{if $nav.cur} class="cur hover"{/if}><a href="{$nav.url}"{if $smarty.foreach.nav_middle_list.iteration eq 7} class="last"{/if}{if $nav.target} target="_blank"{/if}>{$nav.nav_name}</a> 
-  <!-- {if $nav.child} -->
-  <ul>
-   <!-- {foreach from=$nav.child item=child} -->
-   <li><a href="{$child.url}"{if $child.child} class="parent"{/if}>{$child.nav_name}</a> 
-    <!-- {if $child.child} -->
-    <ul>
-     <!-- {foreach from=$child.child item=children} -->
-     <li><a href="{$children.url}">{$children.nav_name}</a></li>
-     <!-- {/foreach} -->
-    </ul>
-    <!-- {/if} --> 
-   </li>
-   <!-- {/foreach} -->
-  </ul>
-  <!-- {/if} -->
-  </li>
-  <!-- {/foreach} -->
-  <div class="clear"></div>
- </ul>
-</div>
+<div class="container zoom-div">
+    <header class="pc_header white flex-show flex-row pc-show">
+        <div class="pc-show flex-show pc-logo wow fadeInLeft">
+            <a href="/"><img src="theme/huimutang/images/imgs/logo-red.png" alt="{$site.site_name}" title="{$site.site_name}"></a>
+        </div>
+        <div class="title-right wow fadeInRight">
+            <div class=" flex-column flex-right pc-show flex-show">
+                <div class="pc-logo-right"><img src="theme/huimutang/images/imgs/h_right_red.png"></div>
+                <nav class="nav">
+                    <ul class="flex-row">
+                        <li>
+                            <a href="index.html">首页</a>
+                        </li>
+						
+						
+                        {foreach from=$nav_middle_list item=item}
+						<li class="">
+							<a href="{$item.url}">{$item.nav_name}</a>
+						</li>
+						
+						{/foreach}
+						
+						
+						{foreach from=$nav_top_list item=item name=foo}
+						<li class="li_border_r {if $smarty.foreach.foo.first}left{/if}">
+							<a {if $smarty.foreach.foo.last}style="border-left: none"{/if} href="{$item.guide}">{$item.nav_name}</a>
+						</li>
+						{/foreach}
+						
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>

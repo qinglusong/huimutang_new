@@ -14,7 +14,11 @@
 define('IN_DOUCO', true);
 
 require (dirname(__FILE__) . '/include/init.php');
-
+$cat_f_ids = array(1,2,3);
+$cat_f_id = $_REQUEST['fid'];
+if(!in_array($cat_f_id, $cat_f_ids)){
+    $dou->dou_msg($GLOBALS['_LANG']['page_wrong'], ROOT_URL);
+}
 // 验证并获取合法的ID，如果不合法将其设定为-1
 $cat_id = $firewall->get_legal_id('product_category', $_REQUEST['id'], $_REQUEST['unique_id']);
 if ($cat_id == -1) {
@@ -84,7 +88,7 @@ $smarty->assign('product_category', $product_category);
 //产品列表-----------------
 $smarty->assign('product_list', $product_list);
 
-print_r($product_category);
+//print_r($product_category);
 
-$smarty->display('product_category.dwt');
+$smarty->display('case.html');
 ?>

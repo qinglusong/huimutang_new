@@ -20,11 +20,33 @@
 var titlebanner=new Swiper('#consult_sp1', {
     initialSlide :0,
     speed:1000,
-    // autoplay: {
-    //     delay: 5000,
-    //     stopOnLastSlide: false,
-    //     disableOnInteraction: true,
-    // },
+    autoplay: {
+        delay: 5000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.home-bg-00 .swiper-button-next',
+        prevEl: '.home-bg-00 .swiper-button-prev',
+    },
+    on: {
+        slideChangeTransitionEnd: function(){
+
+            }
+        },
+});
+
+var titlebanner2=new Swiper('#consult_sp2', {
+    initialSlide :0,
+    speed:1000,
+    autoplay: {
+        delay: 5000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+    },
     pagination: {
         el: '.swiper-pagination',
     },

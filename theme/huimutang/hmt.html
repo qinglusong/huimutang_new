@@ -1,288 +1,45 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>慧目堂</title>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
-    <script type="text/javascript" src="js/wow.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-    <link href="css/tool.css" rel="stylesheet">
-    <link href="css/hmt.css" rel="stylesheet">
-</head>
-<body>
-<div class="header zoom-div mobile-show">
-    <div class="flex-show m-title red-border">
-        <div class="m-title-img-div">
-            <a class="pc-show" href="/"><img src="imgs/logo-red.png" alt="慧目堂" title="慧目堂"></a>
-            <a class="mobile-show" href="/"><img src="imgs/m/title-img-r.png" alt="慧目堂" title="慧目堂"></a>
-        </div>
-        <div class="flex-show flex-row">
-            <span><a href="tel:02158878218"><img src="imgs/phone_red.png" alt=""></a></span>
-            <span id="J_MobileNavTrigger3"><img src="imgs/burger_red.png" alt=""></span>
-        </div>
-    </div>
-</div>
-<div class="container zoom-div">
-    <header class="pc_header white flex-show flex-row pc-show">
-        <div class="pc-show flex-show pc-logo wow fadeInLeft">
-            <a href="/"><img src="imgs/logo-red.png" alt="慧目堂" title="慧目堂"></a>
-        </div>
-        <div class="title-right wow fadeInRight">
-            <div class=" flex-column flex-right pc-show flex-show">
-                <div class="pc-logo-right"><img src="imgs/h_right_red.png"></div>
-                <nav class="nav">
-                    <ul class="flex-row">
-                        <li>
-                            <a href="index.html">首页</a>
-                        </li>
-                        <li>
-                            <a href="#">慧目堂</a>
-                        </li>
-                        <li>
-                            <a href="case.html">案例</a>
-                        </li>
-                        <li>
-                            <a href="service.html">服务</a>
-                        </li>
-                        <li>
-                            <a href="infomation.html">资讯</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">联系</a>
-                        </li>
-                        <li class="li_border_r left">
-                            <a href="consult.html">年度咨询</a>
-                        </li>
-                        <li class="li_border_r">
-                            <a style="border-left: none" href="">项目咨询</a>
-                        </li>
-
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+{include file='inc/header.tpl'}
+    <link href="theme/huimutang/images/css/hmt.css" rel="stylesheet">
     <div class="container flex-show flex-row">
-
+			
         <div class="m-t-div mobile-show wow fadeInLeft">
             <p>慧目堂＞</p>
             <ul>
-                <li><a class="select">慧目堂简介</a></li>
-                <li><a class="">慧目堂伙伴</a></li>
-                <li><a>慧目堂文化</a></li>
-                <li><a>慧目堂奖项</a></li>
-                <li><a>工作氛围</a></li>
-                <li><a> 工作机会</a></li>
+				{foreach from = $pages_arr.list item=item}
+                <li><a href='pages_{$item.id}.html' {if $item.id== $pages_arr.info.id}class="select"{/if}>>{$item.page_name}</a></li>
+                
+				{/foreach}
             </ul>
         </div>
 
         <div class="con-l pc-show">
             <ul>
-                <li class="wow fadeInLeft" data-wow-delay="400ms"><a class="select">慧目堂简介 | Brief Info |</a></li>
-                <li class="wow fadeInLeft" data-wow-delay="500ms"><a>慧目堂伙伴 | Partner |</a></li>
-                <li class="wow fadeInLeft" data-wow-delay="600ms"><a>慧目堂文化 | Culture |</a></li>
-                <li class="wow fadeInLeft" data-wow-delay="700ms"><a>慧目堂奖项 | Awards |</a></li>
-                <li class="wow fadeInLeft" data-wow-delay="800ms"><a>工作氛围 | Working atmosphere |</a></li>
-                <li class="wow fadeInLeft" data-wow-delay="900ms"><a> 工作机会 | Join us |</a></li>
+			{foreach from = $pages_arr.list item=item name=foo}
+                <li class="wow fadeInLeft" data-wow-delay="{$smarty.foreach.foo.index+4}00ms"><a href='pages_{$item.id}.html' {if $item.id== $pages_arr.info.id}class="select"{/if}>{$item.page_name} | {$item.unique_id} |</a></li>
+                
+			{/foreach}
             </ul>
         </div>
         <div class="con-r wow fadeInRight">
-            <div class="title-s wow fadeInRight">Brief Info</div>
-            <div class="title-m wow fadeInRight" data-wow-delay="400ms">慧目堂的介绍</div>
-            <p>慧目堂是全国知名的国际化品牌咨询公司，近14年的实战，将品牌战略与创意设计融会贯通，以“战略定位+视觉锤”为核心，“品牌创建三极体系”为系统方法，制造了一系列市场传奇，打造了数十个细分领域的领军品牌。 </p>
-            <p>与法国创意集团、英国Piano、意大利online等多个著名国际公司携手。运用国际先进理念和品质管理，将中华文化与国际潮流融合，创造品牌溢价。提供：调研、定位、命名；CI/VI、SI、形象、环境、导向、标识、造型、包装、店面；及网络、物料、推广、广告、活动等全面的品牌整合全案策划设计服务。</p>
-            <div class="con-img-div"><img src="imgs/bg3.jpg"></div>
-            <p>3EYES BRAND | 慧目堂品牌顾问 是创建、更新和推广品牌的专家。已成功创建上百个卓越品牌，协助客户成为行业先锋。帮助数百个品牌重获新生，实现企业盈利飞跃。 </p>
-            <p>3EYES SHOPS | 慧目堂店面空间 是营造独特空间氛围的专家。为各类品牌、商业地产、园区、写字楼酒店等创作了一系列高水准的SI店面设计、商业空间、指示设计等。 </p>
-            <p>3EYES PACKAGE | 慧目堂商品包装 是优秀的商品包装设计专家。在结构，材质，工艺等方面深入研究，不断创新。焕发包装的独特魅力，达成最直接的销售业绩。 </p>
-            <div class="con-img-div"><img src="imgs/bg3.jpg"></div>
-            <p>慧目堂上海已正式入驻绿地虹桥世界中心，5A甲级创意写字楼。位于上海新门户“虹桥商务区”，国际企业总部正汇聚于此，充满未来的上海新门户。高铁、机场、高速、地铁10分钟即到，引领上海，环顾长三角，辐射全国乃至全球。购物美食娱乐都近在咫尺，创意满满的新办公室，超大的180度弧形落地窗，让你每天的心情都好的不要不要的...坐看风和日丽，静观暴雨雷电，尽情施展智慧和努力。选择这里，我们与最优秀的企业总部为伴，开创美好未来。 </p>
-            <div class="con-img-div"><img src="imgs/bg3.jpg"></div>
-            <p>佛有五眼，肉眼、天眼、慧眼、法眼和佛眼。正是修炼的五种境界。</p>
-            <p>其中</p>
-            <p>慧眼:是声闻（阿罗汉）、缘觉（辟支佛）的眼。能看破假相，识得真空，不被境所惑动。见众生尽，灭一异之相，舍离诸着，不受一切法，智慧自灭于内。慧眼能照见一切可见不可见、有形无形的事物。</p>
-            <p>慧眼功分为多眼、析眼、追眼、预眼四种类型。</p>
-            <p>(1)多眼是指看事物是立体的，能从四面八方多个方位看。</p>
-            <p>(2)析眼是指能分析，一看就知道是什么东西，有什么含义。</p>
-            <p>(3)追眼是指能追查过去，能够追知已经发生过的事情是什么样子，能够知道事情发生的原因。比如一只碗，追查到若干年前，看到的是哪里的一堆泥土；再如给人看病，不仅能看到病情的存在，而且能看到病史，看到以前的来龙去脉。</p>
-            <p>(4)预眼是指能预见未来，能把没发生的事情在将来发生时的情况看到，或者把最终的结果拿出来，用功夫还能看到事物的量变过程。</p>
-            <p>... ...</p>
-            <p>3EYES ，cooperated with the world famous international company-GPC,
-                is reputed as one of first-class Ideas Creation company.Applying with the advanced idea and quality
-                management and combined the Chinese culture with the international trend fusion,
-                we declare that the first is the strategy and the core is the market create high added value
-                for our clients and meanwhile povided the other service: research, position, naming, CI/VI,
-                environment, signage, product, packaging, and stores, network, materials, promotion and comprehensive brand integration services.
-            </p>
-            <p>3EYES BRAND ，it is the experts to create, update and promote the BRAND . We successfully created hundreds of excellent brands and help our customers rank as the leader in the industry and make hundreds of brand britghten the new life and widen enterprise profit greatly.
-            </p>
-            <p>3EYES SHOPS， It work as the director to help the customer creat the unique SI shop design, commercial space and signage design for their brand, commercial real estate, industry zone, hotel and others.
-            </p>
-            <p>3EYES PACKAGE，it is an excellent commodity packaging designer.By changing the structure, material, process of packagne constantly, and it help the customers create the unique eye catching packaging, which leads the successful sales of products in the market.
-            </p>
-            <p>Shanghai Three Eyes Art Design Co.,Ltd removed to the Shanghai Hongqiao commercial zone- new window of shanghai and facing to Yangtze River Delta and widespread all over china mainland.</p>
+            <div class="title-s wow fadeInRight">{$pages_arr.info.unique_id}</div>
+            <div class="title-m wow fadeInRight" data-wow-delay="400ms">{$pages_arr.info.page_name}</div>
+            {$pages_arr.info.content}
         </div>
     </div>
 
     <div class="bottm-tool mobile-show flex-show flex-row">
-        <div><a><img src="imgs/m/m_hmt_b1.png"></a></div>
-        <div><a><img src="imgs/m/m_hmt_b2.png"></a></div>
-        <div><a><img src="imgs/m/m_hmt_b3.png"></a></div>
-        <div><a><img src="imgs/m/m_hmt_b4.png"></a></div>
+        <div><a href="/"><img src="theme/huimutang/images/imgs/m/m_hmt_b1.png"></a></div>
+        <div><a href="pages_{$pages_arr.list.$page_up.id}.html"><img src="theme/huimutang/images/imgs/m/m_hmt_b2.png"></a></div>
+        <div><a href="pages_{$pages_arr.list.$page_down.id}.html"><img src="theme/huimutang/images/imgs/m/m_hmt_b3.png"></a></div>
+        <div><a><img src="theme/huimutang/images/imgs/m/m_hmt_b4.png"></a></div>
     </div>
-    
     <div class="right-tool pc-show">
         <div class="tool-item">
-            <a class="back" href="####"><i></i></a>
-            <a class="right" href="####"><i></i></a>
-            <a class="left" href="####"><i></i></a>
+            <a class="back" href="/"><i></i></a>
+            <a class="right" href="pages_{$pages_arr.list.$page_down.id}.html"><i></i></a>
+            <a class="left" href="pages_{$pages_arr.list.$page_up.id}.html"><i></i></a>
             <a class="top" href="####"><i></i></a>
         </div>
     </div>
     <!-- footer -->
-    <div class="footer-nav flex-column pc-show flex-show">
-        <div class="footer-div1 wow fadeInRight">
-            <ul class="">
-                <li class="">
-                    <a href="index.html">首页</a>
-                </li>
-                <li class="">
-                    <a href="#">慧目堂</a>
-                </li>
-                <li>
-                    <a href="case.html">案例</a>
-                </li>
-                <li>
-                    <a href="service.html">服务</a>
-                </li>
-                <li>
-                    <a href="infomation.html">资讯</a>
-                </li>
-                <li>
-                    <a href="contact.html">联系</a>
-                </li>
-                <li class="li_border_r">
-                    <a href="consult.html">年度咨询</a>
-                </li>
-                <li class="li_border_r">
-                    <a style="border-left: none" class="none-border-l" href="">项目咨询</a>
-                </li>
-            </ul>
-        </div>
-
-        <nav class="footer-div2 pc-show flex-show flex-row">
-            <div class="footer2-l wow fadeInLeft" >
-                <div>友情链接</div>
-                <ul class="">
-                    <li><a href="/">北京卫生间隔断</a></li>
-                    <li><a href="/">北京展览展示公司</a></li>
-                    <li>
-                        <a href="">软装设计</a>
-                    </li>
-
-                    <li>
-                        <a href="">深圳国际商标注册</a>
-                    </li>
-                    <li>
-                        <a href="">大连品牌设计</a>
-                    </li>
-                    <li>
-                        <a href="">上海展台设计</a>
-                    </li>
-                    <li>
-                        <a href="">儿童乐园设备</a>
-                    </li>
-                    <li>
-                        <a href="">上海展台搭建</a>
-                    </li>
-                    <li>
-                        <a href="">西安专利申请</a>
-                    </li>
-                    <li>
-                        <a href="">石家庄网络推广</a>
-                    </li>
-                    <li>
-                        <a href="">郑州婚纱摄影</a>
-                    </li>
-                    <li>
-                        <a href="">凭证装订机</a>
-                    </li>
-
-                </ul>
-                <div>
-                    <div>联系我们</div>
-                    <ul class="">
-                        <li>业务咨询：021-39888336</li>
-                        <li>
-                            商务推介：021-39888279
-                        </li>
-                        <li>
-                            QQ：2880670804
-                        </li>
-                        <li>
-                            E-mail：7design@163.com
-                        </li>
-                        <li>地址：c上海市 诸光路1588弄 虹桥世界中心 L3A-405</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer2-r wow fadeInRight">
-                <div><img src="imgs/pc_qm.png" ></div>
-                <p>Copyright  2004-2017 Shanghai Three Eyes Art Design Co.,Ltd.  All Rights Reserved</p>
-                <p>版权所有 沪ICP备16026508号   沪公网安备 31011202002497</p>
-            </div>
-        </nav>
-    </div>
-    <nav class="m-footer-nav mobile-show">
-        <div class="wow fadeInLeft"><img src="imgs/m/b-tit-img.png"></div>
-        <div class="wow fadeInLeft" data-wow-delay="100ms"><img src="imgs/m/b-img2.png"></div>
-        <div class="wow fadeInRight" data-wow-delay="200ms"><img src="imgs/m/qianming.png"></div>
-        <p class="wow fadeInLeft" data-wow-delay="300ms">Copyright © 2004-2018 Shanghai Three Eyes Art</p>
-        <p class="wow fadeInLeft" data-wow-delay="350ms">Design Co.,Ltd.  All Rights Reserved © 版权所有</p>
-        <p class="wow fadeInLeft" data-wow-delay="400ms">沪ICP备16026508号</p>
-        <p class="wow fadeInLeft"data-wow-delay="450ms">沪公网安备 31011202002497号</p>
-    </nav>
-</div>
-
-<div id="J_MobileNavBar" class="mobile-show">
-    <div id="alert-cls2" class="cls-btn"><img src="imgs/m/close_img.png"></div>
-    <ul class="flex-column">
-        <li class="">
-            <a href="index.html">首页</a>
-        </li>
-        <li class="">
-            <a href="hmt.html">慧目堂</a>
-        </li>
-        <li>
-            <a href="case.html">案例</a>
-        </li>
-        <li>
-            <a href="service.html">服务</a>
-        </li>
-        <li>
-            <a href="infomation.html">资讯</a>
-        </li>
-        <li>
-            <a href="contact.html">联系</a>
-        </li>
-        <li class="">
-            <a href="">年度咨询</a>
-        </li>
-        <li class="">
-            <a href="">项目咨询</a>
-        </li>
-    </ul>
-</div>
-
-<script type="text/javascript" src="js/zoom.js"></script>
-<script type="text/javascript" src="js/tool.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
-</body>
-</html>
+   {include file='inc/footer.tpl'}

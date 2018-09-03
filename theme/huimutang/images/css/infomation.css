@@ -8,3 +8,9 @@
 .m-btn-div .m-btn .btn-img-div{display: none}
 .m-btn-div .m-btn.active .btn-img-div{display: block;margin-left: 5px}
 .m-btn-div .m-btn.active{color: #ff5a00}
+
+
+@media (max-width: 750px) {
+    .m-btn-div{width: 85%}
+    .m-btn-div .m-btn{font-size: 32px;width: 155px;}
+}

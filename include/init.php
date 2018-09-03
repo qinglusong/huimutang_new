@@ -70,10 +70,10 @@ if (!defined('EXIT_INIT')) {
     header('Content-type: text/html; charset=' . DOU_CHARSET);
     
     // 判断是否跳转到手机版（条件：是移动端、没有强制显示PC版、手机版没有关闭）
-    if ($dou->is_mobile() && $_COOKIE['client'] != 'pc' && !$_CFG['mobile_closed']) {
-        $content_url = str_replace(ROOT_URL, '', 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-        $dou->dou_header(ROOT_URL . M_PATH . '/' . $content_url);
-    }
+    // if ($dou->is_mobile() && $_COOKIE['client'] != 'pc' && !$_CFG['mobile_closed']) {
+    //     $content_url = str_replace(ROOT_URL, '', 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    //     $dou->dou_header(ROOT_URL . M_PATH . '/' . $content_url);
+    // }
     
     // 豆壳防火墙
     $firewall->dou_firewall();
@@ -121,6 +121,8 @@ if (!defined('EXIT_INIT')) {
     // 通用信息调用
     $smarty->assign('site_path','theme/huimutang/images');
     $smarty->assign("lang", $_LANG);
+    $core_product = explode(',',$_CFG['core_product']);
+    $_CFG['core_product_arr'] = $core_product;
     $smarty->assign("site", $_CFG);
     $smarty->assign("url", $_URL = $dou->dou_url()); // 模块URL
     $smarty->assign("open", $_OPEN = $_MODULE['open']); // 模块开启状态

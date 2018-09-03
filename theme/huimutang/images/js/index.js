@@ -4,11 +4,11 @@ var tit_wow=0;
 var titlebanner=new Swiper('.home-bg-00.pc-show', {
     initialSlide :1,
     speed:1000,
-    // autoplay: {
-    //     delay: 5000,
-    //     stopOnLastSlide: false,
-    //     disableOnInteraction: true,
-    // },
+    autoplay: {
+        delay: 5000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+    },
     navigation: {
         nextEl: '.home-bg-00.pc-show .swiper-button-next',
         prevEl: '.home-bg-00.pc-show .swiper-button-prev',

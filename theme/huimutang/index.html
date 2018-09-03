@@ -20,11 +20,11 @@
         <div class="container zoom-div">
             <div class="row">
                <div class="pull-left main-header-logo hidden-sm hidden-xs">
-                    <a href="/"><img src="theme/huimutang/images/imgs/logo.png" alt="慧目堂" title="慧目堂"></a>
+                    <a href="/"><img src="theme/huimutang/images/imgs/logo.png" alt="{$site.site_name}" title="{$site.site_name}"></a>
                 </div>
 
                 <div class="pull-left main-header-logo-mobile hidden-lg hidden-md">
-                    <a href="/" class="flex"><img src="theme/huimutang/images/imgs/logov.png" alt="慧目堂" title="慧目堂"><img class="m-logotxt" src="theme/huimutang/images/imgs/m/title-img-rw.png"></a>
+                    <a href="/" class="flex"><img src="theme/huimutang/images/imgs/logov.png" alt="{$site.site_name}" title="{$site.site_name}"><img class="m-logotxt" src="theme/huimutang/images/imgs/m/title-img-rw.png"></a>
                 </div>
                 <div class="pull-right main-header-right">
                     <div class="pull-right main-header-extra ">
@@ -42,17 +42,11 @@
                                                 <a href="/">首页</a>
                                             </li>
 
-
                                             {foreach from=$nav_middle_list item=item}
-
                                             <li class="">
-                                                <a href="{$item.nav_name}">{$item.nav_name}</a>
+                                                <a href="{$item.url}">{$item.nav_name}</a>
                                             </li>
-
-                                            
                                             {/foreach}
-                                            
-                                            
 
                                             {foreach from=$nav_top_list item=item name=foo}
                                             <li class="li_border_r">
@@ -79,11 +73,11 @@
         <div class="container">
             <div class="row">
                <div class="pull-left main-header-logo hidden-sm hidden-xs">
-                    <a href="/"><img src="theme/huimutang/images/imgs/logo.png" alt="慧目堂" title="慧目堂"></a>
+                    <a href="/"><img src="theme/huimutang/images/imgs/logo.png" alt="{$site.site_name}" title="{$site.site_name}"></a>
                 </div>
 
                 <div class="pull-left main-header-logo-mobile hidden-lg hidden-md wow fadeInLeft" data-wow-delay="3000ms">
-                    <a href="/" class="flex"><img src="theme/huimutang/images/imgs/logov.png" alt="慧目堂" title="慧目堂"><img class="m-logotxt" src="theme/huimutang/images/imgs/m/logotxt.png"></a>
+                    <a href="/" class="flex"><img src="theme/huimutang/images/imgs/logov.png" alt="{$site.site_name}" title="{$site.site_name}"><img class="m-logotxt" src="theme/huimutang/images/imgs/m/logotxt.png"></a>
                 </div>
                 <div class="pull-right main-header-right">
                     <div class="pull-right main-header-extra wow fadeInRight" data-wow-delay="100ms">
@@ -508,7 +502,7 @@
                         <div class="col-md-4 wow fadeInUp" data-wow-delay="200ms">
                             <div class="news-panel-focus">
                                 <div class="news-panel-focus-img">
-                                     <a href="/news_{$item.id}.html" ><img width='631px' height='355px' src="{$item.image}" width="100%" alt=""></a>
+                                     <a href="/news_{$item.id}.html" target='_blank' ><img width='631px' height='355px' src="{$item.image}" width="100%" alt=""></a>
                                  </div>
                                  <div class="news-panel-focus-text">
                                     <h2 class="title"><a href=""><font>{$item.title}</font></a></h2>
@@ -745,7 +739,7 @@
 
         {foreach from=$nav_middle_list item=item}
         <li onclick="alertshow()">
-            <a href="{$item.nav_name}">{$item.nav_name}</a>
+            <a href="{$item.url}">{$item.nav_name}</a>
         </li>
         {/foreach}
         

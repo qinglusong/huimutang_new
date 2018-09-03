@@ -71,5 +71,5 @@ $smarty->assign('cate_info', $cate_info);
 $smarty->assign('article_category', $dou->get_category('article_category', 0, $cat_id));
 $smarty->assign('article_list', $article_list);
 
-$smarty->display('article_category.dwt');
+$smarty->display('infomation.html');
 ?>

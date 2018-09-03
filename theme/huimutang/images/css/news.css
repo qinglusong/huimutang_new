@@ -74,6 +74,10 @@
 }
 .title-top .tip{display: none;}
 @media (max-width: 750px) {
+    /*---yzy---*/
+  .txt-cont p{font-size: 32px;line-height: 58px;margin-bottom: 85px}
+    /*---yzy---*/
+
     .info_bg{
       width: 100%;
       padding: 0 0.48rem;

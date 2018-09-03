@@ -51,7 +51,7 @@ if (file_exists(ROOT_PATH . "theme/$_CFG[site_theme]/" . $page['unique_id'] . '.
     // 自定义单页模板
     $smarty->display($page['unique_id'] . '.dwt');
 } else {
-    $smarty->display('page.dwt');
+    $smarty->display('hmt.html');
 }
 
 ?>

@@ -23,6 +23,10 @@ $fuwu = $dou->get_row('fuwu', '*', "type = '1'");//type=1 服务页
     //print_r($fuwu);
     $smarty->assign('info', $fuwu);
 
-$smarty->display('fuwu.html');
+    $smarty->assign('page_title', $dou->page_title('page','','价值服务'));
+	$smarty->assign('keywords', $_CFG['site_keywords']);
+	$smarty->assign('description', $_CFG['site_description']);
+
+$smarty->display('service.html');
 
 ?>
