@@ -19,16 +19,22 @@ $cat_f_id = $_REQUEST['fid'];
 if(!in_array($cat_f_id, $cat_f_ids)){
     $dou->dou_msg($GLOBALS['_LANG']['page_wrong'], ROOT_URL);
 }
+$where = ' WHERE 1=1 ';
 // 验证并获取合法的ID，如果不合法将其设定为-1
 $cat_id = $firewall->get_legal_id('product_category', $_REQUEST['id'], $_REQUEST['unique_id']);
 if ($cat_id == -1) {
     $dou->dou_msg($GLOBALS['_LANG']['page_wrong'], ROOT_URL);
 } else {
     if($cat_id>0){
-        $where = " WHERE cat_id like '%|".$cat_id."|%'   ";
+        $where .= " AND cat_id like '%|".$cat_id."|%'   ";
     }
     
 }
+
+if($cat_f_id && $cat_id==0){
+    $where .="AND cat_f_id in ('".$cat_f_id."','3') ";
+}
+
 // 获取分页信息
 $page = $check->is_number($_REQUEST['page']) ? trim($_REQUEST['page']) : 1;
 $limit = $dou->pager('product', ($_DISPLAY['product'] ? $_DISPLAY['product'] : 10), $page, $dou->rewrite_url('product_category', $cat_id), $where);
@@ -45,7 +51,7 @@ while ($row = $dou->fetch_array($query)) {
     $description = $row['description'] ? $row['description'] : $dou->dou_substr($row['content'], 150, false);
     
     // 格式化价格
-    $price = $row['price'] > 0 ? $dou->price_format($row['price']) : $_LANG['price_discuss'];
+    $price = $row['price'];
     $img_pc_list = array();
     $img_wap_list = array();
 
@@ -56,7 +62,7 @@ while ($row = $dou->fetch_array($query)) {
             "cat_id" => $row['cat_id'],
             "name" => $row['name'],
             "price" => $price,
-            "thumb" => $dou->dou_file($row['image'], true),
+            "image" => $dou->dou_file($row['image']),
             "add_time" => $add_time,
             "description" => $description,
             "url" => $url,
@@ -85,10 +91,16 @@ $smarty->assign('cate_info', $cate_info);
 $product_category = $dou->get_category('product_category', 0, $cat_id);
 $smarty->assign('product_category', $product_category);
 
+$product_category_erji = $dou->get_category('product_category', $cat_f_id, $cat_id);
+$smarty->assign('product_category_erji', $product_category_erji);
+
+//print_r($product_category_erji);
 //产品列表-----------------
 $smarty->assign('product_list', $product_list);
-
-//print_r($product_category);
+$smarty->assign('cat_id', $cat_id);
+$smarty->assign('cat_f_id', $cat_f_id);
+$smarty->assign('page', $page);
+//print_r($product_list);
 
 $smarty->display('case.html');
 ?>
