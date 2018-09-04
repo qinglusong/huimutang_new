@@ -14,71 +14,50 @@
 define('IN_DOUCO', true);
 
 require (dirname(__FILE__) . '/include/init.php');
-$cat_f_ids = array(1,2,3);
-$cat_f_id = $_REQUEST['fid'];
-if(!in_array($cat_f_id, $cat_f_ids)){
-    $arr = array('code'=>101,'message'=>'id错误','data'=>'');
-    echo json_encode($arr);
-}
-$where = ' WHERE 1=1 ';
+
 // 验证并获取合法的ID，如果不合法将其设定为-1
-$cat_id = $firewall->get_legal_id('product_category', $_REQUEST['id'], $_REQUEST['unique_id']);
+$cat_id = $firewall->get_legal_id('article_category', $_REQUEST['id'], $_REQUEST['unique_id']);
 if ($cat_id == -1) {
     $dou->dou_msg($GLOBALS['_LANG']['page_wrong'], ROOT_URL);
 } else {
-    if($cat_id>0){
-        $where .= " AND cat_id like '%|".$cat_id."|%'   ";
-    }
+    $where = ' WHERE cat_id IN (' . $cat_id . $dou->dou_child_id('article_category', $cat_id) . ')';
+}
     
-}
-
-if($cat_f_id && $cat_id==0){
-    $where .="AND cat_f_id in ('".$cat_f_id."','3') ";
-}
-
 // 获取分页信息
 $page = $check->is_number($_REQUEST['page']) ? trim($_REQUEST['page']) : 1;
 $page =intval($page)+1;//访问这里都是下一页
-$limit = $dou->pager('product', ($_DISPLAY['product'] ? $_DISPLAY['product'] : 9), $page, $dou->rewrite_url('product_category', $cat_id), $where);
+$limit = $dou->pager('article', ($_DISPLAY['article'] ? $_DISPLAY['article'] : 9), $page, $dou->rewrite_url('article_category', $cat_id), $where);
 
-/* 获取产品列表 */
-$sql = "SELECT id, cat_id, name, price, content, image, add_time, description FROM " . $dou->table('product') . $where . " ORDER BY sort_list ASC,id DESC" . $limit;
+/* 获取文章列表 */
+$sql = "SELECT id, title, content, image, cat_id, add_time, click, description FROM " . $dou->table('article') . $where . " ORDER BY id DESC" . $limit;
 $query = $dou->query($sql);
 
 while ($row = $dou->fetch_array($query)) {
-    $url = $dou->rewrite_url('product', $row['id']); // 获取经过伪静态产品链接
+    $url = $dou->rewrite_url('article', $row['id']);
     $add_time = date("Y-m-d", $row['add_time']);
+    $add_time_short = date("m-d", $row['add_time']);
     
     // 如果描述不存在则自动从详细介绍中截取
-    $description = $row['description'] ? $row['description'] : $dou->dou_substr($row['content'], 150, false);
+    $description = $row['description'] ? $row['description'] : $dou->dou_substr($row['content'], 200, false);
     
-    // 格式化价格
-    $price = $row['price'];
-    $img_pc_list = array();
-    $img_wap_list = array();
-
-    $img_wap_list = $dou->get_demo_show_list('demom',$row['id']);//移动幻灯片
-    $img_pc_list = $dou->get_demo_show_list('demo',$row['id']);//PC幻灯片
-    $product_list[] = array (
+    $article_list[] = array (
             "id" => $row['id'],
             "cat_id" => $row['cat_id'],
-            "name" => $row['name'],
-            "price" => $price,
+            "title" => $row['title'],
             "image" => $dou->dou_file($row['image']),
             "add_time" => $add_time,
+            "add_time_short" => $add_time_short,
+            "click" => $row['click'],
             "description" => $description,
-            "url" => $url,
-            "img_pc_list"=>$img_pc_list,
-            "img_wap_list"=>$img_wap_list,
+            "url" => $url 
     );
 }
 
-//产品列表-----------------
-$data['list'] = $product_list;
+//print_r($article_list);
+$data['list'] = $article_list;
 $data['page'] = $page;
-$data['cat_f_id'] = $cat_f_id;
 $data['cat_id'] = $cat_id;
-if($product_list){
+if($article_list){
 
     $arr = array('code'=>200,'message'=>'ok','data'=>$data,'html'=>'');
     echo json_encode($arr);
@@ -86,5 +65,5 @@ if($product_list){
     $arr = array('code'=>101,'message'=>'没有更多啦','data'=>$data);
     echo json_encode($arr);
 }
-//print_r($product_list);
+
 ?>

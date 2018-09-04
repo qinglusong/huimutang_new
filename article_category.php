@@ -60,16 +60,15 @@ $smarty->assign('page_title', $dou->page_title('article_category', $cat_id));
 $smarty->assign('keywords', $cate_info['keywords']);
 $smarty->assign('description', $cate_info['description']);
 
-// 赋值给模板-导航栏
-$smarty->assign('nav_top_list', $dou->get_nav('top'));
-$smarty->assign('nav_middle_list', $dou->get_nav('middle', '0', 'article_category', $cat_id, $cate_info['parent_id']));
-$smarty->assign('nav_bottom_list', $dou->get_nav('bottom'));
-
 // 赋值给模板-数据
+$article_category = $dou->get_category('article_category', 0, $cat_id);
 $smarty->assign('ur_here', $dou->ur_here('article_category', $cat_id));
 $smarty->assign('cate_info', $cate_info);
-$smarty->assign('article_category', $dou->get_category('article_category', 0, $cat_id));
+$smarty->assign('article_category', $article_category);
+//print_r($article_list);
 $smarty->assign('article_list', $article_list);
+$smarty->assign('cat_id', $cat_id);
+$smarty->assign('page', $page);
 
 $smarty->display('infomation.html');
 ?>

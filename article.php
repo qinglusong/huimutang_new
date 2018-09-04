@@ -60,6 +60,11 @@ $smarty->assign('article_category', $dou->get_category('article_category', 0, $c
 $smarty->assign('lift', $dou->lift('article', $id, $cat_id));
 $smarty->assign('article', $article);
 $smarty->assign('defined', $defined);
+//print_r($article);
+$lifts = $dou->lift('article',$article['id'],$cat_id);
+#print_r($lifts);
+$smarty->assign('lifts', $lifts);
+
 
 $smarty->display('news.html');
 ?>

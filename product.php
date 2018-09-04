@@ -58,5 +58,5 @@ $smarty->assign('product_category', $dou->get_category('product_category', 0, $c
 $smarty->assign('product', $product);
 $smarty->assign('defined', $defined);
 
-$smarty->display('case_info.html');
+$smarty->display('cases.html');
 ?>
