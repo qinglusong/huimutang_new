@@ -170,7 +170,7 @@ elseif ($rec == 'edit') {
     
     // CSRF防御令牌生成
     $smarty->assign('token', $firewall->get_token());
-    
+    $article['add_date'] = date('Y-m-d',$article['add_date']);
     // 赋值给模板
     $smarty->assign('form_action', 'update');
     $smarty->assign('article_category', $dou->get_category_nolevel('article_category'));
