@@ -117,40 +117,40 @@
   .tool-item{
     display: flex;
     justify-content:space-around;
-    height: 2.68rem;
-    line-height: 2.68rem;
+    height: 170px;
+    padding: 0 80px;
   }
   .tool-item a i{
     background: url("../imgs/m/newsm_icon.png") no-repeat;
-    background-size: 1.01rem;
-    height: 0.63rem;
+    background-size: 101px;
+    height: 63px;
     display: block;
   }
   .tool-item a.back i{
-    background-position: 0px -0.67rem;
-    width: 0.63rem;
+    background-position: 0px -67px;
+    width: 63px;
   }
   .tool-item a.left i{
-    background-position: -0.67rem -0.66rem;
-    width: 0.32rem;
-    height:0.62rem;
+    background-position: -67px -66px;
+    width: 63px;
+    height:63px;
   }
   .tool-item a.right i{
-    background-position: -0.67rem 0;
-    width: 0.32rem;
-    height:0.62rem;
+    background-position: -67px 0;
+    width: 63px;
+    height:63px;
   }
   .tool-item a.top i{
     background-position: 0 0;
-    width: 0.63rem;
+    width: 63px;
   }
   .tool-item a{
-    width: 0.63rem;
-    height: 0.63rem;
+    width: 63px;
+    height: 63px;
   }
   .tool-item a.left, .tool-item a.right{
     margin-top: 0;
-    height: 0.63rem;
+    height: 63px;
   }
   .tool-item a.top{
     margin-top: 0;

@@ -124,11 +124,12 @@ elseif ($rec == 'insert') {
     // 数据格式化
     $add_time = time();
     $_POST['defined'] = str_replace("\r\n", ',', $_POST['defined']);
+    $_POST['add_date'] = strtotime($_POST['add_date']);
         
     // CSRF防御令牌验证
     $firewall->check_token($_POST['token']);
     
-    $sql = "INSERT INTO " . $dou->table('article') . " (id, cat_id, title, defined, content, image, keywords, description, add_time)" . " VALUES (NULL, '$_POST[cat_id]', '$_POST[title]', '$_POST[defined]', '$_POST[content]', '$image', '$_POST[keywords]', '$_POST[description]', '$add_time')";
+    $sql = "INSERT INTO " . $dou->table('article') . " (id, cat_id, title, defined, content, image, keywords, description, add_time, add_date)" . " VALUES (NULL, '$_POST[cat_id]', '$_POST[title]', '$_POST[defined]', '$_POST[content]', '$image', '$_POST[keywords]', '$_POST[description]', '$add_time', '$_POST[add_date]')";
     $dou->query($sql);
     
     $dou->create_admin_log($_LANG['article_add'] . ': ' . $_POST['title']);
@@ -189,11 +190,12 @@ elseif ($rec == 'update') {
     
     // 格式化自定义参数
     $_POST['defined'] = str_replace("\r\n", ',', $_POST['defined']);
+    $_POST['add_date'] = strtotime($_POST['add_date']);
     
     // CSRF防御令牌验证
     $firewall->check_token($_POST['token']);
     
-    $sql = "UPDATE " . $dou->table('article') . " SET cat_id = '$_POST[cat_id]', title = '$_POST[title]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $image . ", keywords = '$_POST[keywords]', description = '$_POST[description]' WHERE id = '$_POST[id]'";
+    $sql = "UPDATE " . $dou->table('article') . " SET cat_id = '$_POST[cat_id]', title = '$_POST[title]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $image . ", keywords = '$_POST[keywords]', description = '$_POST[description]', add_date = '$_POST[add_date]' WHERE id = '$_POST[id]'";
     $dou->query($sql);
     
     $dou->create_admin_log($_LANG['article_edit'] . ': ' . $_POST['title']);

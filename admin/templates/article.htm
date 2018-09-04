@@ -178,6 +178,14 @@
         <textarea name="description" cols="115" rows="3" class="textArea" />{$article.description}</textarea>
        </dd>
       </dl>
+	  
+	  <dl>
+       <dt>自定义发布时间</dt>
+       <dd>
+        <input type='date' value='' name='add_date' />
+       </dd>
+      </dl>
+	  
       <dl>
        <input type="hidden" name="token" value="{$token}" />
        <input type="hidden" name="image" value="{$article.image}">

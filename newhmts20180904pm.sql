@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2018-09-03 11:59:27
+-- Generation Time: 2018-09-04 12:21:21
 -- 服务器版本： 5.6.17
 -- PHP Version: 5.5.12
 
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`user_id`, `user_name`, `email`, `password`, `action_list`, `add_time`, `last_login`, `last_ip`) VALUES
-(1, 'admin', '', '4297f44b13955235245b2497399d7a93', 'ALL', 1534130792, 1535939095, '127.0.0.1'),
+(1, 'admin', '', '4297f44b13955235245b2497399d7a93', 'ALL', 1534130792, 1536041578, '127.0.0.1'),
 (2, 'songqinglu', '67116544@qq.com', '791cb19a219daaa9fdd0b15fc8e09bcc', 'ADMIN', 1534313777, 1534313804, '127.0.0.1');
 
 -- --------------------------------------------------------
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `admin_log` (
   PRIMARY KEY (`id`),
   KEY `create_time` (`create_time`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=119 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=143 ;
 
 --
 -- 转存表中的数据 `admin_log`
@@ -185,7 +185,31 @@ INSERT INTO `admin_log` (`id`, `create_time`, `user_id`, `action`, `ip`) VALUES
 (115, 1535965726, 1, '系统设置: 编辑成功', '127.0.0.1'),
 (116, 1535965735, 1, '系统设置: 编辑成功', '127.0.0.1'),
 (117, 1535965853, 1, '系统设置: 编辑成功', '127.0.0.1'),
-(118, 1535965889, 1, '编辑导航: 年度咨询', '127.0.0.1');
+(118, 1535965889, 1, '编辑导航: 年度咨询', '127.0.0.1'),
+(119, 1535975471, 1, '系统设置: 编辑成功', '127.0.0.1'),
+(120, 1535978519, 1, '添加案例: asdfsaf', '127.0.0.1'),
+(121, 1535978566, 1, '添加案例: 收水电费水电费', '127.0.0.1'),
+(122, 1535978579, 1, '添加案例: 电饭锅电饭锅', '127.0.0.1'),
+(123, 1535978614, 1, '添加案例: 妇姑荷箪食方法', '127.0.0.1'),
+(124, 1535978637, 1, '添加案例: 更好地方', '127.0.0.1'),
+(125, 1535978666, 1, '添加案例: 首付多少地方', '127.0.0.1'),
+(126, 1535979953, 1, '编辑导航: 案例', '127.0.0.1'),
+(127, 1535980290, 1, '系统设置: 编辑成功', '127.0.0.1'),
+(128, 1535980495, 1, '编辑导航: 资讯', '127.0.0.1'),
+(129, 1536041578, 1, '管理员登录: 登录成功！', '127.0.0.1'),
+(130, 1536048138, 1, '添加单页面: 测试哦页面', '127.0.0.1'),
+(131, 1536048193, 1, '删除单页面: 测试哦页面', '127.0.0.1'),
+(132, 1536054666, 1, '添加案例: 哈哈哈', '127.0.0.1'),
+(133, 1536054690, 1, '编辑案例: 哈哈哈', '127.0.0.1'),
+(134, 1536054790, 1, '添加案例: 嘎嘎阿哥', '127.0.0.1'),
+(135, 1536054809, 1, '编辑案例: 嘎嘎阿哥', '127.0.0.1'),
+(136, 1536054818, 1, '编辑案例: 嘎嘎阿哥', '127.0.0.1'),
+(137, 1536054889, 1, '添加案例: d分三个', '127.0.0.1'),
+(138, 1536054895, 1, '编辑案例: d分三个', '127.0.0.1'),
+(139, 1536054920, 1, '编辑案例: d分三个', '127.0.0.1'),
+(140, 1536055455, 1, '添加分类: 三大发顺丰', '127.0.0.1'),
+(141, 1536055474, 1, '添加分类: 的风格的风格', '127.0.0.1'),
+(142, 1536055484, 1, '添加分类: 非凡哥好枯了', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -204,6 +228,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `keywords` varchar(50) DEFAULT NULL,
   `description` varchar(255) NOT NULL DEFAULT '',
   `add_time` varchar(50) DEFAULT NULL,
+  `add_date` int(10) NOT NULL DEFAULT '0' COMMENT '自定义时间',
   `sort` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `xiangmuzixun_sort` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
@@ -213,12 +238,12 @@ CREATE TABLE IF NOT EXISTS `article` (
 -- 转存表中的数据 `article`
 --
 
-INSERT INTO `article` (`id`, `cat_id`, `title`, `defined`, `content`, `image`, `click`, `keywords`, `description`, `add_time`, `sort`, `xiangmuzixun_sort`) VALUES
-(11, 0, 'ggggggghmt', '', '<p><img src="http://www.3e-d.com/images/article/1_content_1535420607173326.png" data-file="iiazha4.file" /></p>', '2to3ovf.file', 3, '111222', '33333', '1535420625', 0, 0),
-(12, 2, '收到对方答复', '', '<p><img src="http://localhost/images/article/7_content_1535888563271027.jpg" data-file="tl2bs27.file" /></p>', 'u7v54st.file', 0, '啊啊啊不不不不管见子关键字', '描述撒旦飞洒地方', '1535888578', 0, 0),
-(13, 3, '按时发个啥时代风格', '', '<p>水电费广东省<img src="http://localhost/images/article/7_content_1535888605059290.jpg" data-file="de3orzj.file" /></p>', 'lgbvps8.file', 0, '电饭锅电饭锅', '电饭锅', '1535888612', 0, 0),
-(14, 1, '对方过后的复合弓撒旦法撒旦法', '', '<p><img src="http://localhost/images/article/7_content_1535888620959873.png" data-file="vz2qai4.file" />水电费广东省发</p>', 'zepy1kb.file', 0, '是的发个', '水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到', '1535888631', 0, 0),
-(15, 2, '方大化工方大化工水电费感受到水电费感受到', '', '<p>梵蒂冈和豆腐干</p>', '385buf9.file', 4, '十多个好多个', '是的发个水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到', '1535888644', 0, 0);
+INSERT INTO `article` (`id`, `cat_id`, `title`, `defined`, `content`, `image`, `click`, `keywords`, `description`, `add_time`, `add_date`, `sort`, `xiangmuzixun_sort`) VALUES
+(11, 0, 'ggggggghmt', '', '<p><img src="http://www.3e-d.com/images/article/1_content_1535420607173326.png" data-file="iiazha4.file" /></p>', '2to3ovf.file', 3, '111222', '33333', '1535420625', 0, 0, 0),
+(12, 2, '收到对方答复', '', '<p><img src="http://localhost/images/article/7_content_1535888563271027.jpg" data-file="tl2bs27.file" /></p>', 'u7v54st.file', 0, '啊啊啊不不不不管见子关键字', '描述撒旦飞洒地方', '1535888578', 0, 0, 0),
+(13, 3, '按时发个啥时代风格', '', '<p>水电费广东省<img src="http://localhost/images/article/7_content_1535888605059290.jpg" data-file="de3orzj.file" /></p>', 'lgbvps8.file', 0, '电饭锅电饭锅', '电饭锅', '1535888612', 0, 0, 0),
+(14, 1, '对方过后的复合弓撒旦法撒旦法', '', '<p><img src="http://localhost/images/article/7_content_1535888620959873.png" data-file="vz2qai4.file" />水电费广东省发</p>', 'zepy1kb.file', 0, '是的发个', '水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到', '1535888631', 0, 0, 0),
+(15, 2, '方大化工方大化工水电费感受到水电费感受到', '', '<p>梵蒂冈和豆腐干</p>', '385buf9.file', 4, '十多个好多个', '是的发个水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到水电费感受到', '1535888644', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -279,7 +304,7 @@ INSERT INTO `config` (`name`, `value`, `type`, `box`, `tab`, `sort`) VALUES
 ('qq', '123456789/qinglu,123123/xiaoliu,123123/xiaosong', 'text', '', 'main', 11),
 ('email', '7design@163.com', 'text', '', 'main', 12),
 ('language', 'zh_cn', 'select', '', 'main', 13),
-('rewrite', '0', 'radio', '', 'main', 14),
+('rewrite', '1', 'radio', '', 'main', 14),
 ('sitemap', '0', 'radio', '', 'main', 15),
 ('captcha', '1', 'radio', '', 'main', 16),
 ('guestbook_check_chinese', '1', 'radio', '', 'main', 17),
@@ -287,7 +312,7 @@ INSERT INTO `config` (`name`, `value`, `type`, `box`, `tab`, `sort`) VALUES
 ('thumb_width', '135', 'text', '', 'display', 1),
 ('thumb_height', '135', 'text', '', 'display', 2),
 ('core_product', '战略定位,品牌设计,落地推广', 'text', '', 'main', 8),
-('display', 'a:4:{s:7:"article";s:2:"10";s:12:"home_article";s:1:"5";s:7:"product";s:2:"10";s:12:"home_product";s:1:"6";}', 'array', '', 'display', 4),
+('display', 'a:4:{s:7:"article";s:2:"10";s:12:"home_article";s:1:"5";s:7:"product";s:1:"9";s:12:"home_product";s:1:"6";}', 'array', '', 'display', 4),
 ('defined', 'a:2:{s:7:"article";s:0:"";s:7:"product";s:0:"";}', 'array', '', 'defined', 1),
 ('mail_service', '0', 'radio', '', 'mail', 1),
 ('mail_host', 'smtp.domain.com', 'text', '', 'mail', 2),
@@ -360,7 +385,7 @@ CREATE TABLE IF NOT EXISTS `file` (
   `action_time` int(10) unsigned NOT NULL DEFAULT '0',
   `add_time` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=44 ;
 
 --
 -- 转存表中的数据 `file`
@@ -399,7 +424,17 @@ INSERT INTO `file` (`id`, `number`, `file`, `module`, `item_id`, `type`, `size`,
 (30, 'yl8h9wx.file', 'images/page/1_content_1535951134030238.gif', 'page', 1, 'content', 7247, 0, 1535951134, 1535951134),
 (31, 'snywt9g.file', 'data/slide/20180903czheey.png', 'show', 9, 'main', 835299, 0, 1535963241, 1535963241),
 (32, 'zqxrhlb.file', 'data/slide/20180903ceigzp.jpg', 'show', 10, 'main', 67611, 0, 1535963286, 1535963286),
-(33, '85u1hei.file', 'images/projects/20180903fbgwou.mp4', 'show', 11, 'main', 2543831, 0, 1535964667, 1535964667);
+(33, '85u1hei.file', 'images/projects/20180903fbgwou.mp4', 'show', 11, 'main', 2543831, 0, 1535964667, 1535964667),
+(34, 'tfy3l6d.file', 'images/product/7_1535978518319381.jpg', 'product', 7, 'main', 65513, 10529, 1535978518, 1535978518),
+(35, 'h2ofl95.file', 'images/product/8_1535978566304936.jpg', 'product', 8, 'main', 56402, 8639, 1535978566, 1535978566),
+(36, 'd19oxrn.file', 'images/product/9_1535978579882609.jpg', 'product', 9, 'main', 81688, 10514, 1535978579, 1535978579),
+(37, 'iruxu74.file', 'images/product/10_1535978614772078.jpg', 'product', 10, 'main', 23522, 9594, 1535978614, 1535978614),
+(38, '4tu58o1.file', 'images/product/11_content_1535978631756415.jpg', 'product', 11, 'content', 80714, 0, 1535978631, 1535978631),
+(39, '9akmj8p.file', 'images/product/11_1535978637289349.jpg', 'product', 11, 'main', 80714, 13462, 1535978637, 1535978637),
+(40, 'g44nrmm.file', 'images/product/12_1535978666129214.jpg', 'product', 12, 'main', 54537, 9134, 1535978666, 1535978666),
+(41, 'eyd1amp.file', 'images/product/13_1536054666675448.jpg', 'product', 13, 'main', 67611, 12175, 1536054666, 1536054666),
+(42, 'fd2gce7.file', 'images/product/14_1536054818629356.png', 'product', 14, 'main', 835299, 10659, 1536054818, 1536054818),
+(43, 'blww36r.file', 'images/product/15_1536054889856239.png', 'product', 15, 'main', 6096, 11096, 1536054889, 1536054889);
 
 -- --------------------------------------------------------
 
@@ -467,10 +502,10 @@ CREATE TABLE IF NOT EXISTS `nav` (
 --
 
 INSERT INTO `nav` (`id`, `module`, `nav_name`, `guide`, `parent_id`, `type`, `sort`) VALUES
-(3, 'nav', '案例', 'http://www.3e-d.com/product_category.php', 0, 'middle', 21),
+(3, 'nav', '案例', 'http://www.3e-d.com/case_1_0_1.html', 0, 'middle', 21),
 (2, 'nav', '慧目堂', 'http://www.3e-d.com/pages.html', 0, 'middle', 20),
 (4, 'nav', '服务', 'http://www.3e-d.com/fuwu.html', 0, 'middle', 22),
-(5, 'nav', '资讯', 'http://www.3e-d.com/article_category.php', 0, 'middle', 23),
+(5, 'nav', '资讯', 'http://www.3e-d.com/news_0.html', 0, 'middle', 23),
 (6, 'nav', '联系', 'http://www.3e-d.com/contact.html', 0, 'middle', 24),
 (7, 'nav', '项目咨询', 'http://www.3e-d.com/consult.html', 0, 'top', 50),
 (8, 'nav', '年度咨询', '/', 0, 'top', 40);
@@ -490,7 +525,7 @@ CREATE TABLE IF NOT EXISTS `page` (
   `keywords` varchar(255) NOT NULL DEFAULT '',
   `description` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- 转存表中的数据 `page`
@@ -532,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `xiangmuzixun_sort` tinyint(2) NOT NULL DEFAULT '0',
   `sort_list` int(4) NOT NULL DEFAULT '0' COMMENT '列表排序',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- 转存表中的数据 `product`
@@ -543,8 +578,24 @@ INSERT INTO `product` (`id`, `cat_id`, `cat_f_id`, `name`, `en_name`, `price`, `
 (2, '|10|,|11|', 1, '案例测试22222', '', '阿斯顿发送到发送到发生地方适当还带饭是豆腐干等', '', '<p>a撒打发斯蒂芬阿斯顿发斯蒂芬</p>', 'c2x5ttz.file', '阿斯顿发斯蒂芬', 'as大是大非', '1535422937', 0, 0, 6),
 (3, '|11|,|15|', 3, '阿士大夫撒旦法撒旦法是的供货商的放', 'sdfgsdf', '我想实现分公司发送消息和文件到总公司，那我应该如何实现在总公司那端判断是文件还是消息', '', '<p>sd发光时代我想实现<em>分公司</em><em>发送</em>消息和文件到总公司，那我应该如何实现在总公司那端判断是文件还是消息啊， 若是消息的话就添加到memo中， 若是文件则写入相应的目录， 是在服务器端.</p>', 'fqxf31j.file', '', '我想实现分公司发送消息和文件到总公司，那我应该如何实现在总公司那端判断是文件还是消息啊， 若是消息的话就添加到memo中， 若是文件则写入相应的目录， 是在服务器端.我想实现分公司发送消息和文件到总公司，那我应该如何实现在总公司那端判断是文件还是消息啊， 若是消息的话就添加到memo中， 若是文件则写入相应的目录， 是在服务器端.我想实现分公司发送消息和文件到总公司，那我应该如何实现我想实现分公司发送消息和文件到总公司，那我应该如何实现在总公司那端判断是文件还是消息啊， 若是消息的话就添加到memo中， ', '1535423109', 0, 0, 1),
 (4, '|16|', 2, '阿斯蒂芬噶啥多放点', '', '阿斯蒂芬噶啥的', '', '<p>阿斯蒂芬阿斯蒂芬</p>', 'vj395pd.file', 'a是的发生的', '中国的银行业是国有银行高度垄断，产品同质化的行业。面对“中农工建”等国字大行规模大、网点多、信任足的态势，上海银行必须找到自己特有的差异化定位，才能真正开辟出一方天地，赢得这场实力悬殊的用户心智之战。我们看准了技术变革的趋势以及全面消费升级的大势。上海银行变短为长重新定位“精品银行”，并开创了“智慧金融”的新标准。打造全新的精品银行视觉锤并全面系统化，2016年市值跃升为全国城商银行领军品牌。', '1535423128', 0, 0, 2),
-(5, '|11|,|12|,|14|,|15|', 3, '是大法官啥地方水电费', 'sdfsdfdfsg', '城商银行领军品牌，市值1500亿，2016年主板上市', '', '<p>描述</p>\r\n<p>描述</p>\r\n<p>描述</p>\r\n<p>描述</p>\r\n<p>描述城商银行领军品牌，市值1500亿，2016年主板上市</p>\r\n<p>城商银行领军品牌，市值1500亿，2016年主板上市</p>\r\n<p>城商银行领军品牌，市值1500亿，2016年主板上市</p>', 'cotoodg.file', '', '简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬', '1535426596', 0, 0, 3),
-(6, '|10|,|13|,|15|', 3, '撒打发斯蒂芬', '是的发生的', 's对方水电费', '', '<p>sd防守打法<img src="http://localhost/images/product/6_content_1535867443896474.jpg" data-file="vhcq9at.file" /></p>', '5yeeyuk.file', '水电费', 'sd发送的', '1535437184', 0, 0, 23);
+(5, '|11|,|12|,|14|,|15|', 3, '是大法官啥地方水电费', 'sdfsdfdfsg', '城商银行领军品牌，市值1500亿，2016年主板上市', '', '<p>描述</p>\r\n<p>描述</p>\r\n<p>描述</p>\r\n<p>描述</p>\r\n<p>描述城商银行领军品牌，市值1500亿，2016年主板上市</p>\r\n<p>城商银行领军品牌，市值1500亿，2016年主板上市</p>\r\n<p>城商银行领军品牌，市值1500亿，2016年主板上市</p>', 'cotoodg.file', '', '简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬简单描述阿斯顿发斯蒂芬阿斯蒂芬', '1535426596', 7, 0, 3),
+(6, '|10|,|13|,|15|', 3, '撒打发斯蒂芬', '是的发生的', 's对方水电费', '', '<p>sd防守打法<img src="http://localhost/images/product/6_content_1535867443896474.jpg" data-file="vhcq9at.file" /></p>', '5yeeyuk.file', '水电费', 'sd发送的', '1535437184', 8, 0, 23),
+(7, '|10|', 1, 'asdfsaf', 'asdfsadf', 'dfgdsfg', '', '<p>sdfgsd</p>', 'tfy3l6d.file', 'dfdf', 'dfdf', '1535978519', 0, 0, 11),
+(8, '|10|', 1, '收水电费水电费', 'dgf', '对方水电费', '', '<p>撒旦法</p>', 'h2ofl95.file', '', '', '1535978566', 5, 0, 0),
+(9, '|10|', 1, '电饭锅电饭锅', 'fff', '更多的风格', '', '<p>大概</p>', 'd19oxrn.file', '', '', '1535978579', 4, 3, 0),
+(10, '|10|,|15|', 3, '妇姑荷箪食方法', 'hgg', '风帆股份', '', '<p>电饭锅电饭锅</p>', 'iruxu74.file', '', '', '1535978614', 3, 0, 0),
+(11, '|10|,|11|,|12|,|13|,|9|,|14|,|15|,|16|', 3, '更好地方', 'gg', '电饭锅广告费', '', '<p>低功耗<img src="http://localhost/images/product/11_content_1535978631756415.jpg" data-file="4tu58o1.file" /></p>', '9akmj8p.file', '', '', '1535978637', 2, 2, 0),
+(12, '|10|,|13|,|9|,|14|,|16|', 3, '首付多少地方', 'fff', '', '', '<p>电饭锅电饭锅</p>', 'g44nrmm.file', '', '', '1535978666', 1, 0, 0),
+(13, '|10|,|11|,|12|,|13|,|9|,|14|,|15|,|16|', 3, '哈哈哈', '345fg', '阿斯顿发斯蒂芬是豆腐干等发送到发给阿斯蒂芬', '', '<p>阿斯顿发斯蒂芬</p>', 'eyd1amp.file', '啊啊啊', '别巴巴', '1536054666', 0, 0, 100),
+(14, '|10|,|9|', 3, '嘎嘎阿哥', 'sdfsdf', '嘎嘎嘎是地方噶水电费', '', '<p>a大厦</p>', 'fd2gce7.file', '', '', '1536054790', 0, 0, 110),
+(15, '|14|', 2, 'd分三个', 'sdfsd', '水电费噶水电费噶水电费电饭锅和', '', '<p>df好</p>', 'blww36r.file', '', '', '1536054889', 0, 0, 200),
+(16, '|10|,|9|', 3, '嘎嘎阿哥22', 'sdfsdf', '嘎嘎嘎是地方噶水电费', '', '<p>a大厦</p>', 'fd2gce7.file', '', '', '1536054790', 0, 0, 110),
+(17, '|14|', 2, 'd分三个33', 'sdfsd', '水电费噶水电费噶水电费电饭锅和', '', '<p>df好</p>', 'blww36r.file', '', '', '1536054889', 0, 0, 200),
+(18, '|10|,|11|,|12|,|13|,|9|,|14|,|15|,|16|', 3, '哈哈哈33', '345fg', '阿斯顿发斯蒂芬是豆腐干等发送到发给阿斯蒂芬', '', '<p>阿斯顿发斯蒂芬</p>', 'eyd1amp.file', '啊啊啊', '别巴巴', '1536054666', 0, 0, 100),
+(19, '|10|,|11|,|12|,|13|,|9|,|14|,|15|,|16|', 3, '哈哈哈3344', '345fg', '阿斯顿发斯蒂芬是豆腐干等发送到发给阿斯蒂芬', '', '<p>阿斯顿发斯蒂芬</p>', 'eyd1amp.file', '啊啊啊', '别巴巴', '1536054666', 0, 0, 100),
+(20, '|10|,|11|,|12|,|13|,|9|,|14|,|15|,|16|', 3, '哈哈哈55', '345fg', '阿斯顿发斯蒂芬是豆腐干等发送到发给阿斯蒂芬', '', '<p>阿斯顿发斯蒂芬</p>', 'eyd1amp.file', '啊啊啊', '别巴巴', '1536054666', 0, 0, 100),
+(21, '|10|,|11|,|12|,|13|,|9|,|14|,|15|,|16|', 3, '哈哈哈66', '345fg', '阿斯顿发斯蒂芬是豆腐干等发送到发给阿斯蒂芬', '', '<p>阿斯顿发斯蒂芬</p>', 'eyd1amp.file', '啊啊啊', '别巴巴', '1536054666', 0, 0, 100),
+(22, '|10|,|11|,|12|,|13|,|9|,|14|,|15|,|16|', 3, '哈哈哈77', '345fg', '阿斯顿发斯蒂芬是豆腐干等发送到发给阿斯蒂芬', '', '<p>阿斯顿发斯蒂芬</p>', 'eyd1amp.file', '啊啊啊', '别巴巴', '1536054666', 0, 0, 100);
 
 -- --------------------------------------------------------
 
@@ -561,7 +612,7 @@ CREATE TABLE IF NOT EXISTS `product_category` (
   `parent_id` smallint(5) NOT NULL DEFAULT '0',
   `sort` tinyint(1) unsigned NOT NULL DEFAULT '50',
   PRIMARY KEY (`cat_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- 转存表中的数据 `product_category`
@@ -577,7 +628,10 @@ INSERT INTO `product_category` (`cat_id`, `unique_id`, `cat_name`, `keywords`, `
 (13, '23', '环境指标', '问', 'r人', 1, 50),
 (14, '33', '金融设计', '3434', '34', 2, 50),
 (15, 'IT', 'IT网络', '', '', 2, 50),
-(16, 'abcd', 'abcd', 'abcd', 'abced', 2, 50);
+(16, 'abcd', 'abcd', 'abcd', 'abced', 2, 50),
+(17, '23443', '三大发顺丰', '文身断发', 's地方', 1, 50),
+(18, 'dfg', '的风格的风格', '', '', 1, 50),
+(19, '356', '非凡哥好枯了', '电饭锅', '', 1, 50);
 
 -- --------------------------------------------------------
 

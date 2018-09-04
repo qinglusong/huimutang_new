@@ -5,11 +5,16 @@
 
 
 .bg_01 .swiper-container{width: 100%;height: 1000px;z-index: 0;max-width: 1920px}
-.bg_01 .swiper-container .w-p{position: absolute;color: white;right: 100px;top:300px;text-align: right;display: block}
+.bg_01 .swiper-container .w-p{position: absolute;color: white;display: block;top:300px;}
+.bg_01 .swiper-container .w-p .rl-e3{font-size: 35px;margin-top: 30px}
+.bg_01 .swiper-container .w-p.w-p-r{right: 100px;text-align: right;}
+.bg_01 .swiper-container .w-p.w-p-m{width: 100%;right: 0px;text-align: center}
+.bg_01 .swiper-container .w-p.w-p-l{left: 100px;text-align: left}
+
 .bg_01 .w-p .rl-e1{font-size: 45px;margin:0px}
-.bg_01 .w-p .rl-e2{font-size: 31px;}
-.bg_01 .w-p .rl-e2:nth-child(3){margin-bottom: 0px}
-.bg_01 .w-p .rl-e2:nth-child(4){margin-top: 0px}
+.bg_01 .w-p .rl-e2{font-size: 31px;margin: 10px auto}
+/*.bg_01 .w-p .rl-e2:nth-child(3){margin-bottom: 0px}*/
+/*.bg_01 .w-p .rl-e2:nth-child(4){margin-top: 0px}*/
 
 .bg_02{width: 100%;height: 260px;justify-content: center}
 .bg_02 p{color: #ff5a00;font-size: 45px}

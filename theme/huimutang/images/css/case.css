@@ -23,13 +23,15 @@
 }
 
 .bg_1 .ul-div{width: 1270px;font-size: 18px;padding: 0px;margin: auto auto}
+.bg_1 .ul-div ul{flex-wrap: wrap;line-height: 60px}
 .bg_1 ul li>a{display:block;width: 200px;color:#aaaaab;}
 .bg_1 ul li .active{color: #ff5d3d;font-weight: 800}
 
 .class-con{margin-top: 60px}
 .class-con .bg-4-c{display: flex;margin-bottom: 15px;justify-content:space-around;}
 .class-con .bg-4m-img{width: 100%;height: 356px;overflow: hidden;}
-.class-con .bg-4-c-m{width: 633px;position: relative;font-size: 26px;}
+.class-con .bg-4m-img img{width: 100%}
+.class-con .bg-4-c-m{width: 638px;position: relative;font-size: 26px;}
 .class-con .bg-4m-t1,.bg-4m-t2{margin: 25px 40px;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;color:#9b9b9b;}
 .bg-4m-t1{font-weight: bold}
 .btn-down-div{width: 116px;height: 60px;margin: 90px auto;cursor: pointer;}
