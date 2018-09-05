@@ -224,6 +224,7 @@ class Action extends Manager {
      * +----------------------------------------------------------
      */
     function get_sort($module, $field = 'name') {
+        global $dou;
         $display = $GLOBALS['_DISPLAY']['home_' . $module];
      
         // 是否显示面板
@@ -240,7 +241,8 @@ class Action extends Manager {
             $sort['list'][] = array (
                     "id" => $row['id'],
                     "$field" => $row[$field],
-                    "image" => $image
+                    "image" => $image,
+                    "images" => $dou->dou_file($row['image']),
             );
         }
         

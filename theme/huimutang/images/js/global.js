@@ -146,3 +146,28 @@ $(function () {
     })
 
 });
+
+
+function post_datas(){
+    var company_name = $('#company_name').val();
+    var linkman = $('#linkman').val();
+    var tel = $('#tel').val();
+    var yusuan = $('#yusuan').val();
+    var project_desc = $('#project_desc').val();
+    $.ajax({
+            //'async' : false,// 使用同步的Ajax请求
+            type : "post",
+            url : 'post_data.php',
+            dataType : "json",
+            data : {company_name:company_name,linkman:linkman,tel:tel,yusuan:yusuan,project_desc:project_desc},
+            success : function(e){
+                    if(e.code==200){
+                        alert(e.msg);
+                    }else{
+                    
+                        alert(e.msg);
+                    }
+            }
+        });
+
+}

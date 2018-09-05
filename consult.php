@@ -62,8 +62,8 @@ $smarty->assign('show_mobile_list', $show_mobile_list);
 //print_r($show_mobile_list);
 
 //案例列表
-$demo_list = $dou->get_list('product', 'ALL', $_DISPLAY['home_product'], 'sort DESC');
-$news_list = $dou->get_list('article', 'ALL', $_DISPLAY['home_article'], 'sort DESC');
+$demo_list = $dou->get_list('product', 'ALL', 12, 'xiangmuzixun_sort DESC');
+$news_list = $dou->get_list('article', 'ALL', 4, 'xiangmuzixun_sort DESC');
 //print_r($news_list);
 $smarty->assign('recommend_product', $demo_list);
 $smarty->assign('recommend_article', $news_list);

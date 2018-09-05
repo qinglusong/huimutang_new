@@ -66,8 +66,8 @@ elseif ($rec == 'insert') {
     if (empty($_POST['cat_name']))
         $dou->dou_msg($_LANG['article_category_name'] . $_LANG['is_empty']);
 
-    if (!$check->is_unique_id($_POST['unique_id']))
-        $dou->dou_msg($_LANG['unique_id_wrong']);
+    // if (!$check->is_unique_id($_POST['unique_id']))
+    //     $dou->dou_msg($_LANG['unique_id_wrong']);
 
     if ($dou->value_exist('article_category', 'unique_id', $_POST['unique_id']))
         $dou->dou_msg($_LANG['unique_id_existed']);
@@ -114,8 +114,8 @@ elseif ($rec == 'update') {
     if (empty($_POST['cat_name']))
         $dou->dou_msg($_LANG['article_category_name'] . $_LANG['is_empty']);
 
-    if (!$check->is_unique_id($_POST['unique_id']))
-        $dou->dou_msg($_LANG['unique_id_wrong']);
+    // if (!$check->is_unique_id($_POST['unique_id']))
+    //     $dou->dou_msg($_LANG['unique_id_wrong']);
 
     if ($dou->value_exist('article_category', 'unique_id', $_POST['unique_id'], "AND cat_id != '$_POST[cat_id]'"))
         $dou->dou_msg($_LANG['unique_id_existed']);

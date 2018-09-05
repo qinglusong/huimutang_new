@@ -108,6 +108,8 @@ if ($rec == 'default') {
     }
     //print_r($cat_id);
     // 赋值给模板
+    $sorts =$dou->get_sort('product', 'name');
+    //print_r($sorts);
     $smarty->assign('sort', $dou->get_sort('product', 'name'));
     $smarty->assign('xiangmuzixun_sort', $dou->get_xiangmuzixun_sort('product', 'name'));
     $smarty->assign('cat_id', $cat_id);

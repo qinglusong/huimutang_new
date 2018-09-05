@@ -339,10 +339,10 @@
                                     <div class="media case-special-item">
                                         <div class="media-left media-middle wow fadeInLeft" data-wow-delay="200ms" ><img src="{$item.image}" width='522px' height='308px' alt=""></div>
                                         <div class="media-body media-right">
-                                            <h3 class="wow fadeInUp" data-wow-delay="300ms">{$item.name}</h3>
+                                            <h3 class="wow fadeInUp" data-wow-delay="300ms">{$item.name|truncate:12:""}</h3>
                                             <div class="clearfix"></div>
-                                            <p class="subtitle wow fadeInUp" data-wow-delay="300ms">{$item.price_jieshao}</p>
-                                            <p class="description wow fadeInUp" data-wow-delay="300ms">{$item.description} </p>
+                                            <p class="subtitle wow fadeInUp" data-wow-delay="300ms">{$item.price_jieshao|truncate:24:""}</p>
+                                            <p class="description wow fadeInUp" data-wow-delay="300ms">{$item.description|truncate:190:""} </p>
                                         </div>
                                     </div>
                                 </div>
@@ -383,7 +383,7 @@
                                 <div class="news-panel">
                                     <div class="company-detail wow fadeInRight" data-wow-delay="3200ms" >
                                         <div>
-                                            <a href="#">
+                                            <a href="pages.html">
                                                 <div class="right">
                                                     <div class="media-body media-right">
                                                         <div class="news-panel-list-text">
@@ -469,7 +469,7 @@
                                         <h2 class="title">慧目堂创始人</h2>
                                         <h2 class="title">“合众为一营销理论”创始人</h2>
                                         <p class="description">周 轩毅  Steven</p>
-                                        <div class="text-center"><a href="" class="boss-more">更多介绍</a></div>
+                                        <div class="text-center"><a href="pages_2.html" class="boss-more">更多介绍</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -502,11 +502,11 @@
                         <div class="col-md-4 wow fadeInUp" data-wow-delay="200ms">
                             <div class="news-panel-focus">
                                 <div class="news-panel-focus-img">
-                                     <a href="/news_{$item.id}.html" target='_blank' ><img width='631px' height='355px' src="{$item.image}" width="100%" alt=""></a>
+                                     <a href="/news_info_{$item.id}.html" target='_blank' ><img width='631px' height='355px' src="{$item.image}" width="100%" alt=""></a>
                                  </div>
                                  <div class="news-panel-focus-text">
-                                    <h2 class="title"><a href=""><font>{$item.title}</font></a></h2>
-                                    <p class="description">{$item.description|truncate:40} </p>
+                                    <h2 class="title"><a href=""><font>{$item.title|truncate:12:""}</font></a></h2>
+                                    <p class="description">{$item.description|truncate:40}</p>
                                     <p class="date">{$item.add_time}</p>
                                 </div>
                             </div>
@@ -534,10 +534,10 @@
                             {if $smarty.foreach.foo.index < 4}
                             <div class="m-news wow {if $smarty.foreach.foo.index=='0' ||$smarty.foreach.foo.index=='2'}fadeInLeft{else}fadeInRight{/if} "  {if $smarty.foreach.foo.index > 1} data-wow-delay="200ms"{/if}>
                                 <div class="m-news-img">
-                                    <a href="/news_{$item.id}.html"><img src="{$item.image}" alt=""></a>
+                                    <a href="/news_info_{$item.id}.html"><img src="{$item.image}" alt=""></a>
                                 </div>
-                                <p>{$item.title|truncate:13}</p>
-                                <p>{$item.description|truncate:38}</p>
+                                <p>{$item.title|truncate:12}</p>
+                                <p>{$item.description|truncate:40}</p>
                             </div>
                             
                             
@@ -584,30 +584,7 @@
         <div class="er-div wow fadeInUp" data-wow-delay="200ms">
             <img src="theme/huimutang/images/imgs/m/ew.png">
         </div>
-        <div class="input-div">
-            <div class="input-d1 wow fadeInLeft" data-wow-delay="300ms">
-                <div class="input-name">企业名称<span>*</span></div>
-                <input placeholder="请输入" >
-            </div>
-            <div class="input-d1 wow fadeInRight" data-wow-delay="300ms">
-                <div class="input-name">联系人<span>*</span></div>
-                <input placeholder="请输入" >
-            </div>
-            <div class="input-d1 wow fadeInLeft" data-wow-delay="300ms">
-                <div class="input-name">电话<span>*</span></div>
-                <input placeholder="请输入" >
-            </div>
-            <div class="input-d1 wow fadeInRight" data-wow-delay="300ms">
-                <div class="input-name">项目预算</div>
-                <input placeholder="请输入" >
-            </div>
-            <div class="input-d2 wow fadeInUp" data-wow-delay="400ms">
-                <p>项目概述</p>
-                <textarea placeholder="请输入"></textarea>
-            </div>
-
-            <div class="l-bnt wow fadeInUp" data-wow-delay="400ms">请联系我</div>
-        </div>
+        {include file='inc/input_post.tpl'}
 
     </div>
 <!-- footer -->
@@ -807,7 +784,6 @@ console.log("sssss")
         }
       
     });
-
 
 
 {/literal}

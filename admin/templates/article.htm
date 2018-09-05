@@ -48,7 +48,7 @@
      <ul class="homeSortList">
       <!-- {foreach from=$sort.list item=article} -->
       <li>
-       <em>{$article.title}</em>
+       <img src="{$article.images}" width="60" height="40">{$article.title|truncate:5:""}
        <a href="article.php?rec=sort&act=cancel&id={$article.id}" title="{$lang.sort_cancel}">X</a>
       </li>
       <!-- {/foreach} -->
