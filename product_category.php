@@ -55,8 +55,8 @@ while ($row = $dou->fetch_array($query)) {
     $img_pc_list = array();
     $img_wap_list = array();
 
-    $img_wap_list = $dou->get_demo_show_list('demom',$row['id']);//移动幻灯片
-    $img_pc_list = $dou->get_demo_show_list('demo',$row['id']);//PC幻灯片
+    //$img_wap_list = $dou->get_demo_show_list('demom',$row['id']);//移动幻灯片
+    //$img_pc_list = $dou->get_demo_show_list('demo',$row['id']);//PC幻灯片
     $product_list[] = array (
             "id" => $row['id'],
             "cat_id" => $row['cat_id'],
@@ -66,8 +66,8 @@ while ($row = $dou->fetch_array($query)) {
             "add_time" => $add_time,
             "description" => $description,
             "url" => $url,
-            "img_pc_list"=>$img_pc_list,
-            "img_wap_list"=>$img_wap_list,
+            //"img_pc_list"=>$img_pc_list,
+            //"img_wap_list"=>$img_wap_list,
     );
 }
 

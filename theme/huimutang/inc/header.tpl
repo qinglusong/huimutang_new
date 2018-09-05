@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>{$page_title}</title>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/theme/huimutang/images/js/bootstrap.min.js"></script>
-    <script src="https://cdn.bootcss.com/Swiper/4.3.0/theme/huimutang/images/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
     <script type="text/javascript" src="theme/huimutang/images/js/wow.js"></script>
     <link href="theme/huimutang/images/css/bootstrap.min.css" rel="stylesheet">
     <link href="theme/huimutang/images/css/animate.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
             <a class="mobile-show" href="/"><img src="theme/huimutang/images/imgs/m/title-img-r.png" alt="{$site.site_name}" title="{$site.site_name}"></a>
         </div>
         <div class="flex-show flex-row">
-            <span><a href="tel:02158878218"><img src="theme/huimutang/images/imgs/phone_red.png" alt=""></a></span>
+            <span><a href="tel:02139888336"><img src="theme/huimutang/images/imgs/phone_red.png" alt=""></a></span>
             <span id="J_MobileNavTrigger3"><img src="theme/huimutang/images/imgs/burger_red.png" alt=""></span>
         </div>
     </div>
