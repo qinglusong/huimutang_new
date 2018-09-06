@@ -161,6 +161,10 @@ elseif ($rec == 'add') {
 } 
 
 elseif ($rec == 'insert') {
+    $file_banner_list = $_FILES['show_img'];
+    $file_banner_list_wap = $_FILES['show_img_wap'];
+    
+
     // 数据验证
     if (empty($_POST['name'])) $dou->dou_msg($_LANG['name'] . $_LANG['is_empty']);
     //if (!$check->is_price($_POST['price'] = trim($_POST['price']))) $dou->dou_msg($_LANG['price_wrong']);
@@ -207,6 +211,67 @@ elseif ($rec == 'insert') {
     
     $sql = "INSERT INTO " . $dou->table('product') . " (id, cat_id,cat_f_id, name, en_name, price, defined, content, image ,keywords, description, add_time, sort_list)" . " VALUES (NULL, '$cat_ids', '$cat_f_id', '$_POST[name]', '$_POST[en_name]', '$_POST[price]', '$_POST[defined]', '$_POST[content]', '$image', '$_POST[keywords]', '$_POST[description]', '$add_time', '".$_POST['sort_list']."')";
     $dou->query($sql);
+    $insert_id = $dou->insert_id();
+
+    // 插入幻灯案例图片
+
+    if(isset($file_banner_list['name']) ){
+
+        foreach($file_banner_list['name'] as $k=>$v){
+            if($v==''){
+                continue;
+            }
+            $files = array();
+            $files['show_img']['name'] = $v;
+            $files['show_img']['type'] = $file_banner_list['type'][$k];
+            $files['show_img']['tmp_name'] = $file_banner_list['tmp_name'][$k];
+            $files['show_img']['error'] = $file_banner_list['error'][$k];
+            $files['show_img']['size'] = $file_banner_list['size'][$k];
+
+            $show_img = '';
+            if ($v != "") {
+                $custom_filename = $dou->create_rand_string('letter', 6, date('Ymd'));
+                $show_img = $file->box_banner($files,'show', $dou->auto_id('show'), 'show_img', 'main', $custom_filename);
+
+                $sql = "INSERT INTO " . $dou->table('show') . " (id, show_name, show_link, show_img, type, sort, type_id)" . " VALUES (NULL, '".$_POST['banner_title'][$k]."', '".$_POST['banner_link'][$k]."', '$show_img', 'demo', '".$_POST['banner_sort'][$k]."', '$insert_id')";
+                $dou->query($sql);
+            }
+
+        }
+
+    }
+
+
+
+    //wap
+
+    if(isset($file_banner_list_wap['name'])){
+
+        foreach($file_banner_list_wap['name'] as $k=>$v){
+            if($v==''){
+                continue;
+            }
+            $files_wap = array();
+            $files_wap['show_img']['name'] = $v;
+            $files_wap['show_img']['type'] = $file_banner_list_wap['type'][$k];
+            $files_wap['show_img']['tmp_name'] = $file_banner_list_wap['tmp_name'][$k];
+            $files_wap['show_img']['error'] = $file_banner_list_wap['error'][$k];
+            $files_wap['show_img']['size'] = $file_banner_list_wap['size'][$k];
+
+            $show_img = '';
+            
+            if ($v != "") {
+                $custom_filename = $dou->create_rand_string('letter', 6, date('Ymd'));
+                $show_img = $file->box_banner($files_wap,'show', $dou->auto_id('show'), 'show_img', 'main', $custom_filename);
+
+                $sql = "INSERT INTO " . $dou->table('show') . " (id, show_name, show_link, show_img, type, sort, type_id)" . " VALUES (NULL, '".$_POST['banner_title_wap'][$k]."', '".$_POST['banner_link_wap'][$k]."', '$show_img', 'demom', '".$_POST['banner_sort_wap'][$k]."', '$insert_id')";
+                $dou->query($sql);
+            }
+
+        }
+
+    }
+
     
     $dou->create_admin_log($_LANG['product_add'] . ': ' . $_POST['name']);
     $dou->dou_msg($_LANG['product_add_succes'], 'product.php');
@@ -248,7 +313,10 @@ elseif ($rec == 'edit') {
     $cat_ids = str_replace('|', '', $product['cat_id']);
     $product['cat_ids_arr'] = explode(',', $cat_ids);
     //print_r($cat_ids_arr);
-    
+
+    $product['img_wap_list'] = $dou->get_demo_show_list('demom',$id);//移动幻灯片
+    $product['img_pc_list'] = $dou->get_demo_show_list('demo',$id);//PC幻灯片
+    //print_r($product);exit;
     // CSRF防御令牌生成
     $smarty->assign('token', $firewall->get_token());
     
@@ -267,6 +335,9 @@ elseif ($rec == 'edit') {
 } 
 
 elseif ($rec == 'update') {
+    $file_banner_list = $_FILES['show_img'];
+    $file_banner_list_wap = $_FILES['show_img_wap'];
+    //print_r($file_banner_list);exit;
     // 数据验证
     if (empty($_POST['name'])) $dou->dou_msg($_LANG['name'] . $_LANG['is_empty']);
     //if (!$check->is_price($_POST['price'] = trim($_POST['price']))) $dou->dou_msg($_LANG['price_wrong']);
@@ -312,6 +383,78 @@ elseif ($rec == 'update') {
     
     $sql = "update " . $dou->table('product') . " SET cat_id = '$cat_ids', cat_f_id = '$cat_f_id', name = '$_POST[name]', en_name = '$_POST[en_name]', price = '$_POST[price]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $image . ", keywords = '$_POST[keywords]', description = '$_POST[description]', sort_list='".$_POST['sort_list']."' WHERE id = '$_POST[id]'";
     $dou->query($sql);
+    $insert_id = $_POST['id'];
+
+    // 插入幻灯案例图片
+
+    if(isset($file_banner_list['name']) || isset($_POST['banner_sort'])){
+
+        foreach($_POST['banner_sort'] as $k=>$v){
+            //print_r($_POST['banner_id'][$k]);
+            if($file_banner_list['name'][$k]=='' && empty($_POST['banner_id'][$k])){
+                continue;
+            }
+
+            $files = array();
+            $files['show_img']['name'] = $file_banner_list['name'][$k];
+            $files['show_img']['type'] = $file_banner_list['type'][$k];
+            $files['show_img']['tmp_name'] = $file_banner_list['tmp_name'][$k];
+            $files['show_img']['error'] = $file_banner_list['error'][$k];
+            $files['show_img']['size'] = $file_banner_list['size'][$k];
+
+            $show_img = '';
+            if ($file_banner_list['name'][$k] != "") {
+                $custom_filename = $dou->create_rand_string('letter', 6, date('Ymd'));
+                $show_img = $file->box_banner($files,'show', $dou->auto_id('show'), 'show_img', 'main', $custom_filename);
+
+                $sql = "INSERT INTO " . $dou->table('show') . " (id, show_name, show_link, show_img, type, sort, type_id)" . " VALUES (NULL, '".$_POST['banner_title'][$k]."', '".$_POST['banner_link'][$k]."', '$show_img', 'demo', '".$_POST['banner_sort'][$k]."', '$insert_id')";
+                $dou->query($sql);
+            }else{
+                $sql = "update " . $dou->table('show') . " SET show_name='".$_POST['banner_title'][$k]."',show_link = '".$_POST['banner_link'][$k]."', sort = '".$_POST['banner_sort'][$k]."' , type_id = '$insert_id' WHERE id = '".$_POST['banner_id'][$k]."'";
+                $dou->query($sql);
+            }
+
+
+
+        }
+
+    }
+
+
+
+    //wap
+
+    if(isset($file_banner_list_wap['name']) || isset($_POST['banner_sort_wap'])){
+
+        foreach($_POST['banner_sort_wap'] as $k=>$v){
+            //print_r($_POST['banner_id_wap'][$k]);
+            if($file_banner_list_wap['name'][$k]=='' && empty($_POST['banner_id_wap'][$k])){
+                continue;
+            }
+            $files_wap = array();
+            $files_wap['show_img']['name'] = $file_banner_list_wap['name'][$k];
+            $files_wap['show_img']['type'] = $file_banner_list_wap['type'][$k];
+            $files_wap['show_img']['tmp_name'] = $file_banner_list_wap['tmp_name'][$k];
+            $files_wap['show_img']['error'] = $file_banner_list_wap['error'][$k];
+            $files_wap['show_img']['size'] = $file_banner_list_wap['size'][$k];
+
+            $show_img = '';
+            
+            if ($file_banner_list_wap['name'][$k] != "") {
+                $custom_filename = $dou->create_rand_string('letter', 6, date('Ymd'));
+                $show_img = $file->box_banner($files_wap,'show', $dou->auto_id('show'), 'show_img', 'main', $custom_filename);
+
+                $sql = "INSERT INTO " . $dou->table('show') . " (id, show_name, show_link, show_img, type, sort, type_id)" . " VALUES (NULL, '".$_POST['banner_title_wap'][$k]."', '".$_POST['banner_link_wap'][$k]."', '$show_img', 'demom', '".$_POST['banner_sort_wap'][$k]."', '$insert_id')";
+                $dou->query($sql);
+            }else{
+                $sql = "update " . $dou->table('show') . " SET show_name='".$_POST['banner_title_wap'][$k]."',show_link = '".$_POST['banner_link_wap'][$k]."', sort = '".$_POST['banner_sort_wap'][$k]."' , type_id = '$insert_id' WHERE id = '".$_POST['banner_id_wap'][$k]."'";
+
+                $dou->query($sql);
+            }
+
+        }
+
+    }
     
     $dou->create_admin_log($_LANG['product_edit'] . ': ' . $_POST['name']);
     $dou->dou_msg($_LANG['product_edit_succes'], 'product.php');

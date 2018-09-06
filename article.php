@@ -27,6 +27,7 @@ $article = $dou->get_row('article', '*', "id = '$id'");
 
 // 格式化数据
 $article['add_time'] = date("Y-m-d", $article['add_time']);
+$article['add_date'] = date("Y-m-d", $article['add_date']);
 
 // 格式化自定义参数
 foreach (explode(',', $article['defined']) as $row) {

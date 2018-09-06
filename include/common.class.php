@@ -505,6 +505,7 @@ class Common extends DbMysql {
             if ($row['click']) $item['click'] = $row['click'];
 
             $item['add_time'] = date("Y-m-d", $row['add_time']);
+             $item['add_date'] = date("Y-m-d", $row['add_date']);
             $item['add_time_short'] = date("m-d", $row['add_time']);
             $item['description'] = $row['description'] ? $row['description'] : $this->dou_substr($row['content'], 320);
             $item['image'] = $this->dou_file($row['image']);

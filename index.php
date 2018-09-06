@@ -71,8 +71,7 @@ $smarty->assign('recommend_article', $news_list);
 
 $smarty->assign('link', $link);
 $smarty->assign('index', $index);
-//print_r($_CFG);
-
+//print_r($demo_list);
 
 $smarty->display('index.html');
 

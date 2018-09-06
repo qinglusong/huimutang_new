@@ -105,6 +105,122 @@ class File {
             return $number;
         }
     }
+
+
+
+/**
+     * +----------------------------------------------------------
+     * 文件上传与信息写入
+     * +----------------------------------------------------------
+     * $module 模块名称
+     * $item_id 项目ID
+     * $file_field 文件域
+     * $type 文件类别
+     * $custom_filename 自定义文件名
+     * $thumb 是否创建缩略图
+     * +----------------------------------------------------------
+     */
+    function box_banner($files,$module, $item_id, $file_field = 'image', $type = 'main', $custom_filename = '', $thumb = false) {
+        if ($files[$file_field]['name'] != "") {
+            // 在项目中判断是否已经存在文件编号，没有就生成一个
+            $number = $GLOBALS['dou']->get_one("SELECT " . $file_field . " FROM " . $GLOBALS['dou']->table($module) . " WHERE id = '$item_id'");
+            $number = $number ? $number : $this->create_file_number();
+            
+            // 在文件库中判断是否存在文件编号
+            if (!$GLOBALS['dou']->value_exist('file', 'number', $number)) {
+                // 文件编号不存在则执行写入文件操作
+                $file_name = $custom_filename ? $custom_filename : $this->create_file_name($item_id); // 创建一个随机不重复文件名
+                $action = 'insert'; // 标注为写入操作
+            } else {
+                // 文件编号存在执行文件更新操作
+                $file_name = $GLOBALS['dou']->get_file_name($GLOBALS['dou']->get_one("SELECT file FROM " . $GLOBALS['dou']->table('file') . " WHERE number = '$number'"));
+                if (empty($file_name))
+                    $file_name = $custom_filename ? $custom_filename : $this->create_file_name($item_id); // 空文件数据要随机生成一个文件名
+                $action = 'update'; // 标注为升级操作
+            }
+            
+            // 文件上传操作
+            $full_file_name = $this->upload_banner($files,$file_field, $file_name);
+            $file = $this->file_dir . $full_file_name;
+            
+            // 获取文件大小前需要先清除文件状态缓存
+            clearstatcache();
+            $size = filesize(ROOT_PATH . '/' . $file);
+            
+            $add_time = $action_time = time();
+            
+            // 缩略图
+            if ($thumb) {
+                $thumb = $this->thumb($full_file_name, $GLOBALS['_CFG']['thumb_width'], $GLOBALS['_CFG']['thumb_height']);
+
+                // 获取文件大小
+                clearstatcache(); // 获取文件大小前需要先清除文件状态缓存
+                $thumb_size = filesize($this->full_file_dir . $this->thumb_dir . $thumb);
+            }
+            $thumb_size = $thumb_size ? $thumb_size : 0;
+            
+            if ($action == 'insert') {
+                // 写入文件数据
+                $sql = "INSERT INTO " . $GLOBALS['dou']->table('file') . " (id, number, file, module, item_id, type, size, thumb_size, action_time, add_time)" . " VALUES (NULL, '$number', '$file', '$module', '$item_id', '$type', '$size', '$thumb_size', '$action_time',  '$add_time')";
+            } elseif ($action == 'update') {
+                // 更新文件数据
+                $sql = "update " . $GLOBALS['dou']->table('file') . " SET file = '$file', size = '$size', thumb_size = '$thumb_size', action_time = '$action_time' WHERE number = '$number'";
+            }
+         
+            // 执行SQL语句
+            $GLOBALS['dou']->query($sql);
+            
+            return $number;
+        }
+    }
+
+
+
+    /**
+     * +----------------------------------------------------------
+     * 图片上传的处理函数
+     * +----------------------------------------------------------
+     * $file_field 上传的图片域
+     * $file_name 给上传的图片重命名
+     * +----------------------------------------------------------
+     */
+    function upload_banner($files,$file_field, $file_name = '') {
+        if ($GLOBALS['dou']->dir_status($this->full_file_dir) != 'write') {
+            $GLOBALS['dou']->dou_msg($GLOBALS['_LANG']['file_dir_wrong']);
+        }
+        
+        // 没有命名规则默认以时间作为文件名
+        if (empty($file_name))
+            $file_name = $GLOBALS['dou']->create_rand_string('number', 6, time()); // 设定当前时间为图片名称
+        
+        if (@ empty($files[$file_field]['name']))
+            $GLOBALS['dou']->dou_msg($GLOBALS['_LANG']['file_empty']);
+
+        $name = explode(".", $files[$file_field]["name"]); // 将上传前的文件以“.”分开取得文件类型
+        $img_count = count($name); // 获得截取的数量
+        $img_type = $name[$img_count - 1]; // 取得文件的类型
+        if (stripos($this->file_type, $img_type) === false) {
+            $GLOBALS['dou']->dou_msg($GLOBALS['_LANG']['file_support'] . $this->file_type . $GLOBALS['_LANG']['file_support_no'] . $img_type);
+        }
+        $full_file_name = $file_name . "." . $img_type; // 写入数据库的文件名
+        $file_address = $this->full_file_dir . $full_file_name; // 上传后的文件名称
+        $file_ok = move_uploaded_file($files[$file_field]["tmp_name"], $file_address);
+        if ($file_ok) {
+            $img_size = $files[$file_field]["size"];
+            $img_size_kb = round($img_size / 1024);
+            if ($img_size_kb > $this->file_size_max) {
+                @unlink($file_address);
+                $GLOBALS['dou']->dou_msg($GLOBALS['_LANG']['file_out_size'] . $this->file_size_max . "KB");
+            } else {
+                return $full_file_name;
+            }
+        } else {
+            $GLOBALS['_LANG']['file_wrong'] = preg_replace('/d%/Ums', $this->file_size_max, $GLOBALS['_LANG']['file_wrong']);
+            $GLOBALS['dou']->dou_msg($GLOBALS['_LANG']['file_wrong']);
+        }
+    }
+
+
     
     /**
      * +----------------------------------------------------------

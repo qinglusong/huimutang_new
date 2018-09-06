@@ -36,7 +36,7 @@
           <div class="tt-swiper case-list">
             <!-- Swiper -->
                 <div class="swiper-slide">
-                  <div class="en-title">{$product.en_name}待续</div>
+                  <div class="en-title">{$product.en_name}</div>
                   <h2>{$product.name}</h2>
                   <div class="clearfix"></div>
                   <h3>{$product.price}</h3>
@@ -52,15 +52,18 @@
       </div>
     </div>
   
-    <div class="right-tool">
-      <div class="tool-item">
-        <a class="back" href="case_1_0_1.html"><i></i></a>
+
+  </div>
+  
+  <div class="right-tool fixed">
+  <div class="tool-item">
+    <a class="back" href="case_1_0_1.html"><i></i></a>
         <a class="right" {if $lifts.previous.id}href="case_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="left" {if $lifts.next.id}href="case_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="top" href="####"><i></i></a>
-      </div>
-    </div>
   </div>
+</div>
+  
   <div class="content bg-3">
     <div class="section-title wow fadeInUp" data-wow-delay="100ms">
       <h2>相关案例</h2>
@@ -189,6 +192,14 @@
     <p class="wow fadeInLeft" data-wow-delay="400ms">沪ICP备16026508号</p>
     <p class="wow fadeInLeft"data-wow-delay="450ms">沪公网安备 31011202002497号</p>
   </nav>
+</div>
+<div class="right-tool fixed">
+  <div class="tool-item">
+    <a class="back" href="case_1_0_1.html"><i></i></a>
+        <a class="right" {if $lifts.previous.id}href="case_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
+        <a class="left" {if $lifts.next.id}href="case_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
+        <a class="top" href="####"><i></i></a>
+  </div>
 </div>
 <script type="text/javascript" src="theme/huimutang/images/js/zoom.js"></script>
 <script type="text/javascript" src="theme/huimutang/images/js/tool.js"></script>

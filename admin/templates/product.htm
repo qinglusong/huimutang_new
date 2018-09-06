@@ -137,7 +137,7 @@
     <div class="clear"></div>
     {include file="pager.htm"}
     <!-- {/if} -->
-    <!-- {if $rec eq 'add' || $rec eq 'edit'} 商品添加或编辑 -->
+    <!-- {if $rec eq 'add' || $rec eq 'edit'} 商品添加或编辑+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <h3><a href="{$action_link.href}" class="actionBtn">{$action_link.text}</a>{$ur_here}</h3>
     <form action="product.php?rec={$form_action}" method="post" enctype="multipart/form-data">
      <div class="formBasic">
@@ -220,6 +220,85 @@
         <input type="file" name="image" size="38" class="inpFlie" />
         {if $product.image}<a href="{$product.image}" target="_blank"><img src="images/icon_yes.png"></a>{else}<img src="images/icon_no.png">{/if}</dd>
       </dl>
+	  
+	  
+	  
+	  <dl>
+       <dt>PC轮播图|<a href='javascript:;' onclick="addimgs()" style='cursor:pointer; color:red;'>【添加】</a><font color='red' size='1'><a href='/admin/demoshow.php'>编辑已存在的图片去菜单案例幻灯片修改</a></font></dt>
+       <dd id='banner_list'>
+		
+			{if $product.img_pc_list}
+			{foreach from=$product.img_pc_list item=item key=key name=foo }
+			
+			<div>
+			<input type='file' disabled="false"  name='show_img[]' size='38' class='inpFlie' />
+			<a href='{$item.show_img}' target='_blank'><img width='40px' height='20px;' src='{$item.show_img}'></a>
+			<input type='hidden' name='banner_id[]'  value='{$item.id}' />
+			标题：<input type='text' name='banner_title[]'  value='{$item.show_name}' />
+			链接：<input type='text' name='banner_link[]'  value='{$item.show_link}' />
+			排序：<input type='text' name='banner_sort[]'  value='{$item.sort}' />
+			<div><br>
+			
+			{/foreach}
+			{/if}
+		
+		
+		</dd>
+      </dl>
+	  
+	  <dl>
+       <dt>wap轮播图|<a href='javascript:;' onclick="addwapimgs()" style='cursor:pointer; color:red;'>【添加】</a><font color='red' size='1'><a href='/admin/demoshow.php'>编辑已存在的图片去菜单案例幻灯片修改</a></font></dt>
+       <dd id='banner_list_wap'>
+		
+			{if $product.img_pc_list}
+			{foreach from=$product.img_wap_list item=item key=key name=foo }
+			
+			<div>
+			<input type='file' disabled="false"  name='show_img_wap[]' size='38' class='inpFlie' />
+			<a href='{$item.show_img}' target='_blank'><img width='40px' height='20px;' src='{$item.show_img}'></a>
+			<input type='hidden' name='banner_id_wap[]'  value='{$item.id}' />
+			标题：<input type='text' name='banner_title_wap[]'  value='{$item.show_name}' />
+			链接：<input type='text' name='banner_link_wap[]'  value='{$item.show_link}' />
+			排序：<input type='text' name='banner_sort_wap[]'  value='{$item.sort}' />
+			<div><br>
+			
+			{/foreach}
+			{/if}
+		
+		</dd>
+      </dl>
+	  
+	  <script type="text/javascript">
+		{literal}
+		
+		function addimgs(){
+			var	html= '<div>';
+				html+=		"<input type='file' name='show_img[]' size='38' class='inpFlie' />";
+				//html+=		"<a href='' target='_blank'><img width='50px' height='30px;' src=''></a>";
+				html+=		"标题：<input type='text' name='banner_title[]'  value='' />";
+				html+=		"链接：<input type='text' name='banner_link[]'  value='' />";
+				html+=		"排序：<input type='text' name='banner_sort[]'  value='' />";
+				html+="<div><br>";
+				
+				$("#banner_list").append(html);
+		}
+		
+		function addwapimgs(){
+			var	html= '<div>';
+				html+=		"<input type='file' name='show_img_wap[]' size='38' class='inpFlie' />";
+				//html+=		"<a href='' target='_blank'><img width='50px' height='30px;' src=''></a>";
+				html+=		"标题：<input type='text' name='banner_title_wap[]'  value='' />";
+				html+=		"链接：<input type='text' name='banner_link_wap[]'  value='' />";
+				html+=		"排序：<input type='text' name='banner_sort_wap[]'  value='' />";
+				html+="<div><br>";
+				
+				$("#banner_list_wap").append(html);
+		}
+		
+		{/literal}
+	  </script>
+	  
+	  
       <dl>
        <dt>{$lang.keywords}</dt>
        <dd>
@@ -252,6 +331,7 @@
     <h3><a href="{$action_link.href}" class="actionBtn">{$action_link.text}</a>{$ur_here}</h3>
     <script type="text/javascript">
     {literal}
+
      function mask(i) {
         document.getElementById('mask').innerHTML += i;
         document.getElementById('mask').scrollTop = 100000000;
