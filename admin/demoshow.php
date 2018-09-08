@@ -150,4 +150,22 @@ elseif ($rec == 'del') {
     }
 }
 
+elseif ($rec == 'del_ajax') {
+    // 验证并获取合法的ID
+    $id = $check->is_number($_REQUEST['id']) ? $_REQUEST['id'] : '';
+    if(!$id){
+        echo json_encode(array('code'=>201,'message'=>'id为空'));exit;
+    }
+    
+    $show_name = $dou->get_one("SELECT show_name FROM " . $dou->table('show') . " WHERE id = '$id'");
+    
+    // 删除相应图片
+    $show_img = $dou->get_one("SELECT show_img FROM " . $dou->table('show') . " WHERE id = '$id'");
+    $dou->del_file($show_img);
+    
+    $dou->create_admin_log($_LANG['show_del'] . ': ' . $show_name);
+    $dou->delete($dou->table('show'), "id = '$id'");
+    echo json_encode(array('code'=>200,'message'=>'ok'));
+}
+
 ?>

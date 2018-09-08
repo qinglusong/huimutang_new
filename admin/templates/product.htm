@@ -7,6 +7,10 @@
 {include file="javascript.htm"}
 <script type="text/javascript" src="images/jquery.form.min.js"></script>
 <script type="text/javascript" src="images/jquery.autotextarea.js"></script>
+<script type="text/javascript" charset="utf-8" src="templates/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="templates/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="templates/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="templates/ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
 <div id="dcWrap">
@@ -175,10 +179,6 @@
       </dl>
 
 
-
-
-
-
       <dl>
        <dt>{$lang.product_price}</dt>
        <dd>
@@ -198,22 +198,17 @@
         </dd>
       </dl>
       <!-- {/if} -->
-      <dl>
-       <dt>{$lang.product_content}</dt>
-       <dd>
-        <!-- FileBox -->
-        <div id="contentFile" class="fileBox">
-         <span class="btnFile" onclick="fileBox('content');">{$lang.file_insert_image}</span>
-         <span class="fileStatus" style="display:none"><img src="images/loader.gif" alt="uploading"/></span>
-        </div>
-        <!-- /FileBox -->
-        <!-- TinyMCE -->
-        <script type="text/javascript" charset="utf-8" src="include/tinymce/tinymce.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="include/tinymce/init.js"></script>
-        <textarea id="content" name="content" rows="20">{$product.content}</textarea>
-        <!-- /TinyMCE -->
-       </dd>
-      </dl>
+      
+
+
+
+<script id="editor" name="content" type="text/plain" style="width:1024px;height:500px;">{$product.content}</script>
+
+
+
+
+
+
       <dl>
        <dt>{$lang.thumb}</dt>
        <dd>
@@ -230,14 +225,15 @@
 			{if $product.img_pc_list}
 			{foreach from=$product.img_pc_list item=item key=key name=foo }
 			
-			<div>
+			<div id='showdemo_{$item.id}'>
 			<input type='file' disabled="false"  name='show_img[]' size='38' class='inpFlie' />
 			<a href='{$item.show_img}' target='_blank'><img width='40px' height='20px;' src='{$item.show_img}'></a>
 			<input type='hidden' name='banner_id[]'  value='{$item.id}' />
 			标题：<input type='text' name='banner_title[]'  value='{$item.show_name}' />
 			链接：<input type='text' name='banner_link[]'  value='{$item.show_link}' />
 			排序：<input type='text' name='banner_sort[]'  value='{$item.sort}' />
-			<div><br>
+      <a href='javascript:;' onclick='del_div({$item.id})'>X</a>
+			</div><br>
 			
 			{/foreach}
 			{/if}
@@ -253,14 +249,15 @@
 			{if $product.img_pc_list}
 			{foreach from=$product.img_wap_list item=item key=key name=foo }
 			
-			<div>
+			<div id='showdemom_{$item.id}'>
 			<input type='file' disabled="false"  name='show_img_wap[]' size='38' class='inpFlie' />
 			<a href='{$item.show_img}' target='_blank'><img width='40px' height='20px;' src='{$item.show_img}'></a>
 			<input type='hidden' name='banner_id_wap[]'  value='{$item.id}' />
 			标题：<input type='text' name='banner_title_wap[]'  value='{$item.show_name}' />
 			链接：<input type='text' name='banner_link_wap[]'  value='{$item.show_link}' />
 			排序：<input type='text' name='banner_sort_wap[]'  value='{$item.sort}' />
-			<div><br>
+      <a href='javascript:;' onclick='del_div_m({$item.id})'>X</a>
+			</div><br>
 			
 			{/foreach}
 			{/if}
@@ -374,3 +371,159 @@ function douAction()
 </body>
 </html>
 <!-- {/if} -->
+<script type="text/javascript">
+{literal}
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor');
+
+
+    function isFocus(e){
+        alert(UE.getEditor('editor').isFocus());
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function setblur(e){
+        UE.getEditor('editor').blur();
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function insertHtml() {
+        var value = prompt('插入html代码', '');
+        UE.getEditor('editor').execCommand('insertHtml', value)
+    }
+    function createEditor() {
+        enableBtn();
+        UE.getEditor('editor');
+    }
+    function getAllHtml() {
+        alert(UE.getEditor('editor').getAllHtml())
+    }
+    function getContent() {
+        var arr = [];
+        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getContent());
+        alert(arr.join("\n"));
+    }
+    function getPlainTxt() {
+        var arr = [];
+        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getPlainTxt());
+        alert(arr.join('\n'))
+    }
+    function setContent(isAppendTo) {
+        var arr = [];
+        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+        alert(arr.join("\n"));
+    }
+    function setDisabled() {
+        UE.getEditor('editor').setDisabled('fullscreen');
+        disableBtn("enable");
+    }
+
+    function setEnabled() {
+        UE.getEditor('editor').setEnabled();
+        enableBtn();
+    }
+
+    function getText() {
+        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+        var range = UE.getEditor('editor').selection.getRange();
+        range.select();
+        var txt = UE.getEditor('editor').selection.getText();
+        alert(txt)
+    }
+
+    function getContentTxt() {
+        var arr = [];
+        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+        arr.push("编辑器的纯文本内容为：");
+        arr.push(UE.getEditor('editor').getContentTxt());
+        alert(arr.join("\n"));
+    }
+    function hasContent() {
+        var arr = [];
+        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+        arr.push("判断结果为：");
+        arr.push(UE.getEditor('editor').hasContents());
+        alert(arr.join("\n"));
+    }
+    function setFocus() {
+        UE.getEditor('editor').focus();
+    }
+    function deleteEditor() {
+        disableBtn();
+        UE.getEditor('editor').destroy();
+    }
+    function disableBtn(str) {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            if (btn.id == str) {
+                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+            } else {
+                btn.setAttribute("disabled", "true");
+            }
+        }
+    }
+    function enableBtn() {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+        }
+    }
+
+    function getLocalData () {
+        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
+    }
+
+    function clearLocalData () {
+        UE.getEditor('editor').execCommand( "clearlocaldata" );
+        alert("已清空草稿箱")
+    }
+
+
+    function del_div(id){
+      if(confirm('确定删除么？')){
+
+
+        $.ajax({
+            //'async' : false,// 使用同步的Ajax请求
+            type : "post",
+            url : 'demoshow.php',
+            dataType : "json",
+            data : {'rec':'del_ajax',id:id},
+            success : function(e){
+                if(e.code==200){
+                  $('#showdemo_'+id).html('');
+                }else{
+                  alert(e.message);
+                }
+            }
+        });
+      }
+    }
+
+    function del_div_m(id){
+      if(confirm('确定删除么？')){
+        $.ajax({
+            //'async' : false,// 使用同步的Ajax请求
+            type : "post",
+            url : 'demoshow.php',
+            dataType : "json",
+            data : {'rec':'del_ajax',id:id},
+            success : function(e){
+                if(e.code==200){
+                  $('#showdemom_'+id).html('');
+                }else{
+                  alert(e.message);
+                }
+            }
+        });
+      }
+    }
+
+  {/literal}
+</script>

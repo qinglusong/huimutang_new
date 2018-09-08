@@ -47,7 +47,10 @@ if ($rec == 'edit') {
     //print_r($projects);
     // CSRF防御令牌生成
     $smarty->assign('token', $firewall->get_token());
-    $projects['contents_arr']['bottom_video']['url_format'] =  $dou->dou_file($projects['contents_arr']['bottom_video']['url']);;
+    $projects['contents_arr']['bottom_video']['url_format'] =  $dou->dou_file($projects['contents_arr']['bottom_video']['url']);
+    //客户评价背景图 pc and wap
+    $projects['contents_arr']['comment_bg']['url_format'] =  $dou->dou_file($projects['contents_arr']['comment_bg']['url']);
+    $projects['contents_arr']['comment_bg_m']['url_format'] =  $dou->dou_file($projects['contents_arr']['comment_bg_m']['url']);
     // 赋值给模板
     $smarty->assign('form_action', 'update');
     $smarty->assign('info', $projects);
@@ -69,6 +72,8 @@ elseif ($rec == 'update') {
     unset($_POST['token']);
     $posts = $_POST;
     unset($_POST['old_file_url']);
+    unset($_POST['old_file_url_comment_bg']);
+    unset($_POST['old_file_url_comment_bg_m']);
     foreach($_POST as $k=>$v){
         if(!$v){
             $dou->dou_msg('所有内容不可为空');
@@ -97,6 +102,31 @@ elseif ($rec == 'update') {
         
     }else{
         $post_data['bottom_video']['url'] = $posts['old_file_url']; 
+    }
+//客户评价背景 pc
+
+    if($posts['is_up_file_comment_bg']=='1'){
+        // 文件上传盒子
+        if ($_FILES['comment_bg']['name'] != "") {
+            $custom_filenames = $dou->create_rand_string('letter', 6, date('Ymd'));
+            $videos = $file->box('show', $dou->auto_id('show'), 'comment_bg', 'main', $custom_filenames);
+            $post_data['comment_bg']['url'] = $videos; 
+        }
+        
+    }else{
+        $post_data['comment_bg']['url'] = $posts['old_file_url_comment_bg']; 
+    }
+//客户评价背景 wap
+    if($posts['is_up_file_comment_bg_m']=='1'){
+        // 文件上传盒子
+        if ($_FILES['comment_bg_m']['name'] != "") {
+            $custom_filenames = $dou->create_rand_string('letter', 6, date('Ymd'));
+            $videos = $file->box('show', $dou->auto_id('show'), 'comment_bg_m', 'main', $custom_filenames);
+            $post_data['comment_bg_m']['url'] = $videos; 
+        }
+        
+    }else{
+        $post_data['comment_bg_m']['url'] = $posts['old_file_url_comment_bg_m']; 
     }
     
 //print_r($post_data);exit;

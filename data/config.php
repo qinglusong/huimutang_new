@@ -57,5 +57,7 @@ define('ADMIN_PATH','admin');
 // mobile path
 define('M_PATH','m');
 
+define('SMARTY_THEME','theme/huimutang');
+
 
 ?>

@@ -33,10 +33,10 @@ $root_url = dirname($http . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']) . "/";
 define('ROOT_PATH', str_replace('include/init.php', '', str_replace('\\', '/', __FILE__)));
 define('ROOT_URL', !defined('ROUTE') ? $root_url : str_replace('include/', '', $root_url)); // 区分route.php作为入口的情况来分别赋值
 
-if (!file_exists(ROOT_PATH . "data/system.dou")) {
-      header("Location: " . ROOT_URL . "install/index.php\n");
-      exit();
-}
+// if (!file_exists(ROOT_PATH . "data/system.dou")) {
+//       header("Location: " . ROOT_URL . "install/index.php\n");
+//       exit();
+// }
 
 // 载入DouPHP核心文件
 require_once (ROOT_PATH . 'data/config.php'); // 伪静态下config.php会在route.php中第一次被调用
@@ -81,7 +81,7 @@ if (!defined('EXIT_INIT')) {
     // SMARTY配置
     $smarty = new smarty();
     $smarty->config_dir = ROOT_PATH . 'include/smarty/Config_File.class.php'; // 目录变量
-    $smarty->template_dir = ROOT_PATH . 'theme/huimutang';// . $_CFG['site_theme']; // 模板存放目录
+    $smarty->template_dir = ROOT_PATH . SMARTY_THEME;// . $_CFG['site_theme']; // 模板存放目录
     $smarty->compile_dir = ROOT_PATH . 'cache'; // 编译目录
     $smarty->left_delimiter = '{'; // 左定界符
     $smarty->right_delimiter = '}'; // 右定界符

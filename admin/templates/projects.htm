@@ -64,6 +64,28 @@
       </dl>
 
       <dl>
+       <dt>客户评价背景PC</dt>
+       <dd>
+        <input type="file" name="comment_bg" size="28" />
+           {if $info.contents_arr.comment_bg.url}<a href='{$info.contents_arr.comment_bg.url_format}' target='_blank'><img src="images/icon_yes.png"></a>{/if}
+           是否更新图片
+           <label><input name="is_up_file_comment_bg" type="radio" value='1'/>更新</label>
+           <label><input name="is_up_file1_comment_bg" type="radio" checked value="2"/>不更新</label>
+       </dd>
+      </dl>
+
+      <dl>
+       <dt>客户评价背景WAP</dt>
+       <dd>
+        <input type="file" name="comment_bg_m" size="28" />
+           {if $info.contents_arr.comment_bg_m.url}<a href='{$info.contents_arr.comment_bg_m.url_format}' target='_blank'><img src="images/icon_yes.png"></a>{/if}
+           是否更新图片
+           <label><input name="is_up_file_comment_bg_m" type="radio" value='1'/>更新</label>
+           <label><input name="is_up_file_comment_bg_m" type="radio" checked value="2"/>不更新</label>
+       </dd>
+      </dl>
+
+      <dl>
        <dt>最下方视频</dt>
        <dd>
         <input type="file" name="bottom_video" size="28" />
@@ -79,6 +101,8 @@
       <dl>
        <input type="hidden" name="token" value="{$token}" />
        <input type="hidden" name="old_file_url" value="{$info.contents_arr.bottom_video.url}" />
+       <input type="hidden" name="old_file_url_comment_bg" value="{$info.contents_arr.comment_bg.url}" />
+       <input type="hidden" name="old_file_url_comment_bg_m" value="{$info.contents_arr.comment_bg_m.url}" />
        <input type="hidden" name="id" value="{$info.id}">
        <input name="submit" class="btn" type="submit" value="{$lang.btn_submit}" />
       </dl>

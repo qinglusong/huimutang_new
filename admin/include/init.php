@@ -38,10 +38,10 @@ define('ROOT_PATH', str_replace(ADMIN_PATH . '/include/init.php', '', str_replac
 define('ROOT_URL', preg_replace('/' . ADMIN_PATH . '\//Ums', '', dirname($http . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']) . "/"));
 define('M_URL', ROOT_URL . M_PATH . '/');
 
-if (!file_exists(ROOT_PATH . "data/system.dou")) {
-    header("Location: ../install/index.php\n");
-    exit();
-}
+// if (!file_exists(ROOT_PATH . "data/system.dou")) {
+//     header("Location: ../install/index.php\n");
+//     exit();
+// }
 
 // 载入DouPHP核心文件
 require (ROOT_PATH . 'include/smarty/Smarty.class.php');
