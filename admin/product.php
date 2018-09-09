@@ -207,9 +207,9 @@ elseif ($rec == 'insert') {
 
     $cat_ids = trim($cat_ids,',');
 
+    $post_description = htmlspecialchars($_POST['description']);
     
-    
-    $sql = "INSERT INTO " . $dou->table('product') . " (id, cat_id,cat_f_id, name, en_name, price, defined, content, image ,keywords, description, add_time, sort_list)" . " VALUES (NULL, '$cat_ids', '$cat_f_id', '$_POST[name]', '$_POST[en_name]', '$_POST[price]', '$_POST[defined]', '$_POST[content]', '$image', '$_POST[keywords]', '$_POST[description]', '$add_time', '".$_POST['sort_list']."')";
+    $sql = "INSERT INTO " . $dou->table('product') . " (id, cat_id,cat_f_id, name, en_name, price, defined, content, image ,keywords, description, add_time, sort_list)" . " VALUES (NULL, '$cat_ids', '$cat_f_id', '$_POST[name]', '$_POST[en_name]', '$_POST[price]', '$_POST[defined]', '$_POST[content]', '$image', '$_POST[keywords]', '$post_description', '$add_time', '".$_POST['sort_list']."')";
     $dou->query($sql);
     $insert_id = $dou->insert_id();
 
@@ -380,8 +380,8 @@ elseif ($rec == 'update') {
     }
 
     $cat_ids = trim($cat_ids,',');
-    
-    $sql = "update " . $dou->table('product') . " SET cat_id = '$cat_ids', cat_f_id = '$cat_f_id', name = '$_POST[name]', en_name = '$_POST[en_name]', price = '$_POST[price]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $image . ", keywords = '$_POST[keywords]', description = '$_POST[description]', sort_list='".$_POST['sort_list']."' WHERE id = '$_POST[id]'";
+    $post_description = htmlspecialchars($_POST['description']);
+    $sql = "update " . $dou->table('product') . " SET cat_id = '$cat_ids', cat_f_id = '$cat_f_id', name = '$_POST[name]', en_name = '$_POST[en_name]', price = '$_POST[price]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $image . ", keywords = '$_POST[keywords]', description = '$post_description', sort_list='".$_POST['sort_list']."' WHERE id = '$_POST[id]'";
     $dou->query($sql);
     $insert_id = $_POST['id'];
 

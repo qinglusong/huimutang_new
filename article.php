@@ -61,6 +61,6 @@ $lifts = $dou->lift('article',$article['id'],$cat_id);
 #print_r($lifts);
 $smarty->assign('lifts', $lifts);
 
-
+$smarty->assign('news', 1);//详情头部包含右侧浮层
 $smarty->display('news.html');
 ?>

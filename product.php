@@ -113,6 +113,6 @@ $lifts = $dou->lift('product',$product['id']);
 
 $smarty->assign('product_cate_list',$cat_id_name_arr);
 $smarty->assign('lifts', $lifts);
-
+$smarty->assign('cases', 1);//案例详情头部包含swiper.js文件 和右侧浮层
 $smarty->display('cases.html');
 ?>

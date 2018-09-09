@@ -1,0 +1,5 @@
+.container{margin: 0px;padding: 0px;}
+.content{width: 100%;max-width: 1920px;position: relative;}
+.zoom-div body html{overflow-x: hidden;}
+
+header.pc_header{position: absolute;top:0px;left: 0px;z-index: 99;background: rgba(0,0,0,0.5);padding-top:20px;}

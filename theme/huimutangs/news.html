@@ -1,0 +1,44 @@
+    {include file='inc/header.tpl'}
+    <link href="theme/huimutang/images/css/news.css" rel="stylesheet">
+    <div class="info_bg">
+      <div class="swiper-container news-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div>
+              <div class="title-top wow fadeInRight"><div>{$article.en_title}</div> <h2>{$article.title}</h2><p class="tip">{$article.add_date} <span>分享</span></p></div>
+                <div class="flex-show flex-row pc-tip pc-show">
+                    <div>{$article.add_date}</div>
+                    <a class="share-but flex-show flex-row">
+                        <div><img src="theme/huimutangs/images/imgs/share.png"> </div>
+                        <div>分享</div>
+                    </a>
+                </div>
+              <div class="content wow fadeIn">
+                <div class="txt-cont">
+                  {$article.content}
+                </div>
+                <!--<div class="img-cont">
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                </div>-->
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    <div class="right-tool wap-show">
+      <div class="tool-item">
+        <a class="back" href="news_0_1.html"><i></i></a>
+        <a class="left" {if $lifts.next.id}href="news_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
+        <a class="right" {if $lifts.previous.id}href="news_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
+        
+        <a class="top" href="#"><i></i></a>
+      </div>
+    </div>
+    <!-- footer -->
+      {include file='inc/footer.tpl'}
+    <script type="text/javascript" src="theme/huimutangs/images/js/news.js"></script>

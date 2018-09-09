@@ -78,6 +78,9 @@ $fuwu = $dou->get_row('fuwu', '*', "type = '2'");//type=2   项目咨询页
         $fuwu['contents'] = urldecode($fuwu['contents']);
         $fuwu['contents_arr'] = json_decode($fuwu['contents'],true);
         $fuwu['bottom_video_file'] = $dou->dou_file($fuwu['contents_arr']['bottom_video']['url']);
+
+        $fuwu['bottom_comment_file'] = $dou->dou_file($fuwu['contents_arr']['comment_bg']['url']);
+        $fuwu['bottom_comment_m_file'] = $dou->dou_file($fuwu['contents_arr']['comment_bg_m']['url']);
     }
     //print_r($fuwu);
     $smarty->assign('info', $fuwu);

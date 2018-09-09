@@ -68,7 +68,7 @@ $smarty->assign('keywords', $pages_arr['info']['page_name']);
 $smarty->assign('description', $pages_arr['info']['page_name']);
 
 
-
+$smarty->assign('is_l_r_buttom',1);//右侧显示左右top
 
 
 $smarty->assign('pages_arr',$pages_arr);

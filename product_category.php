@@ -101,6 +101,6 @@ $smarty->assign('cat_id', $cat_id);
 $smarty->assign('cat_f_id', $cat_f_id);
 $smarty->assign('page', $page);
 //print_r($product_list);
-
+$smarty->assign('is_case',1);//footer.tpl 页面 分类弹出
 $smarty->display('case.html');
 ?>

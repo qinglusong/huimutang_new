@@ -64,7 +64,14 @@ $smarty->assign('show_mobile_list', $show_mobile_list);
 //案例列表
 $demo_list = $dou->get_list('product', 'ALL', $_DISPLAY['home_product'], 'sort DESC');
 $news_list = $dou->get_list('article', 'ALL', $_DISPLAY['home_article'], 'sort DESC');
-//print_r($news_list);
+// foreach($demo_list as $k=>$v){
+// 	$demo_list[$k]['description'] = mb_strcut($v['description'],0,520,'utf-8');
+// 	$demo_list[$k]['price_jieshao'] = mb_strcut($v['price_jieshao'],0,60,'utf-8');
+// }
+// foreach($news_list as $k=>$v){
+// 	$news_list[$k]['description'] = mb_strcut($v['description'],0,520,'utf-8');
+// }
+//print_r($demo_list);
 $smarty->assign('recommend_product', $demo_list);
 $smarty->assign('recommend_article', $news_list);
 

@@ -1,0 +1,39 @@
+{include file='inc/header.tpl'}
+    <link href="theme/huimutangs/images/css/hmt.css" rel="stylesheet">
+    <div class="container flex-show flex-row bg-col-00">
+
+        <div class="m-t-div mobile-show wow fadeInLeft">
+            <p>慧目堂＞</p>
+            <ul>
+                {foreach from = $pages_arr.list item=item}
+                <li><a href='pages_{$item.id}.html' {if $item.id== $pages_arr.info.id}class="select"{/if}>>{$item.page_name}</a></li>
+                
+                {/foreach}
+            </ul>
+        </div>
+
+        <div class="con-l pc-show">
+            <ul>
+                {foreach from = $pages_arr.list item=item name=foo}
+                <li class="wow fadeInLeft" data-wow-delay="{$smarty.foreach.foo.index+4}00ms"><a href='pages_{$item.id}.html' {if $item.id== $pages_arr.info.id}class="select"{/if}>{$item.page_name} | {$item.unique_id} |</a></li>
+                
+            {/foreach}
+            </ul>
+        </div>
+        <div class="con-r wow fadeInRight">
+            <div class="title-s wow fadeInRight">{$pages_arr.info.unique_id}</div>
+        <div class="title-m wow fadeInRight" data-wow-delay="400ms">{$pages_arr.info.page_name}</div>
+            {$pages_arr.info.content}
+        </div>
+    </div>
+
+    <div class="bottm-tool mobile-show flex-show flex-row ">
+        <div><a href="/"><img src="theme/huimutang/images/imgs/m/m_hmt_b1.png"></a></div>
+        <div><a href="pages_{$pages_arr.list.$page_up.id}.html"><img src="theme/huimutang/images/imgs/m/m_hmt_b2.png"></a></div>
+        <div><a href="pages_{$pages_arr.list.$page_down.id}.html"><img src="theme/huimutang/images/imgs/m/m_hmt_b3.png"></a></div>
+        <div class='toolbar-top'><a><img src="theme/huimutang/images/imgs/m/m_hmt_b4.png"></a></div>
+    </div>
+    
+
+    <!-- footer -->
+    {include file='inc/footer.tpl'}
