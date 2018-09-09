@@ -35,8 +35,8 @@
                 <a href="news_info_{$item.id}.html">
                 <div class="bg-4-c-m wow fadeInUp news-panel-focus mobile-show " data-wow-delay="100ms">
                     <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
-                    <p class="bg-4m-t1">{$item.title}</p>
-                    <p class="bg-4m-t2">{$item.description}
+                    <p class="bg-4m-t1">{$item.title|truncate:20}</p>
+                    <p class="bg-4m-t2">{$item.description|truncate:120:''}
                     </p>
                     <p class="bg-4m-t3">{$item.add_date}</p>
                 </div>
@@ -61,8 +61,8 @@
                 <a href="news_info_{$item.id}.html">
                 <div class="bg-4-c-m wow fadeInUp news-panel-focus" data-wow-delay="100ms">
                     <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
-                    <p class="bg-4m-t1">{$item.title}</p>
-                    <p class="bg-4m-t2">{$item.description}
+                    <p class="bg-4m-t1">{$item.title|truncate:20}</p>
+                    <p class="bg-4m-t2">{$item.description|truncate:120}
                     </p>
                     <p class="bg-4m-t3">{$item.add_date}</p>
                 </div>

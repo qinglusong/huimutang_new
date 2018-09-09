@@ -375,10 +375,10 @@
     </div>
     <!-- three page -->
     <div class="content home-bg-02">
-        <div class="bg2-bk wow fadeIn" data-wow-delay="3000ms"></div>
+        <div class="bg2-bk wow fadeIn" data-wow-delay="2000ms"></div>
         <div class="bg-01-con">
             <div class="tip-bar bar1"></div>
-            <div class="pc-show section-title wow fadeInUp" data-wow-delay="3100ms">
+            <div class="pc-show section-title wow fadeInUp" data-wow-delay="2100ms">
                 <h2 style="color: #ff5a00;">公司简介</h2>
                 <p style="color: #fff;">COMPANY PROFILE</p>
             </div>
@@ -393,7 +393,7 @@
                         <div class="row">
                             <div class="content-wrap">
                                 <div class="news-panel">
-                                    <div class="pc-show company-detail wow fadeInRight" data-wow-delay="3200ms">
+                                    <div class="pc-show company-detail wow fadeInRight" data-wow-delay="2200ms">
                                         <div>
                                             <a href="pages.html">
                                                 <div class="right">
@@ -414,7 +414,7 @@
                                                     <div class="media-body media-right">
                                                         <div class="news-panel-list-text">
                                                             <h2>{$site.index_company_profile_title}</h2>
-                                                            <p>{$site.index_company_profile_content}</p>
+                                                            <p>{$site.index_company_profile_content|truncate:180}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -531,7 +531,7 @@
                     <div onclick="location.href='news_info_{$item.id}.html'" class="bg-4-c-m wow fadeInUp news-panel-focus" data-wow-delay="100ms">
                         <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
                         <div class="hn-w-b">
-                            <p class="bg-4m-t1">{$item.title|truncate:12:""}</p>
+                            <p class="bg-4m-t1">{$item.title|truncate:12}</p>
                             <p class="bg-4m-t2">{$item.description|truncate:100}</p>
                             <p class="bg-4m-t3">{$item.add_date}</p>
                         </div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-09 18:20:24
+<?php /* Smarty version 2.6.26, created on 2018-09-09 19:42:15
          compiled from index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'truncate', 'index.html', 349, false),)), $this); ?>
@@ -46,7 +46,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'truncate', 
             <div class="pull-right main-header-right">
                 <div class="pull-right main-header-extra ">
                     <div class="mobile-toggle hidden-lg">
-                        <span><a href="tel:02158878218"><img src="http://localhost/theme/huimutangs/images/imgs/phone.png" alt=""></a></span>
+                        <span><a href="tel:<?php echo $this->_tpl_vars['site']['tel']; ?>
+"><img src="http://localhost/theme/huimutangs/images/imgs/phone.png" alt=""></a></span>
                         <span id="J_MobileNavTrigger"><img src="http://localhost/theme/huimutangs/images/imgs/burger.png" alt=""></span>
                     </div>
                     <div class="pull-right hidden-md hidden-sm hidden-xs">
@@ -435,10 +436,10 @@ if ($this->_foreach['foo']['total'] > 0):
     </div>
     <!-- three page -->
     <div class="content home-bg-02">
-        <div class="bg2-bk wow fadeIn" data-wow-delay="3000ms"></div>
+        <div class="bg2-bk wow fadeIn" data-wow-delay="2000ms"></div>
         <div class="bg-01-con">
             <div class="tip-bar bar1"></div>
-            <div class="pc-show section-title wow fadeInUp" data-wow-delay="3100ms">
+            <div class="pc-show section-title wow fadeInUp" data-wow-delay="2100ms">
                 <h2 style="color: #ff5a00;">公司简介</h2>
                 <p style="color: #fff;">COMPANY PROFILE</p>
             </div>
@@ -453,7 +454,7 @@ if ($this->_foreach['foo']['total'] > 0):
                         <div class="row">
                             <div class="content-wrap">
                                 <div class="news-panel">
-                                    <div class="pc-show company-detail wow fadeInRight" data-wow-delay="3200ms">
+                                    <div class="pc-show company-detail wow fadeInRight" data-wow-delay="2200ms">
                                         <div>
                                             <a href="pages.html">
                                                 <div class="right">
@@ -471,13 +472,13 @@ if ($this->_foreach['foo']['total'] > 0):
                                     </div>
                                     <div class="mobile-show company-detail wow fadeInRight" data-wow-delay="1000ms">
                                         <div>
-                                            <a href="#">
+                                            <a href="pages.html">
                                                 <div class="right">
                                                     <div class="media-body media-right">
                                                         <div class="news-panel-list-text">
                                                             <h2><?php echo $this->_tpl_vars['site']['index_company_profile_title']; ?>
 </h2>
-                                                            <p><?php echo $this->_tpl_vars['site']['index_company_profile_content']; ?>
+                                                            <p><?php echo ((is_array($_tmp=$this->_tpl_vars['site']['index_company_profile_content'])) ? $this->_run_mod_handler('truncate', true, $_tmp, 130) : smarty_modifier_truncate($_tmp, 130)); ?>
 </p>
                                                         </div>
                                                     </div>
@@ -630,7 +631,8 @@ if ($this->_foreach['foo']['total'] > 0):
         $this->_foreach['foo']['iteration']++;
 ?>
                 <?php if (($this->_foreach['foo']['iteration']-1) < 4): ?>
-                    <div class="m-news wow <?php if (($this->_foreach['foo']['iteration']-1) == '0' || ($this->_foreach['foo']['iteration']-1) == '2'): ?>fadeInLeft<?php else: ?>fadeInRight<?php endif; ?>">
+                    <div onclick="location.href='news_info_<?php echo $this->_tpl_vars['item']['id']; ?>
+.html'" class="m-news wow <?php if (($this->_foreach['foo']['iteration']-1) == '0' || ($this->_foreach['foo']['iteration']-1) == '2'): ?>fadeInLeft<?php else: ?>fadeInRight<?php endif; ?>">
                         <div class="m-news-img">
                             <a href="/news_info_<?php echo $this->_tpl_vars['item']['id']; ?>
 .html"><img src="<?php echo $this->_tpl_vars['item']['image']; ?>
