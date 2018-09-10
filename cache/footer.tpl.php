@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-09 17:28:59
+<?php /* Smarty version 2.6.26, created on 2018-09-10 12:55:44
          compiled from inc/footer.tpl */ ?>
    <div class="footer-nav flex-column pc-show flex-show">
         <div class="footer-div1 wow fadeInRight">
@@ -72,7 +72,7 @@ if ($this->_foreach['foo']['total'] > 0):
             </div>
 
             <div class="footer2-r wow fadeInRight">
-                <div><img src="http://localhost/theme/huimutangs/images/imgs/pc_qm.png" ></div>
+                <div><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/pc_qm.png" ></div>
                 <p>Copyright  2004-2017 Shanghai Three Eyes Art Design Co.,Ltd.  All Rights Reserved</p>
                 <p>版权所有 <?php echo $this->_tpl_vars['site']['icp']; ?>
    沪公网安备 31011202002497</p>
@@ -80,9 +80,9 @@ if ($this->_foreach['foo']['total'] > 0):
         </nav>
     </div>
     <nav class="m-footer-nav mobile-show">
-        <div class="wow fadeInLeft"><img src="http://localhost/theme/huimutangs/images/imgs/m/b-tit-img.png"></div>
-        <div class="wow fadeInLeft" data-wow-delay="100ms"><img src="http://localhost/theme/huimutangs/images/imgs/m/b-img2.png"></div>
-        <div class="wow fadeInRight" data-wow-delay="200ms"><img src="http://localhost/theme/huimutangs/images/imgs/m/qianming.png"></div>
+        <div class="wow fadeInLeft"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/b-tit-img.png"></div>
+        <div class="wow fadeInLeft" data-wow-delay="100ms"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/b-img2.png"></div>
+        <div class="wow fadeInRight" data-wow-delay="200ms"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/qianming.png"></div>
         <p class="wow fadeInLeft" data-wow-delay="300ms">Copyright © 2004-2018 Shanghai Three Eyes Art</p>
         <p class="wow fadeInLeft" data-wow-delay="350ms">Design Co.,Ltd.  All Rights Reserved © 版权所有</p>
         <p class="wow fadeInLeft" data-wow-delay="400ms"><?php echo $this->_tpl_vars['site']['icp']; ?>
@@ -91,7 +91,7 @@ if ($this->_foreach['foo']['total'] > 0):
     </nav>
 </div>
 <div id="J_MobileNavBar" class="mobile-show">
-    <div id="alert-cls2" class="cls-btn"><img src="http://localhost/theme/huimutangs/images/imgs/m/close_img.png"></div>
+    <div id="alert-cls2" class="cls-btn"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/close_img.png"></div>
     <ul class="flex-column">
         <li class="">
             <a href="/">首页</a>
@@ -155,7 +155,7 @@ _1.html'><?php echo $this->_tpl_vars['item']['cat_name']; ?>
         <?php endforeach; endif; unset($_from); ?>
     </ul>   
     <div class="close-div">
-        <img src="http://localhost/theme/huimutangs/images/imgs/m/close_img.png">
+        <img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/close_img.png">
     </div>
 </div>
 <div class="m-class-btn-div2  flex-show flex-column hidden">
@@ -172,7 +172,7 @@ _1.html'><?php echo $this->_tpl_vars['item']['cat_name']; ?>
         <?php endforeach; endif; unset($_from); ?>
     </ul>
     <div class="close-div">
-        <img src="http://localhost/theme/huimutangs/images/imgs/m/close_img.png">
+        <img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/close_img.png">
     </div>
 </div>
 
@@ -182,7 +182,7 @@ _1.html'><?php echo $this->_tpl_vars['item']['cat_name']; ?>
 <?php if ($this->_tpl_vars['cases'] == 1): ?>
 <div class="right-tool fixed">
   <div class="tool-item">
-    <a class="back" href="case_1_0_1.html"><i></i></a>
+    <a class="back" href="/"><i></i></a>
         <a class="right" <?php if ($this->_tpl_vars['lifts']['previous']['id']): ?>href="case_info_<?php echo $this->_tpl_vars['lifts']['previous']['id']; ?>
 .html" <?php else: ?> href='javascript:;'<?php endif; ?>><i></i></a>
         <a class="left" <?php if ($this->_tpl_vars['lifts']['next']['id']): ?>href="case_info_<?php echo $this->_tpl_vars['lifts']['next']['id']; ?>
@@ -195,7 +195,7 @@ _1.html'><?php echo $this->_tpl_vars['item']['cat_name']; ?>
 <?php if ($this->_tpl_vars['news'] == 1): ?>
 <div class="right-tool fixed">
   <div class="tool-item">
-    <a class="back" href="news_0_1.html"><i></i></a>
+    <a class="back" href="/"><i></i></a>
         <a class="right" <?php if ($this->_tpl_vars['lifts']['previous']['id']): ?>href="news_info_<?php echo $this->_tpl_vars['lifts']['previous']['id']; ?>
 .html" <?php else: ?> href='javascript:;'<?php endif; ?>><i></i></a>
         <a class="left" <?php if ($this->_tpl_vars['lifts']['next']['id']): ?>href="news_info_<?php echo $this->_tpl_vars['lifts']['next']['id']; ?>
@@ -206,8 +206,8 @@ _1.html'><?php echo $this->_tpl_vars['item']['cat_name']; ?>
 <?php endif; ?>
 
 
-<script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/zoom.js"></script>
-<script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/tool.js"></script>
-<script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/global.js"></script>
+<script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/zoom.js"></script>
+<script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/tool.js"></script>
+<script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/global.js"></script>
 </body>
 </html>

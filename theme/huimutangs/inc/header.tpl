@@ -24,7 +24,7 @@
 <div class="header zoom-div mobile-show">
     <div class="flex-show m-title red-border">
         <div class="m-title-img-div">
-            <a class="pc-show" href="/"><img src="theme/huimutangs/images/imgs/logo-red.png" alt="{$page_title}" title="{$page_title}"></a>
+            <a class="pc-show" href="/"><img width='237px' height='87px' src="theme/huimutangs/images/imgs/logo-red.png" alt="{$page_title}" title="{$page_title}"></a>
             <a class="mobile-show" href="/"><img src="theme/huimutangs/images/imgs/m/title-img-r.png" alt="{$page_title}" title="{$page_title}"></a>
         </div>
         <div class="flex-show flex-row">
@@ -36,7 +36,7 @@
 <div class="container zoom-div">
     <header class="pc_header white flex-show flex-row pc-show">
         <div class="pc-show flex-show pc-logo wow fadeInLeft">
-            <a href="/"><img src="theme/huimutangs/images/imgs/logo-red.png" alt="{$page_title}" title="{$page_title}"></a>
+            <a href="/"><img width='237px' height='87px' src="theme/huimutangs/images/imgs/logo-red.png" alt="{$page_title}" title="{$page_title}"></a>
         </div>
         <div class="title-right wow fadeInRight">
             <div class=" flex-column flex-right pc-show flex-show">
@@ -48,7 +48,7 @@
                             <p>中国十佳最具创新力策划机构</p>
                         </div>
                         <div class="rlogo-r consult">
-                            <div><img src="theme/huimutangs/images/imgs/r_logo3.png"></div>
+                            <div><img width='106px' height='28px' src="theme/huimutangs/images/imgs/r_logo3.png"></div>
                             <div>上海银行指定供应商</div>
                         </div>
                     </div>

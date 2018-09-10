@@ -312,7 +312,7 @@
 	<dl>
        <dt>{$lang.sort}</dt>
        <dd>
-        <input type="text" name="sort_list" value="{$product.sort_list}" size="14" class="inpMain" />
+        <input type="text" name="sort_list" value="{if $product.sort_list>0}{$product.sort_list}{else}100{/if}" size="14" class="inpMain" />
        </dd>
       </dl>
 	  

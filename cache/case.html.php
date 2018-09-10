@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-09 15:56:41
+<?php /* Smarty version 2.6.26, created on 2018-09-10 12:55:44
          compiled from case.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'truncate', 'case.html', 48, false),)), $this); ?>
@@ -7,7 +7,7 @@ $this->_smarty_include(array('smarty_include_tpl_file' => 'inc/header.tpl', 'sma
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<link href="http://localhost/theme/huimutangs/images/css/case.css" rel="stylesheet">
+<link href="http://www.3e-d.com/theme/huimutangs/images/css/case.css" rel="stylesheet">
 
     <div class="bg_1">
         <div class="h-btn-div qus-color1 h-btn-l pc-show wow fadeIn">
@@ -59,7 +59,7 @@ _1.html'><?php echo $this->_tpl_vars['item']['cat_name']; ?>
                 <div><?php echo $this->_tpl_vars['item']['cat_name']; ?>
 </div>
                 <div class="btn-img-div">
-                    <img src="http://localhost/theme/huimutang/images/imgs/m/btn-d-s.png">
+                    <img src="http://www.3e-d.com/theme/huimutang/images/imgs/m/btn-d-s.png">
                 </div>
             </div>
             <?php endforeach; endif; unset($_from); ?>
@@ -103,7 +103,7 @@ if ($this->_foreach['foo']['total'] > 0):
         </div>
     </div>
     <!--<div class="btn-down-div pc-show wow fadeIn">-->
-        <!--<img src="http://localhost/theme/huimutangs/images/imgs/donw_btn.png">-->
+        <!--<img src="http://www.3e-d.com/theme/huimutangs/images/imgs/donw_btn.png">-->
     <!--</div>-->
     <!-- footer -->
   <?php $_smarty_tpl_vars = $this->_tpl_vars;
@@ -166,8 +166,8 @@ unset($_smarty_tpl_vars);
                         
                         
                     }else{
-                    $(\'#down_data\').attr(\'data-page\',e.data.page);
-                        alert(e.message);
+                    //$(\'#down_data\').attr(\'data-page\',e.data.page);
+                        
                         
                     }
             }
@@ -179,13 +179,25 @@ unset($_smarty_tpl_vars);
     // $(window).scroll(function () {
     //     add_div1()
     // });
-    $(window).scroll(function(){
-        totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
-        if(($(document).height()) <= totalheight) {
-            add_div1();
-            //$(".class-con").append(newhtml);
-        }
+    // $(window).scroll(function(){
+    //     totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
+    //     if(($(document).height()) <= totalheight+50) {
+    //         add_div1();
+    //         //$(".class-con").append(newhtml);
+    //     }
+    // });
+
+
+    $(window).scroll(function () {
+      var scrollTop = $(this).scrollTop();
+      var scrollHeight = $(document).height();
+      var windowHeight = $(this).height();
+      if (scrollTop + windowHeight == scrollHeight) {
+        add_div1();
+      }
     });
+
+
     //add_div1();
 
 //    add_div2();
@@ -194,17 +206,17 @@ unset($_smarty_tpl_vars);
         $(\'.class-con\').css("height","1385px");
         var newhtml2 = \'<div class="bg-4-c flex-show flex-row" style="visiblity:visible">\\n\' +
                 \'                <div class="bg-4-c-m  news-panel-focus" style="visiblity:visible">\\n\' +
-                \'                    <div class="bg-4m-img news-panel-focus-img"><img src="http://localhost/theme/huimutangs/images/imgs/pic3.jpg"></div>\\n\' +
+                \'                    <div class="bg-4m-img news-panel-focus-img"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/pic3.jpg"></div>\\n\' +
                 \'                    <p class="bg-4m-t1">鼓起羽绒</p>\\n\' +
                 \'                    <p class="bg-4m-t2">高端羽绒家纺领军品牌</p>\\n\' +
                 \'                </div>\\n\' +
                 \'                <div class="bg-4-c-m  news-panel-focus" style="visiblity:visible">\\n\' +
-                \'                    <div class="bg-4m-img news-panel-focus-img"><img src="http://localhost/theme/huimutangs/images/imgs/pic1.jpg"></div>\\n\' +
+                \'                    <div class="bg-4m-img news-panel-focus-img"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/pic1.jpg"></div>\\n\' +
                 \'                    <p class="bg-4m-t1">鼓起羽绒</p>\\n\' +
                 \'                    <p class="bg-4m-t2">高端羽绒家纺领军品牌</p>\\n\' +
                 \'                </div>\\n\' +
                 \'                <div class="bg-4-c-m  news-panel-focus" style="visiblity:visible">\\n\' +
-                \'                    <div class="bg-4m-img news-panel-focus"><img src="http://localhost/theme/huimutangs/images/imgs/pic2.jpg"></div>\\n\' +
+                \'                    <div class="bg-4m-img news-panel-focus"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/pic2.jpg"></div>\\n\' +
                 \'                    <p class="bg-4m-t1">鼓起羽绒</p>\\n\' +
                 \'                    <p class="bg-4m-t2">高端羽绒家纺领军品牌</p>\\n\' +
                 \'                </div>\\n\' +

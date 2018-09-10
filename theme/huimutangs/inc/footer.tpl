@@ -133,7 +133,7 @@
 {if $cases==1}
 <div class="right-tool fixed">
   <div class="tool-item">
-    <a class="back" href="case_1_0_1.html"><i></i></a>
+    <a class="back" href="/"><i></i></a>
         <a class="right" {if $lifts.previous.id}href="case_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="left" {if $lifts.next.id}href="case_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="top" href="####"><i></i></a>
@@ -144,7 +144,7 @@
 {if $news==1}
 <div class="right-tool fixed">
   <div class="tool-item">
-    <a class="back" href="news_0_1.html"><i></i></a>
+    <a class="back" href="/"><i></i></a>
         <a class="right" {if $lifts.previous.id}href="news_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="left" {if $lifts.next.id}href="news_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="top" href="#"><i></i></a>

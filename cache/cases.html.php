@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-09 19:42:04
+<?php /* Smarty version 2.6.26, created on 2018-09-10 12:55:59
          compiled from cases.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'truncate', 'cases.html', 79, false),)), $this); ?>
@@ -9,7 +9,7 @@ unset($_smarty_tpl_vars);
  ?>
 
 
-  <link href="http://localhost/theme/huimutangs/images/css/cases.css" rel="stylesheet">
+  <link href="http://www.3e-d.com/theme/huimutangs/images/css/cases.css" rel="stylesheet">
   
   <div class="case-list-special bg-col-01">
     <div class="tt-swiper case-gallery text-center">
@@ -78,7 +78,7 @@ _1.html'><?php echo $this->_tpl_vars['item']['cat_name']; ?>
   
     <div class="right-tool wap-show">
       <div class="tool-item">
-        <a class="back" href="case_1_0_1.html"><i></i></a>
+        <a class="back" href="/"><i></i></a>
         <a class="left"  <?php if ($this->_tpl_vars['lifts']['next']['id']): ?>href="case_info_<?php echo $this->_tpl_vars['lifts']['next']['id']; ?>
 .html" <?php else: ?> href='javascript:;'<?php endif; ?> ><i></i></a>
         <a class="right"<?php if ($this->_tpl_vars['lifts']['previous']['id']): ?>href="case_info_<?php echo $this->_tpl_vars['lifts']['previous']['id']; ?>
@@ -128,4 +128,4 @@ $this->_smarty_include(array('smarty_include_tpl_file' => 'inc/footer.tpl', 'sma
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-  <script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/cases.js"></script>
+  <script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/cases.js"></script>

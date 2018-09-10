@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-09 19:42:15
+<?php /* Smarty version 2.6.26, created on 2018-09-10 12:55:30
          compiled from index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'truncate', 'index.html', 349, false),)), $this); ?>
@@ -15,13 +15,13 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'truncate', 
     <!--<script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
     <script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
     <!--<link href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">-->
-    <link href="http://localhost/theme/huimutangs/images/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://localhost/theme/huimutangs/images/css/animate.min.css" rel="stylesheet">
-    <link href="http://localhost/theme/huimutangs/images/css/swiper.css" rel="stylesheet">
-    <link href="http://localhost/theme/huimutangs/images/css/style.css" rel="stylesheet">
-    <link href="http://localhost/theme/huimutangs/images/css/index.css" rel="stylesheet">
-    <link href="http://localhost/theme/huimutangs/images/css/case.css" rel="stylesheet">
-    <link href="http://localhost/theme/huimutangs/images/css/infomation.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/animate.min.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/swiper.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/style.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/index.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/case.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/infomation.css" rel="stylesheet">
     <!--[if lt IE 9]>
 
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -36,22 +36,22 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'truncate', 
     <div class="container zoom-div">
         <div class="row">
             <div class="pull-left main-header-logo hidden-sm hidden-xs">
-                <a href="/"><img src="http://localhost/theme/huimutangs/images/imgs/logo.png" alt="慧目堂" title="慧目堂"></a>
+                <a href="/"><img width='237px' height='88px' src="http://www.3e-d.com/theme/huimutangs/images/imgs/logo.png" alt="慧目堂" title="慧目堂"></a>
             </div>
 
             <div class="pull-left main-header-logo-mobile hidden-lg hidden-md">
-                <a href="/" class="flex"><img src="http://localhost/theme/huimutangs/images/imgs/logov.png" alt="慧目堂" title="慧目堂"><img class="m-logotxt"
-                src="http://localhost/theme/huimutangs/images/imgs/m/title-img-rw.png"></a>
+                <a href="/" class="flex"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/logov.png" alt="慧目堂" title="慧目堂"><img class="m-logotxt"
+                src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/title-img-rw.png"></a>
             </div>
             <div class="pull-right main-header-right">
                 <div class="pull-right main-header-extra ">
                     <div class="mobile-toggle hidden-lg">
                         <span><a href="tel:<?php echo $this->_tpl_vars['site']['tel']; ?>
-"><img src="http://localhost/theme/huimutangs/images/imgs/phone.png" alt=""></a></span>
-                        <span id="J_MobileNavTrigger"><img src="http://localhost/theme/huimutangs/images/imgs/burger.png" alt=""></span>
+"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/phone.png" alt=""></a></span>
+                        <span id="J_MobileNavTrigger"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/burger.png" alt=""></span>
                     </div>
                     <div class="pull-right hidden-md hidden-sm hidden-xs">
-                        <div class="hhbank"><img src="http://localhost/theme/huimutangs/images/imgs/h_right.png"></div>
+                        <div class="hhbank"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/h_right.png"></div>
                         <nav class="hidden-md hidden-sm hidden-xs nav">
                             <div class="row">
                                 <div class="main-header-nav">
@@ -96,36 +96,36 @@ if ($this->_foreach['foo']['total'] > 0):
 
 </header>
 <div class="container zoom-div">
-    <div class="body-img"><img src="http://localhost/theme/huimutangs/images/imgs/m/body-img.jpg"></div>
+    <div class="body-img"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/body-img.jpg"></div>
     <div class="content" id="head-top">
         <header class="main-header pc-header">
             <div class="container">
                 <div class="row">
                     <div class="pull-left main-header-logo hidden-sm hidden-xs">
-                        <a href="/"><img src="http://localhost/theme/huimutangs/images/imgs/logo.png" alt="慧目堂" title="慧目堂"></a>
+                        <a href="/"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/logo.png" alt="慧目堂" title="慧目堂"></a>
                     </div>
 
                     <div class="pull-left main-header-logo-mobile hidden-lg hidden-md wow fadeInLeft"
                          data-wow-delay="3000ms">
-                        <a href="/" class="flex"><img src="http://localhost/theme/huimutangs/images/imgs/logov.png" alt="慧目堂" title="慧目堂"><img class="m-logotxt"
-                        src="http://localhost/theme/huimutangs/images/imgs/m/logotxt.png"></a>
+                        <a href="/" class="flex"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/logov.png" alt="慧目堂" title="慧目堂"><img class="m-logotxt"
+                        src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/logotxt.png"></a>
                     </div>
                     <div class="pull-right main-header-right">
                         <div class="pull-right main-header-extra wow fadeInRight" data-wow-delay="100ms">
                             <div class="mobile-toggle hidden-lg">
-                                <span><a href="tel:02158878218"><img src="http://localhost/theme/huimutangs/images/imgs/phone.png" alt=""></a></span>
-                                <span id="J_MobileNavTrigger2"><img src="http://localhost/theme/huimutangs/images/imgs/burger.png" alt=""></span>
+                                <span><a href="tel:02158878218"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/phone.png" alt=""></a></span>
+                                <span id="J_MobileNavTrigger2"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/burger.png" alt=""></span>
                             </div>
                             <div class="pull-right hidden-md hidden-sm hidden-xs">
                                 <div class="hhbank">
-                                    <!--<img src="http://localhost/theme/huimutangs/images/imgs/h_right.png">-->
+                                    <!--<img src="http://www.3e-d.com/theme/huimutangs/images/imgs/h_right.png">-->
                                     <div class="pc-r-logo">
                                         <div class="rlogo-l">
                                             <p>中法国际合作</p>
                                             <p>中国十佳最具创新力策划机构</p>
                                         </div>
                                         <div class="rlogo-r">
-                                            <div><img src="http://localhost/theme/huimutangs/images/imgs/r_logo2.png"></div>
+                                            <div><img width='105px' height='28px' src="http://www.3e-d.com/theme/huimutangs/images/imgs/r_logo2.png"></div>
                                             <div>上海银行指定供应商</div>
                                         </div>
                                     </div>
@@ -191,7 +191,7 @@ if ($this->_foreach['foo']['total'] > 0):
                         <div class="content-wrap inner title-l-div">
                             <div class="img_div_pc"><img src="<?php echo $this->_tpl_vars['item']['show_img']; ?>
 "></div>
-                            <!--<div class="img_div_m"><img src="http://localhost/theme/huimutangs/images/imgs/m/m_r_b.jpg"></div>-->
+                            <!--<div class="img_div_m"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/m_r_b.jpg"></div>-->
                             <div class="w-p hidden w-p-l">
                                 <p class="ani rl-e1"><?php echo $this->_tpl_vars['item']['show_name']; ?>
 </p>
@@ -215,7 +215,7 @@ if ($this->_foreach['foo']['total'] > 0):
                         <div class="content-wrap inner title-m-div">
                             <div class="img_div_pc"><img src="<?php echo $this->_tpl_vars['item']['show_img']; ?>
 "></div>
-                            <!--<div class="img_div_m"><img src="http://localhost/theme/huimutangs/images/imgs/m/bg-m-1.jpg"></div>-->
+                            <!--<div class="img_div_m"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/bg-m-1.jpg"></div>-->
                             <div class="w-p w-p-m">
                                 <p class="ani wow fadeInUp e1" data-wow-duration="1s" data-wow-delay="0s" ><?php echo $this->_tpl_vars['item']['show_name']; ?>
 </p>
@@ -240,7 +240,7 @@ if ($this->_foreach['foo']['total'] > 0):
                         <div class="content-wrap inner title-r-div">
                             <div class="img_div_pc"><img src="<?php echo $this->_tpl_vars['item']['show_img']; ?>
 "></div>
-                            <!--<div class="img_div_m"><img src="http://localhost/theme/huimutangs/images/imgs/m/m_r_b.jpg"></div>-->
+                            <!--<div class="img_div_m"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/m_r_b.jpg"></div>-->
                             <div class="w-p hidden w-p-r">
                                 <p class="ani rl-e1"><?php echo $this->_tpl_vars['item']['show_name']; ?>
 </p>
@@ -430,8 +430,8 @@ if ($this->_foreach['foo']['total'] > 0):
                 <div class="swp2 swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
             </div>
             <!-- Add Arrows -->
-            <div class="sw2_r"><img src="http://localhost/theme/huimutangs/images/imgs/gray_r.png"></div>
-            <div class="sw2_l"><img src="http://localhost/theme/huimutangs/images/imgs/gray_l.png"></div>
+            <div class="sw2_r"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/gray_r.png"></div>
+            <div class="sw2_l"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/gray_l.png"></div>
         </div>
     </div>
     <!-- three page -->
@@ -478,7 +478,7 @@ if ($this->_foreach['foo']['total'] > 0):
                                                         <div class="news-panel-list-text">
                                                             <h2><?php echo $this->_tpl_vars['site']['index_company_profile_title']; ?>
 </h2>
-                                                            <p><?php echo ((is_array($_tmp=$this->_tpl_vars['site']['index_company_profile_content'])) ? $this->_run_mod_handler('truncate', true, $_tmp, 130) : smarty_modifier_truncate($_tmp, 130)); ?>
+                                                            <p><?php echo ((is_array($_tmp=$this->_tpl_vars['site']['index_company_profile_content'])) ? $this->_run_mod_handler('truncate', true, $_tmp, 180) : smarty_modifier_truncate($_tmp, 180)); ?>
 </p>
                                                         </div>
                                                     </div>
@@ -511,7 +511,7 @@ if ($this->_foreach['foo']['total'] > 0):
                     <div class="item-list clearfix">
 
                         <div class="num1 wow" data-wow-delay="300ms">
-                            <div class="item-list-img"><img src="http://localhost/theme/huimutangs/images/imgs/no1.png" alt=""></div>
+                            <div class="item-list-img"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/no1.png" alt=""></div>
                         </div>
                         <a href="hmt.html">
                             <div class="pinpai-txt col-xs-6 pull-left wow fadeInLeft" data-wow-delay="200ms">
@@ -549,7 +549,7 @@ if ($this->_foreach['foo']['total'] > 0):
                         <div class="news-panel clearfix">
                             <div class="absolute-r wow fadeInRight" data-wow-delay="200ms">
                                 <div class="pull-left boss">
-                                    <img src="http://localhost/theme/huimutangs/images/imgs/boss.png">
+                                    <img src="http://www.3e-d.com/theme/huimutangs/images/imgs/boss.png">
                                 </div>
                                 <div class="boss-txt">
                                     <p>慧目堂创始人</p>
@@ -606,7 +606,7 @@ if ($this->_foreach['foo']['total'] > 0):
                         <div class="bg-4m-img news-panel-focus-img"><img src="<?php echo $this->_tpl_vars['item']['image']; ?>
 "></div>
                         <div class="hn-w-b">
-                            <p class="bg-4m-t1"><?php echo ((is_array($_tmp=$this->_tpl_vars['item']['title'])) ? $this->_run_mod_handler('truncate', true, $_tmp, 12, "") : smarty_modifier_truncate($_tmp, 12, "")); ?>
+                            <p class="bg-4m-t1"><?php echo ((is_array($_tmp=$this->_tpl_vars['item']['title'])) ? $this->_run_mod_handler('truncate', true, $_tmp, 12) : smarty_modifier_truncate($_tmp, 12)); ?>
 </p>
                             <p class="bg-4m-t2"><?php echo ((is_array($_tmp=$this->_tpl_vars['item']['description'])) ? $this->_run_mod_handler('truncate', true, $_tmp, 100) : smarty_modifier_truncate($_tmp, 100)); ?>
 </p>
@@ -669,7 +669,7 @@ if ($this->_foreach['foo']['total'] > 0):
     <div class="content bg-col-07">
         <div class="tel-div">
             <div class="tel-1">
-                <div class="tel-1-s wow fadeInLeft"><img src="http://localhost/theme/huimutangs/images/imgs/m/s2.png"></div>
+                <div class="tel-1-s wow fadeInLeft"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/s2.png"></div>
                 <div class="tel-t wow fadeInRight">
                     <div class="tel-name">客户咨询</div>
                     <div class="tel-num"><?php echo $this->_tpl_vars['site']['tel']; ?>
@@ -677,7 +677,7 @@ if ($this->_foreach['foo']['total'] > 0):
                 </div>
             </div>
             <div class="tel-2">
-                <div class="tel-1-s wow fadeInLeft" data-wow-delay="100ms"><img src="http://localhost/theme/huimutangs/images/imgs/m/s1.png"></div>
+                <div class="tel-1-s wow fadeInLeft" data-wow-delay="100ms"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/s1.png"></div>
                 <div class="tel-t wow fadeInRight" data-wow-delay="100ms">
                     <div class="tel-name">客户咨询</div>
                     <div class="tel-num"><?php echo $this->_tpl_vars['site']['tel_commerce']; ?>
@@ -686,7 +686,7 @@ if ($this->_foreach['foo']['total'] > 0):
             </div>
         </div>
         <div class="er-div wow fadeInUp" data-wow-delay="200ms">
-            <img src="http://localhost/theme/huimutangs/images/imgs/m/ew.png">
+            <img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/ew.png">
         </div>
         <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'inc/input_post.tpl', 'smarty_include_vars' => array()));
@@ -777,7 +777,7 @@ if ($this->_foreach['foo']['total'] > 0):
 
                 <div class="row footer-r wow fadeInRight">
                     <p class="hidden-lg hidden-md"></p>
-                    <div><img src="http://localhost/theme/huimutangs/images/imgs/pc_qm.png"></div>
+                    <div><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/pc_qm.png"></div>
                     <p>Copyright 2004-2017 Shanghai Three Eyes Art Design Co.,Ltd. All Rights Reserved</p>
                     <p>版权所有 <?php echo $this->_tpl_vars['site']['icp']; ?>
  沪公网安备 31011202002497</p>
@@ -787,9 +787,9 @@ if ($this->_foreach['foo']['total'] > 0):
     </nav>
 
     <nav class="m-footer-nav">
-        <div class="wow fadeInLeft"><img src="http://localhost/theme/huimutangs/images/imgs/m/b-tit-img.png"></div>
-        <div class="wow fadeInLeft" data-wow-delay="100ms"><img src="http://localhost/theme/huimutangs/images/imgs/m/b-img2.png"></div>
-        <div class="wow fadeInRight" data-wow-delay="200ms"><img src="http://localhost/theme/huimutangs/images/imgs/m/qianming.png"></div>
+        <div class="wow fadeInLeft"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/b-tit-img.png"></div>
+        <div class="wow fadeInLeft" data-wow-delay="100ms"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/b-img2.png"></div>
+        <div class="wow fadeInRight" data-wow-delay="200ms"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/qianming.png"></div>
         <p class="wow fadeInLeft" data-wow-delay="300ms">Copyright © 2004-2018 Shanghai Three Eyes Art</p>
         <p class="wow fadeInLeft" data-wow-delay="350ms">Design Co.,Ltd. All Rights Reserved © 版权所有</p>
         <p class="wow fadeInLeft" data-wow-delay="400ms"><?php echo $this->_tpl_vars['site']['icp']; ?>
@@ -807,7 +807,7 @@ if ($this->_foreach['foo']['total'] > 0):
                 <p>扫一扫关注</p>
                 <p>慧目堂微信公众号</p>
                 <div style="margin-top: 8px;">
-                    <img src="http://localhost/theme/huimutangs/images/imgs/ewm.jpg">
+                    <img src="http://www.3e-d.com/theme/huimutangs/images/imgs/ewm.jpg">
                 </div>
             </div>
         </div>
@@ -865,13 +865,13 @@ if ($this->_foreach['foo']['total'] > 0):
         
         <?php endforeach; endif; unset($_from); ?>
     </ul>
-    <div id="alert-cls" class="cls-btn"><img src="http://localhost/theme/huimutangs/images/imgs/m/close_img.png"></div>
+    <div id="alert-cls" class="cls-btn"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/close_img.png"></div>
 </div>
-<script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/wow.js"></script>
-<script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/zoom.js"></script>
-<script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/tool.js"></script>
-<script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/index.js"></script>
-<script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/global.js?03"></script>
+<script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/wow.js"></script>
+<script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/zoom.js"></script>
+<script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/tool.js"></script>
+<script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/index.js"></script>
+<script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/global.js?03"></script>
 
 <script type="text/javascript">
 <?php echo '

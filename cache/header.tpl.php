@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-09 17:05:12
+<?php /* Smarty version 2.6.26, created on 2018-09-10 12:55:44
          compiled from inc/header.tpl */ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -16,49 +16,49 @@
     <script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
     <?php endif; ?>
     
-    <script type="text/javascript" src="http://localhost/theme/huimutangs/images/js/wow.js"></script>
-    <link href="http://localhost/theme/huimutangs/images/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://localhost/theme/huimutangs/images/css/animate.min.css" rel="stylesheet">
-    <link href="http://localhost/theme/huimutangs/images/css/swiper.css" rel="stylesheet">
-    <link href="http://localhost/theme/huimutangs/images/css/tool.css" rel="stylesheet">
+    <script type="text/javascript" src="http://www.3e-d.com/theme/huimutangs/images/js/wow.js"></script>
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/animate.min.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/swiper.css" rel="stylesheet">
+    <link href="http://www.3e-d.com/theme/huimutangs/images/css/tool.css" rel="stylesheet">
     
 </head>
 <body>
 <div class="header zoom-div mobile-show">
     <div class="flex-show m-title red-border">
         <div class="m-title-img-div">
-            <a class="pc-show" href="/"><img src="http://localhost/theme/huimutangs/images/imgs/logo-red.png" alt="<?php echo $this->_tpl_vars['page_title']; ?>
+            <a class="pc-show" href="/"><img width='237px' height='87px' src="http://www.3e-d.com/theme/huimutangs/images/imgs/logo-red.png" alt="<?php echo $this->_tpl_vars['page_title']; ?>
 " title="<?php echo $this->_tpl_vars['page_title']; ?>
 "></a>
-            <a class="mobile-show" href="/"><img src="http://localhost/theme/huimutangs/images/imgs/m/title-img-r.png" alt="<?php echo $this->_tpl_vars['page_title']; ?>
+            <a class="mobile-show" href="/"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/title-img-r.png" alt="<?php echo $this->_tpl_vars['page_title']; ?>
 " title="<?php echo $this->_tpl_vars['page_title']; ?>
 "></a>
         </div>
         <div class="flex-show flex-row">
             <span><a href="tel:<?php echo $this->_tpl_vars['site']['tel']; ?>
-"><img src="http://localhost/theme/huimutangs/images/imgs/phone_red.png" alt=""></a></span>
-            <span id="J_MobileNavTrigger3"><img src="http://localhost/theme/huimutangs/images/imgs/burger_red.png" alt=""></span>
+"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/phone_red.png" alt=""></a></span>
+            <span id="J_MobileNavTrigger3"><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/burger_red.png" alt=""></span>
         </div>
     </div>
 </div>
 <div class="container zoom-div">
     <header class="pc_header white flex-show flex-row pc-show">
         <div class="pc-show flex-show pc-logo wow fadeInLeft">
-            <a href="/"><img src="http://localhost/theme/huimutangs/images/imgs/logo-red.png" alt="<?php echo $this->_tpl_vars['page_title']; ?>
+            <a href="/"><img width='237px' height='87px' src="http://www.3e-d.com/theme/huimutangs/images/imgs/logo-red.png" alt="<?php echo $this->_tpl_vars['page_title']; ?>
 " title="<?php echo $this->_tpl_vars['page_title']; ?>
 "></a>
         </div>
         <div class="title-right wow fadeInRight">
             <div class=" flex-column flex-right pc-show flex-show">
                 <div class="pc-logo-right">
-                    <!--<img src="http://localhost/theme/huimutangs/images/imgs/h_right_red.png">-->
+                    <!--<img src="http://www.3e-d.com/theme/huimutangs/images/imgs/h_right_red.png">-->
                     <div class="pc-r-logo black">
                         <div class="rlogo-l">
                             <p>中法国际合作</p>
                             <p>中国十佳最具创新力策划机构</p>
                         </div>
                         <div class="rlogo-r consult">
-                            <div><img src="http://localhost/theme/huimutangs/images/imgs/r_logo3.png"></div>
+                            <div><img width='106px' height='28px' src="http://www.3e-d.com/theme/huimutangs/images/imgs/r_logo3.png"></div>
                             <div>上海银行指定供应商</div>
                         </div>
                     </div>
