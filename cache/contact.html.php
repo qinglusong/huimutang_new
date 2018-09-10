@@ -1,18 +1,18 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-09 13:58:40
+<?php /* Smarty version 2.6.26, created on 2018-09-10 15:58:07
          compiled from contact.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'inc/header.tpl', 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<link href="http://localhost/theme/huimutangs/images/css/container.css" rel="stylesheet">
+<link href="http://www.3e-d.com/theme/huimutangs/images/css/container.css" rel="stylesheet">
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=m9NbZNsf9dK0p87DgDYDDHWr"></script>
     <div class="bg_01">
         <p class="bg1-t1 wow fadeInDown">联系我们</p>
         <p class="bg1-t2 wow fadeInDown">CONTACT US</p>
         <div class="bg1-con flex-show flex-show flex-wrap wow fadeInUp">
             <div class="flex-show flex-row">
-                <div><img src="http://localhost/theme/huimutangs/images/imgs/s1_b.png"></div>
+                <div><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/s1_b.png"></div>
                 <div class="flex-show flex-column bg4-txt">
                     <p>客户咨询：</p>
                     <p><?php echo $this->_tpl_vars['site']['tel']; ?>
@@ -20,7 +20,7 @@ unset($_smarty_tpl_vars);
                 </div>
             </div>
             <div class="flex-show flex-row">
-                <div><img src="http://localhost/theme/huimutangs/images/imgs/s2_b.png"></div>
+                <div><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/s2_b.png"></div>
                 <div class="flex-show flex-column bg4-txt">
                     <p>供应合作：</p>
                     <p><?php echo $this->_tpl_vars['site']['tel_commerce']; ?>
@@ -28,10 +28,10 @@ unset($_smarty_tpl_vars);
                 </div>
             </div>
             <div class="flex-show flex-row">
-                <div><img src="http://localhost/theme/huimutangs/images/imgs/s3_b.png"></div>
+                <div><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/s3_b.png"></div>
                 <div class="flex-show flex-column bg4-txt">
                     <p>公司招聘：</p>
-                    <p style='cursor:pointer;' onclick='location.href="http://www.3e-d.com/pages_6.html";'>招聘岗位查询>>></p>
+                    <p style='cursor:pointer;' onclick='location.href="pages_6.html";'>招聘岗位查询>>></p>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ unset($_smarty_tpl_vars);
         <div class="bg2-d1 pc-show wow fadeInLeft">
             <div class="er-div wow fadeInUp" data-wow-delay="200ms">
                 <p>关注慧目堂微信公众号</p>
-                <img src="http://localhost/theme/huimutangs/images/imgs/m/ew-b.jpg">
+                <img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/ew-b.jpg">
             </div>
             <p><span class="m-1">地址：</span><span class="m-2"><?php echo $this->_tpl_vars['site']['site_address']; ?>
 </span></p>
@@ -61,27 +61,27 @@ unset($_smarty_tpl_vars);
             <div class="input-div">
                 <div class="input-d1 ">
                     <div class="input-name"><span>*</span>企业名称 :</div>
-                    <input name='company_name' id='company_name' />
+                    <input name='company_names' id='company_names' />
                 </div>
                 <div class="input-d1">
                     <div class="input-name"><span>*</span>联系人 :</div>
-                    <input name='linkman' id='linkman' />
+                    <input name='linkmans' id='linkmans' />
                 </div>
                 <div class="input-d1">
                     <div class="input-name"><span>*</span>电话 :</div>
-                    <input name='tel' id='tel' />
+                    <input name='tels' id='tels' />
                 </div>
                 <div class="input-d1">
                     <div class="input-name">项目预算 :</div>
-                    <input name='yusuan' id='yusuan' />
+                    <input name='yusuans' id='yusuans' />
                 </div>
                 <div class="input-d1">
                     <div class="input-name">项目概述 :</div>
-                    <input name='project_desc' id='project_desc' />
+                    <input name='project_descs' id='project_descs' />
                     <!--<textarea placeholder="请输入"></textarea>-->
                 </div>
 
-                <div onclick="post_datas();" class="l-bnt" >请联系我</div>
+                <div onclick="post_datass();" class="l-bnt" >请联系我</div>
             </div>
         </div>
         <div class="bg-d3-m mobile-show">
@@ -103,7 +103,7 @@ unset($_smarty_tpl_vars);
 
     <div class="bg-col-07 mobile-show">
         <div class="er-div wow fadeInUp" data-wow-delay="200ms">
-            <img src="http://localhost/theme/huimutangs/images/imgs/m/ew.png">
+            <img src="http://www.3e-d.com/theme/huimutangs/images/imgs/m/ew.png">
         </div>
         <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'inc/input_post.tpl', 'smarty_include_vars' => array()));
@@ -116,9 +116,9 @@ unset($_smarty_tpl_vars);
         <h1>虹桥世界中心</h1>
         <p>Hongqiao World Centre</p>
         <div class="hq-img-div flex-show flex-row flex-wrap">
-            <div><img src="http://localhost/theme/huimutangs/images/imgs/hq1.jpg"></div>
-            <div><img src="http://localhost/theme/huimutangs/images/imgs/hq2.jpg"></div>
-            <div><img src="http://localhost/theme/huimutangs/images/imgs/hq3.jpg"></div>
+            <div><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/hq1.jpg"></div>
+            <div><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/hq2.jpg"></div>
+            <div><img src="http://www.3e-d.com/theme/huimutangs/images/imgs/hq3.jpg"></div>
         </div>
     </div>
 
@@ -244,6 +244,30 @@ unset($_smarty_tpl_vars);
     var tel = $(\'#tel\').val();
     var yusuan = $(\'#yusuan\').val();
     var project_desc = $(\'#project_desc\').val();
+    $.ajax({
+            //\'async\' : false,// 使用同步的Ajax请求
+            type : "post",
+            url : \'post_data.php\',
+            dataType : "json",
+            data : {company_name:company_name,linkman:linkman,tel:tel,yusuan:yusuan,project_desc:project_desc},
+            success : function(e){
+                    if(e.code==200){
+                        alert(e.msg);
+                    }else{
+
+                        alert(e.msg);
+                    }
+            }
+        });
+
+}
+
+    function post_datass(){
+    var company_name = $(\'#company_names\').val();
+    var linkman = $(\'#linkmans\').val();
+    var tel = $(\'#tels\').val();
+    var yusuan = $(\'#yusuans\').val();
+    var project_desc = $(\'#project_descs\').val();
     $.ajax({
             //\'async\' : false,// 使用同步的Ajax请求
             type : "post",

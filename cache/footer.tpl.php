@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-10 12:55:44
+<?php /* Smarty version 2.6.26, created on 2018-09-10 17:44:56
          compiled from inc/footer.tpl */ ?>
    <div class="footer-nav flex-column pc-show flex-show">
         <div class="footer-div1 wow fadeInRight">
@@ -180,7 +180,7 @@ _1.html'><?php echo $this->_tpl_vars['item']['cat_name']; ?>
 <?php endif; ?>
 
 <?php if ($this->_tpl_vars['cases'] == 1): ?>
-<div class="right-tool fixed">
+<div class="right-tool fixed pc-show">
   <div class="tool-item">
     <a class="back" href="/"><i></i></a>
         <a class="right" <?php if ($this->_tpl_vars['lifts']['previous']['id']): ?>href="case_info_<?php echo $this->_tpl_vars['lifts']['previous']['id']; ?>

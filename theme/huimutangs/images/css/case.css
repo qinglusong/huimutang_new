@@ -22,11 +22,11 @@
     transform: scale(1.1);
 }
 
-.bg_1 .ul-div{width: 1270px;font-size: 18px;padding: 0px;margin: auto auto}
+.bg_1 .ul-div{width: 1570px;font-size: 18px;padding: 0px;margin: auto auto}
 .bg_1 .ul-div ul{flex-wrap: wrap;line-height: 60px}
-.bg_1 ul li>a{display:block;width: 200px;color:#aaaaab;}
+.bg_1 ul li>a{display:block;color:#aaaaab;}
 .bg_1 ul li .active{color: #ff5d3d;font-weight: 800}
-
+.bg_1 ul li{margin: 0px auto;}
 .class-con{margin-top: 60px;overflow-y: auto;overflow-x: hidden}
 .class-con .bg-4-c{display: flex;margin-bottom: 15px;justify-content:center;}
 
@@ -65,5 +65,3 @@
 }
 
 .bg_1 ul li>a:hover{color: #ff5a00!important;font-weight: bold}
-
-

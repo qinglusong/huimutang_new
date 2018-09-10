@@ -250,7 +250,7 @@ $_LANG['mail_port'] = '服务器端口';
 $_LANG['mail_ssl'] = '是否使用SSL安全协议';
 $_LANG['mail_username'] = '发件邮箱';
 $_LANG['mail_password'] = '发件邮箱密码';
-
+$_LANG['email_shoujianren'] = '接收客户信息邮箱(英文逗号分隔)';
 // 系统设置提示
 $_LANG['rewrite_cue'] = '需要Rewrite支持，启用前请重命名根目录和"' . M_PATH . '"目录下 "d%.txt" 文件为 "d%"，';
 $_LANG['rewrite_cue_nginx'] = 'URL重写需要Rewrite支持，在启用前请将根目录下 "nginx.txt" 里的伪静态规则添加至您的Nginx服务器，';

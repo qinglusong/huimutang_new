@@ -131,7 +131,7 @@
 {/if}
 
 {if $cases==1}
-<div class="right-tool fixed">
+<div class="right-tool fixed pc-show">
   <div class="tool-item">
     <a class="back" href="/"><i></i></a>
         <a class="right" {if $lifts.previous.id}href="case_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>

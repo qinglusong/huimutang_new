@@ -2,67 +2,87 @@
 
 
   <link href="theme/huimutangs/images/css/cases.css" rel="stylesheet">
-  
-  <div class="case-list-special bg-col-01">
-    <div class="tt-swiper case-gallery text-center">
-      <!-- Swiper -->
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
+    
 
+  <div class="case-gallery">
+        <div class="pc-show case-list-special bg-col-01 swiper-container">
+            <div class="swiper-wrapper">
 
-          {foreach from=$product.img_pc_list item=item key=key name=foo}
-          <div class="swiper-slide">
-            <img src="{$item.show_img}" alt="" /></a>
-            <div class="layer-mask"></div>
-          </div>
-        {/foreach}
-
-
-        </div>
-      </div>
-      
-      <!-- Add Pagination -->
-      <div class="swiper-pagination hide"></div>
-      <!-- Add Arrows -->
-      <div class="swiper-button-next swiper-button-red"></div>
-      <div class="swiper-button-prev swiper-button-red"></div>
-    </div>
-  </div>
-  
-  
-  <div class="content bg-col-00">
-    <div class="container">
-      <div class="row">
-        <div class="content-wrap">
-          
-          <div class="tt-swiper case-list">
-            <!-- Swiper -->
+                {foreach from=$product.img_pc_list item=item key=key name=foo}
                 <div class="swiper-slide">
-                  <div class="en-title">{$product.en_name}</div>
-                  <h2>{$product.name}</h2>
-                  <div class="clearfix"></div>
-                  <h3>{$product.price}</h3>
-                  <p class="subtitle">{foreach from=$product_cate_list item=item}<a href='case_{$item.parent_id}_{$item.cat_id}_1.html'>{$item.cat_name}</a>&nbsp;{/foreach}</p>
-                  <div class="title-top"><p class="tip pc-share"><span>分享</span></p></div>
-                  <div class="description">
-                    {$product.content}
-                  </div>
+                    <div class="img_div_pc"><img src="{$item.show_img}">
+                      <div class="layer-mask"></div>
+                    </div>
                 </div>
-          </div>
-        
+                {/foreach}
+
+
+
+            </div>
+            
+             Add Arrows
+            <div class="swiper-button-next swiper-button-red"></div>
+            <div class="swiper-button-prev swiper-button-red"></div>
+            <!--</div>-->
         </div>
-      </div>
+
+        <div class="mobile-show swiper-container">
+            <div class="swiper-wrapper">
+              {foreach from=$product.img_wap_list item=item key=key name=foo}
+                <div class="swiper-slide">
+                    <div class=""><img src="{$item.show_img}"></div>
+                </div>
+               {/foreach}
+
+
+            </div>
+            <div class="swiper-button-next swiper-button-red"></div>
+            <div class="swiper-button-prev swiper-button-red"></div>
+        </div>
     </div>
+
+    <div class="content bg-col-00">
+        <div class="container">
+            <div class="row">
+                <div class="content-wrap">
+
+                    <div class="tt-swiper case-list">
+                    <!-- Swiper -->
+                        <div class="swiper-slide">
+                          <div class="en-title">{$product.en_name}</div>
+                          <h2>{$product.name}</h2>
+                          <div class="clearfix"></div>
+                          <h3>{$product.price}</h3>
+                          <p class="subtitle">{foreach from=$product_cate_list item=item}<a href='case_{$item.parent_id}_{$item.cat_id}_1.html'>{$item.cat_name}</a>&nbsp;{/foreach}</p>
+                          <div class="title-top"><p class="tip pc-share"><span>分享</span></p></div>
+                          <div class="description">
+                            {$product.content}
+                          </div>
+                        </div>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="right-tool mobile-show">
+            <div class="tool-item">
+                <a class="back" href="/"><i></i></a>
+        <a class="right" {if $lifts.previous.id}href="case_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
+        <a class="left" {if $lifts.next.id}href="case_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
+        <a class="top" href="####"><i></i></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
   
-    <div class="right-tool wap-show">
-      <div class="tool-item">
-        <a class="back" href="/"><i></i></a>
-        <a class="left"  {if $lifts.next.id}href="case_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if} ><i></i></a>
-        <a class="right"{if $lifts.previous.id}href="case_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
-        <a class="top" href="#"><i></i></a>
-      </div>
-    </div>
-  </div>
   <div class="content bg-3">
     <div class="section-title wow fadeInUp" data-wow-delay="100ms">
       <h2>相关案例</h2>

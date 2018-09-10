@@ -96,8 +96,8 @@ titlebanner.el.onmouseout=function(){
 
 var homeCase = new Swiper('.home-case .swiper-container', {
     navigation: {
-        nextEl: '.home-case .sw2_l',
-        prevEl: '.home-case .sw2_r',
+        nextEl: '.home-case .sw2_r',
+        prevEl: '.home-case .sw2_l',
     },
     pagination: {
         el: '.swp2',

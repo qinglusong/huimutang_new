@@ -83,7 +83,7 @@
 
 
 
-                <div class="swiper-slide">
+                <div {if $item.show_link!=''}onclick="location.href='{$item.show_link}'"{/if} class="swiper-slide">
                     <img class="pc-show" src="{$item.show_img}">
                     <div class="w-p {if $item.style_banner==2}w-p-l {/if} {if $item.style_banner==3}w-p-r {/if} {if $item.style_banner==1}w-p-m{/if}">
                         <p class="rl-e1 pc-show ani wow fadeInUp">{$item.show_name}</p>
@@ -114,7 +114,7 @@
 
 
 
-                <div class="swiper-slide">
+                <div {if $item.show_link!=''}onclick="location.href='{$item.show_link}'"{/if} class="swiper-slide">
                     <img class="mobile-show" src="theme/huimutangs/images/imgs/m/consult-t.jpg">
                     <div class="w-p {if $item.style_banner==2}w-p-l {/if} {if $item.style_banner==3}w-p-r {/if} {if $item.style_banner==1}w-p-m{/if}">
                     <p class="m-rl-e1 mobile-show">{$item.show_name}</p>

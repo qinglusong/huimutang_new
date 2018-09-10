@@ -47,27 +47,27 @@
             <div class="input-div">
                 <div class="input-d1 ">
                     <div class="input-name"><span>*</span>企业名称 :</div>
-                    <input name='company_name' id='company_name' />
+                    <input name='company_names' id='company_names' />
                 </div>
                 <div class="input-d1">
                     <div class="input-name"><span>*</span>联系人 :</div>
-                    <input name='linkman' id='linkman' />
+                    <input name='linkmans' id='linkmans' />
                 </div>
                 <div class="input-d1">
                     <div class="input-name"><span>*</span>电话 :</div>
-                    <input name='tel' id='tel' />
+                    <input name='tels' id='tels' />
                 </div>
                 <div class="input-d1">
                     <div class="input-name">项目预算 :</div>
-                    <input name='yusuan' id='yusuan' />
+                    <input name='yusuans' id='yusuans' />
                 </div>
                 <div class="input-d1">
                     <div class="input-name">项目概述 :</div>
-                    <input name='project_desc' id='project_desc' />
+                    <input name='project_descs' id='project_descs' />
                     <!--<textarea placeholder="请输入"></textarea>-->
                 </div>
 
-                <div onclick="post_datas();" class="l-bnt" >请联系我</div>
+                <div onclick="post_datass();" class="l-bnt" >请联系我</div>
             </div>
         </div>
         <div class="bg-d3-m mobile-show">
@@ -217,6 +217,30 @@
     var tel = $('#tel').val();
     var yusuan = $('#yusuan').val();
     var project_desc = $('#project_desc').val();
+    $.ajax({
+            //'async' : false,// 使用同步的Ajax请求
+            type : "post",
+            url : 'post_data.php',
+            dataType : "json",
+            data : {company_name:company_name,linkman:linkman,tel:tel,yusuan:yusuan,project_desc:project_desc},
+            success : function(e){
+                    if(e.code==200){
+                        alert(e.msg);
+                    }else{
+
+                        alert(e.msg);
+                    }
+            }
+        });
+
+}
+
+    function post_datass(){
+    var company_name = $('#company_names').val();
+    var linkman = $('#linkmans').val();
+    var tel = $('#tels').val();
+    var yusuan = $('#yusuans').val();
+    var project_desc = $('#project_descs').val();
     $.ajax({
             //'async' : false,// 使用同步的Ajax请求
             type : "post",

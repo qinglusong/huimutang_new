@@ -57,6 +57,20 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$query = $dou->query($sql);
 		if($query){
 			setcookie("hmtcookie-".$postData['tel'], 1, time()+60);//一分钟
+
+			$bodys = "";
+			$bodys .="<h2>企业名称：</h2>".$postData['company_name'];
+			$bodys .="<h2>联系人：</h2>".$postData['linkman'];
+			$bodys .="<h2>电话：</h2>".$postData['tel'];
+			$bodys .="<h2>预算：</h2>".$postData['yusuan'];
+			$bodys .="<h2>描述：</h2>".$postData['project_desc'];
+			$shoujianren = explode(',',$_CFG['email_shoujianren']);
+			//print_r($shoujianren);exit;
+			foreach($shoujianren as $k=>$v){
+				$dou->send_mail($v, '慧目堂客户联系信息', $bodys);
+			}
+			
+			//send_mails($_CFG['email_shoujianren'],$bodys);
 			echo  json_encode(outArray(200,'成功'));
 			exit;
 		}else{
@@ -119,6 +133,28 @@ function get_remote_ip(){
 	function outArray($code, $msg='', $data=array()){
 		$code = intval($code);
 		return array('code'=>$code, 'msg'=>$msg, 'data'=>$data);
+	}
+
+	function send_mails($smtpemailto,$mailbody){
+
+		/**
+		*实例化邮件类
+		*/
+		include('include/email.php');
+		$smtpserver = "smtp.163.com";              //SMTP服务器
+		$smtpserverport =25;                      //SMTP服务器端口
+		$smtpusermail = "sql900211@163.com";      //SMTP服务器的用户邮箱
+		//$smtpemailto = "sql900211@163.com,67116544@qq.com";       //发送给谁
+		$smtpuser = "sql900211@163.com";         //SMTP服务器的用户帐号
+		$smtppass = "sql900211";                 //SMTP服务器的用户密码
+		$mailsubject = "慧目堂客户联系信息";        //邮件主题
+		//$mailbody = "<h1>你的用户名是</h1>";      //邮件内容
+		$mailtype = "HTML";                      //邮件格式（HTML/TXT）,TXT为文本邮件
+		$smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);
+		$smtp->debug = false;                     //是否显示发送的调试信息
+		$smtp->sendmail($smtpemailto, $smtpusermail, $mailsubject, $mailbody, $mailtype);
+
+
 	}
 
 
