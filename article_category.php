@@ -28,7 +28,7 @@ $page = $check->is_number($_REQUEST['page']) ? trim($_REQUEST['page']) : 1;
 $limit = $dou->pager('article', ($_DISPLAY['article'] ? $_DISPLAY['article'] : 10), $page, $dou->rewrite_url('article_category', $cat_id), $where);
 
 /* 获取文章列表 */
-$sql = "SELECT id, title, content, image, cat_id, add_time,add_date, click, description FROM " . $dou->table('article') . $where . " ORDER BY id DESC" . $limit;
+$sql = "SELECT id, title, content, image, cat_id, add_time,add_date, click, description FROM " . $dou->table('article') . $where . " ORDER BY add_date DESC,id DESC" . $limit;
 $query = $dou->query($sql);
 
 while ($row = $dou->fetch_array($query)) {

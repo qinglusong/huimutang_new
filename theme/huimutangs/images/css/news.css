@@ -90,6 +90,7 @@
 /*---yzy---*/
 
 @media (max-width: 750px) {
+  .txt-cont p>img{width: 100%!important;}
   .fixed{display: none;}
   .wap-show{
     display: block;
@@ -176,11 +177,3 @@
     margin-top: 0;
   }
 }
-
-
-
-
-
-
-
-

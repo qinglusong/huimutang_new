@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			$shoujianren = explode(',',$_CFG['email_shoujianren']);
 			//print_r($shoujianren);exit;
 			foreach($shoujianren as $k=>$v){
-				$dou->send_mail($v, '慧目堂客户联系信息', $bodys);
+				$dou->send_mail($v, '慧目堂客户联系信息', '<h2>有新的客户信息，后台看看吧</h2>');
 			}
 			
 			//send_mails($_CFG['email_shoujianren'],$bodys);

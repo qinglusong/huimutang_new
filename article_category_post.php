@@ -29,12 +29,13 @@ $page =intval($page)+1;//访问这里都是下一页
 $limit = $dou->pager('article', ($_DISPLAY['article'] ? $_DISPLAY['article'] : 9), $page, $dou->rewrite_url('article_category', $cat_id), $where);
 
 /* 获取文章列表 */
-$sql = "SELECT id, title, content, image, cat_id, add_time, click, description FROM " . $dou->table('article') . $where . " ORDER BY id DESC" . $limit;
+$sql = "SELECT id, title, content, image, cat_id, add_time,add_date, click, description FROM " . $dou->table('article') . $where . " ORDER BY add_date DESC,id DESC" . $limit;
 $query = $dou->query($sql);
 
 while ($row = $dou->fetch_array($query)) {
     $url = $dou->rewrite_url('article', $row['id']);
     $add_time = date("Y-m-d", $row['add_time']);
+    $add_date = date("Y-m-d", $row['add_date']);
     $add_time_short = date("m-d", $row['add_time']);
     
     // 如果描述不存在则自动从详细介绍中截取
@@ -46,6 +47,7 @@ while ($row = $dou->fetch_array($query)) {
             "title" => $row['title'],
             "image" => $dou->dou_file($row['image']),
             "add_time" => $add_time,
+            "add_date" => $add_date,
             "add_time_short" => $add_time_short,
             "click" => $row['click'],
             "description" => $description,
