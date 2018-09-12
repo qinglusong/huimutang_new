@@ -18,7 +18,7 @@ function show_r() {
 }
 show_r();
 // case
-var caseGallery1 = new Swiper('.case-gallery .pc-show.swiper-container', {
+var caseGallery1 = new Swiper('.pc-show.swiper-container', {
 //
 //     autoplay: false,
 //     speed: 1000,
@@ -30,8 +30,8 @@ var caseGallery1 = new Swiper('.case-gallery .pc-show.swiper-container', {
 //     paginationClickable: true,
 //     prevButton: '.case-gallery .swiper-button-prev',
 //     nextButton: '.case-gallery .swiper-button-next',
-    onInit: function(swiper) {
-        swiper.slides[2].className = "swiper-slide swiper-slide-active";
+    onInit: function(sw) {
+        sw.slides[2].className = ".swiper-slide .swiper-slide-active";
     },
     // breakpoints: {
     //     668: {
@@ -48,13 +48,13 @@ var caseGallery1 = new Swiper('.case-gallery .pc-show.swiper-container', {
 $('.case-gallery .swiper-button-next').on('click', function (e) {
     e.preventDefault();
     caseGallery1.slideNext();
-    caseGallery2.slideNext();
+    // caseGallery2.slideNext();
 });
 
 $(' .case-gallery .swiper-button-prev').on('click', function (e) {
     e.preventDefault();
     caseGallery1.slidePrev();
-    caseGallery2.slidePrev();
+    // caseGallery2.slidePrev();
 });
 $('.tool-item a.top').click(function (e) {
     e.preventDefault();
@@ -63,8 +63,20 @@ $('.tool-item a.top').click(function (e) {
 
 
 
-var caseGallery2 = new Swiper('.case-gallery .mobile-show.swiper-container', {
+var caseGallery2 = new Swiper('.mobile-show.swiper-container', {
     loop: true,
-    prevButton: '.case-gallery .swiper-button-prev',
-    nextButton: '.case-gallery .swiper-button-next',
+    prevButton: '.mobile-show .swiper-button-prev',
+    nextButton: '.mobile-show .swiper-button-next',
+});
+
+$('.mobile-show .swiper-button-next').on('click', function (e) {
+    e.preventDefault();
+    // caseGallery1.slideNext();
+    caseGallery2.slideNext();
+});
+
+$('.mobile-show .swiper-button-prev').on('click', function (e) {
+    e.preventDefault();
+    // caseGallery1.slidePrev();
+    caseGallery2.slidePrev();
 });

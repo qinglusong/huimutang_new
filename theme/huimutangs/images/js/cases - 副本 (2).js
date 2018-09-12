@@ -18,7 +18,7 @@ function show_r() {
 }
 show_r();
 // case
-var caseGallery = new Swiper('.case-gallery .swiper-container', {
+var caseGallery1 = new Swiper('.case-gallery .pc-show.swiper-container', {
 //
 //     autoplay: false,
 //     speed: 1000,
@@ -40,24 +40,31 @@ var caseGallery = new Swiper('.case-gallery .swiper-container', {
     // }
 
 });
-
-var caseList = new Swiper('.case-list .swiper-container', {
-    loop: true
-});
-
-
+//
+// var caseList = new Swiper('.case-list .swiper-container', {
+//     loop: true
+// });
 
 $('.case-gallery .swiper-button-next').on('click', function (e) {
     e.preventDefault();
-    caseGallery.slideNext();
+    caseGallery1.slideNext();
+    caseGallery2.slideNext();
 });
 
 $(' .case-gallery .swiper-button-prev').on('click', function (e) {
     e.preventDefault();
-    caseGallery.slidePrev();
+    caseGallery1.slidePrev();
+    caseGallery2.slidePrev();
 });
 $('.tool-item a.top').click(function (e) {
     e.preventDefault();
     $('html, body').animate({scrollTop: '0px'}, 800);
 });
 
+
+
+var caseGallery2 = new Swiper('.case-gallery .mobile-show.swiper-container', {
+    loop: true,
+    prevButton: '.case-gallery .swiper-button-prev',
+    nextButton: '.case-gallery .swiper-button-next',
+});

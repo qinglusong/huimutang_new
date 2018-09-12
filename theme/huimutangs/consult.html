@@ -15,7 +15,20 @@
     <link href="theme/huimutangs/images/css/tool.css" rel="stylesheet">
     <link href="theme/huimutangs/images/css/consult.css" rel="stylesheet">
     <link href="theme/huimutangs/images/css/case.css" rel="stylesheet">
-
+	{literal}
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm =  = document.createElementment("script");
+	  
+	  hm.src = " = "= "https://hm.baidu.com/hm.js?c653807cfb7cac372b0211c5f2e13c68";
+	 ";
+	  var s =  = document.getElementsBytsByTagName("script")[0]; 
+	  
+	  s.parentNode.insertBefore(ore(hm, s);
+	})();
+	</script>
+	{/literal}
 </head>
 <body>
 <div class="header zoom-div mobile-show">
@@ -212,7 +225,7 @@
 
 
             {foreach from=$recommend_product item=item key=key name=foo}
-                <div onclick="location.href='case_info_{$item.id}.html';" class="bg-4-c-m wow fadeInUp news-panel-focus" data-wow-delay="{$key+1}00ms">
+                <div onclick="location.href='case_info_{$item.id}.html';" class="bg-4-c-m wow fadeInUp news-panel-focus" data-wow-delay="{$key+1}ms">
                     <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
                     <p class="bg-4m-t1">{if $item.name}{$item.name|truncate:20:''}{else}{$item.price|truncate:20:''}{/if}</p>
                     <p class="bg-4m-t2">{if $item.price_jieshao}{$item.price_jieshao|truncate:20:''}{else}{$item.name}{/if}</p>
@@ -247,7 +260,7 @@
 
         {foreach from=$recommend_article item=item name=foo}
             {if $smarty.foreach.foo.index < 3}
-            <div onclick="location.href='news_info_{$item.id}.html';" class="bg-4-c-m news-panel-focus">
+            <div onclick="location.href='news_info_{$item.id}.html';" class="bg-4-c-m wow fadeInUp news-panel-focus" data-wow-delay="{$smarty.foreach.foo.index}00ms">
                 <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
                 <p class="bg-4m-t1">{$item.title|truncate:12:""}</p>
                 <p class="bg-4m-t2">{$item.description|truncate:40}</p>
@@ -258,7 +271,7 @@
 
 
 
-            <div onclick="location.href='news_info_{$item.id}.html';" class="bg-4-c-m news-panel-focus mobile-show flex-column">
+            <div onclick="location.href='news_info_{$item.id}.html';" class="bg-4-c-m wow fadeInUp news-panel-focus mobile-show flex-column" data-wow-delay="{$smarty.foreach.foo.index}00ms">
                 <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
                 <p class="bg-4m-t1">{$item.title|truncate:12:""}</p>
                 <p class="bg-4m-t2">{$item.description|truncate:40}</p>

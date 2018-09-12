@@ -10,11 +10,13 @@
 .m-btn-div .m-btn.active{color: #ff5a00}
 
 .bg-4-c-m{text-align: left;}
-.class-con .bg-4m-t1{font-size: 20px;color: #626262;font-weight: bold;margin-bottom: 5px;margin-top: 10px}
+.class-con .bg-4m-t1{font-size: 20px;color: #626262;font-weight: bold;margin-bottom: 5px;margin-top: 20px;padding: 0px 35px}
 .class-con .bg-4m-t2,.class-con .bg-4m-t3{margin-bottom: 10px;font-size: 14px;color: #676767;margin-top: 5px;line-height: 25px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;}
-.class-con .bg-4m-t2{height: 45px;}
-.class-con .bg-4m-t3{text-align: right;margin-right: 30px;margin-top: 0px}
-.bg_1 ul li>a{width: 175px}
+.class-con .bg-4m-t2{height: 45px;padding: 0px 35px}
+.class-con .bg-4m-t3{text-align: right;margin-right: 30px;margin-top: -30px}
+.bg_1 .ul-div ul li>a{width: 175px}
+.bg_1 .footer-nav  ul li>a{color:#ffffff}
+
 
 @media (max-width: 750px) {
     .m-btn-div{width: 85%}

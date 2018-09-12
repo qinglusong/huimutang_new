@@ -4,11 +4,11 @@ var tit_wow=0;
 var titlebanner=new Swiper('.home-bg-00.pc-show', {
     initialSlide :1,
     speed:1000,
-    // autoplay: {
-    //     delay: 5000,
-    //     stopOnLastSlide: false,
-    //     disableOnInteraction: true,
-    // },
+    autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+    },
     pagination: {
         el: '.swp1',
     },
@@ -47,11 +47,11 @@ var titlebanner=new Swiper('.home-bg-00.pc-show', {
 var titlebanner2=new Swiper('.home-bg-00.mobile-show', {
     initialSlide :1,
     speed:1000,
-    // autoplay: {
-    //     delay: 5000,
-    //     stopOnLastSlide: false,
-    //     disableOnInteraction: true,
-    // },
+    autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+    },
     navigation: {
         nextEl: '.home-bg-00.mobile-show .swiper-button-next',
         prevEl: '.home-bg-00.mobile-show .swiper-button-prev',
@@ -95,6 +95,12 @@ titlebanner.el.onmouseout=function(){
 }
 
 var homeCase = new Swiper('.home-case .swiper-container', {
+   speed:1000,
+    autoplay: {
+        delay: 5000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+    },
     navigation: {
         nextEl: '.home-case .sw2_r',
         prevEl: '.home-case .sw2_l',

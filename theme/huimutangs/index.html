@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+{literal}
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm =  = document.createElementment("script");
+  
+  hm.src = " = "= "https://hm.baidu.com/hm.js?c653807cfb7cac372b0211c5f2e13c68";
+ ";
+  var s =  = document.getElementsBytsByTagName("script")[0]; 
+  
+  s.parentNode.insertBefore(ore(hm, s);
+})();
+</script>
+{/literal}
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -24,7 +38,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 
     <![endif]-->
-
+	
 </head>
 <body>
 <header class="main-header wap-header fixed" style="display: none;">
@@ -343,13 +357,13 @@
 
                                         <div class="media case-special-item">
                                             <a href="case_info_{$item.id}.html">
-                                            <div class="media-left media-middle wow fadeInLeft" data-wow-delay="200ms">
+                                            <div class="media-left media-middle wow fadeInLeft" data-wow-delay="100ms">
                                                 <img src="{$item.image}" alt=""></div>
                                             <div class="media-body media-right">
                                                 <h3 class="wow fadeInUp" data-wow-delay="300ms">{$item.name|truncate:12:""}</h3>
                                                 <div class="clearfix"></div>
-                                                <p class="subtitle wow fadeInUp" data-wow-delay="300ms">{$item.price_jieshao|truncate:24:""}</p>
-                                                <p class="description wow fadeInUp" data-wow-delay="300ms">{$item.description|truncate:190:""}</p>
+                                                <p class="subtitle wow fadeInUp" data-wow-delay="200ms">{$item.price_jieshao|truncate:48:""}</p>
+                                                <p class="description wow fadeInUp" data-wow-delay="200ms">{$item.description}</p>
                                             </div>
                                             </a>
                                         </div>
@@ -534,7 +548,7 @@
                         <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
                         <div class="hn-w-b">
                             <p class="bg-4m-t1">{$item.title|truncate:12}</p>
-                            <p class="bg-4m-t2">{$item.description|truncate:100}</p>
+                            <p class="bg-4m-t2">{$item.description|truncate:60}</p>
                             <p class="bg-4m-t3">{$item.add_date}</p>
                         </div>
                     </div>

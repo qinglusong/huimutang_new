@@ -26,7 +26,9 @@
             <!--</div>-->
         </div>
 
-        <div class="mobile-show swiper-container">
+        
+    </div>
+    <div class="mobile-show swiper-container">
             <div class="swiper-wrapper">
               {foreach from=$product.img_wap_list item=item key=key name=foo}
                 <div class="swiper-slide">
@@ -38,8 +40,7 @@
             </div>
             <div class="swiper-button-next swiper-button-red"></div>
             <div class="swiper-button-prev swiper-button-red"></div>
-        </div>
-    </div>
+      </div>
 
     <div class="content bg-col-00">
         <div class="container">
@@ -68,8 +69,9 @@
         <div class="right-tool mobile-show">
             <div class="tool-item">
                 <a class="back" href="/"><i></i></a>
-        <a class="right" {if $lifts.previous.id}href="case_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
-        <a class="left" {if $lifts.next.id}href="case_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
+                <a class="left" {if $lifts.next.id}href="case_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
+                <a class="right" {if $lifts.previous.id}href="case_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
+        
         <a class="top" href="####"><i></i></a>
             </div>
         </div>

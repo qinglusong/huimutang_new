@@ -288,7 +288,7 @@ body {
 
 /* navbar */
 .nav{
-    margin-top: 45px;
+    margin-top: 33px;
 }
 .navbar-menu {
     margin-bottom: 0;
@@ -438,7 +438,7 @@ body {
     color: #717071;
     font-size: 17px;
     line-height: 1.8;
-    margin-top: 65px;
+    margin-top: 40px;
     margin-bottom: 0;
 }
 .tip-bar{width: 294px;height: 19px;margin: 0 auto;}
@@ -481,7 +481,7 @@ body {
     height: 13px;
 }
 
-.home-case .media-right{width: 725px}
+.home-case .media-right{width: 705px}
 
 
 .home-case .swiper-button-next{right: 160px}
@@ -820,4 +820,3 @@ body {
     height: 40px;
     margin-left: 15px;
 }
-

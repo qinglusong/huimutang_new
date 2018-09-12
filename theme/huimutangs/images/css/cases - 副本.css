@@ -69,17 +69,17 @@
   top: 0;
   right: 0;
 }
-.swiper-slide .img_div_pc{position: relative}
+
 .swiper-slide-active .layer-mask {
   display: none;
 }
-.case-gallery .swiper-button-next,.mobile-show .swiper-button-next{
+.case-gallery .swiper-button-next{
   background: url("../imgs/case-l.png") no-repeat;
 }
-.case-gallery .swiper-button-prev,.mobile-show .swiper-button-prev{
+.case-gallery .swiper-button-prev{
   background: url("../imgs/case-r.png") no-repeat;
 }
-.case-gallery .swiper-button-prev, .case-gallery .swiper-button-next,.mobile-show .swiper-button-prev, .mobile-show .swiper-button-next{
+.case-gallery .swiper-button-prev, .case-gallery .swiper-button-next{
   width: 50px;
   height: 96px;
   margin-top: 0px;
@@ -211,14 +211,11 @@
 .class-con .bg-4m-t2{font-weight: normal}
 /* media ///////////////////////////////////////////// */
 @media (max-width: 750px) {
-    img{width: 100%}
     .class-con .bg-4-c{flex-direction:column;}
     .class-con .bg-4-c-m{width: 750px}
     .class-con .bg-4-c-m .bg-4m-img>img{width: 100%}
     .class-con .bg-4m-t1{font-size: 36px;margin: 10px 0px;font-weight: bold}
     .class-con .bg-4m-t2{margin-bottom: 20px}
-    .mobile-show .swiper-button-prev, .mobile-show .swiper-button-next{margin-top:-40px}
-    .mobile-show.swiper-container swiper-slide div{width: 100%;position: relative}
 }
 
 

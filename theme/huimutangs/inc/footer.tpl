@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="footer2-r wow fadeInRight">
+            <div style='text-align: left;' class="footer2-r wow fadeInRight">
                 <div><img src="theme/huimutangs/images/imgs/pc_qm.png" ></div>
                 <p>Copyright  2004-2017 Shanghai Three Eyes Art Design Co.,Ltd.  All Rights Reserved</p>
                 <p>版权所有 {$site.icp}   沪公网安备 31011202002497</p>

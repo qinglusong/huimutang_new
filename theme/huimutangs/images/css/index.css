@@ -23,7 +23,7 @@ a:hover {
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
     transform: scale(1.1);}
-.con-btn{width: 200px;height: 55px;margin: 50px auto;color: white;line-height: 55px;font-size: 24px;text-align: center;}
+.con-btn{width: 200px;height: 55px;margin: 10px auto;color: white;line-height: 55px;font-size: 24px;text-align: center;}
 .con-btn a{color: white;}
 .pc-r-logo{color: white;display: flex;flex-direction: row;align-items: flex-end;margin-left: 554px;}
 .pc-r-logo .rlogo-l{display: flex;flex-direction: column;justify-content: space-between;height: 43px;font-size: 15px}
@@ -247,6 +247,7 @@ a:hover {
     .cls-btn img{width: 100%;height: 100%}
 
     .mobile-navbar{box-sizing: border-box;top:1.0rem!important;z-index: 1000}
+	.m-news-p img{width:100%}
 }
 
 /*-------------------hover---------------------*/
