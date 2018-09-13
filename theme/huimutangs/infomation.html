@@ -84,6 +84,7 @@
     <!--<div class="btn-down-div pc-show wow fadeIn">-->
         <!--<img src="theme/huimutangs/images/imgs/donw_btn.png">-->
     <!--</div>-->
+</div>
     <!-- footer -->
  {include file='inc/footer.tpl'}
 <script>
@@ -174,38 +175,138 @@
 
     }
 
+
+
+
+
+    $(function(){
+    var winH = $(window).height(); //页面可视区域高度
+    var i = 0; //设置当前页数
     $(window).scroll(function () {
-        var mb = myBrowser();
-        var scrollHeight = $(document).height();
-        
-      var scrollTop = $(this).scrollTop();
-      
-      var windowHeight = $(this).height();
+        if(i)return;
+        var pageH = $(document.body).height();
+        var scrollT = $(window).scrollTop(); //滚动条top
+        var aa = (pageH-winH-scrollT)/winH;
+        if(aa<10){
+            i=1;
+            var page1 = $('#pc_show').attr('data-page');
+                var cat_id1 = $('#pc_show').attr('data-cat-id');
+                var page2 = $('#mobile_show').attr('data-page');
+                var cat_id2 = $('#mobile_show').attr('data-cat-id');
+                $.ajax({
+                    //'async' : false,// 使用同步的Ajax请求
+                    type : "post",
+                    url : 'article_category_post.php',
+                    dataType : "json",
+                    data : {id:cat_id1,page:page1},
+                    success : function(e){
+                            if(e.code==200){
+                                //组合数据 设置page加1
+                                i=0;
+                                var newhtml='<div class="bg-4-c flex-show flex-row pc-show">\n';
+                                $.each(e.data.list, function (n, value) {
 
 
-      if ("Safari" == mb) {
-            if (scrollTop + windowHeight == scrollHeight-20) {
-                add_div1();
-                console.log(mb);
-                //alert(mb+'test');
+                                    newhtml +='<a href="news_info_'+value.id+'.html">'+
+                                        '<div class="bg-4-c-m wow fadeInUp news-panel-focus" data-wow-delay="1ms">'+
+                                        '<div class="bg-4m-img news-panel-focus-img"><img src="'+value.image+'"></div>'+
+                                        '<p class="bg-4m-t1">'+value.title.substring(0,20)+'</p>'+
+                                        '<p class="bg-4m-t2">'+value.description.substring(0,60)+'</p>'+
+                                        '<p class="bg-4m-t3">'+value.add_date+'</p>'+
+                                        '</div>'+
+                                        '</a>';
+                                        if((n+1)%3==0){
+                                            newhtml +='</div><div class="bg-4-c flex-show flex-row pc-show">';
+                                        }
 
-            }
+
+
+                                });
+
+                                
+                                newhtml +='</div>';
+
+
+
+
+                                var newhtml_mobile='<div class="bg-4-c flex-show flex-row mobile-show">\n';
+                                $.each(e.data.list, function (n, value) {
+
+
+                                    newhtml_mobile +='<a href="news_info_'+value.id+'.html">'+
+                                        '<div class="bg-4-c-m wow fadeInUp news-panel-focus mobile-show" data-wow-delay="1ms">'+
+                                        '<div class="bg-4m-img news-panel-focus-img"><img src="'+value.image+'"></div>'+
+                                        '<p class="bg-4m-t1">'+value.title.substring(0,20)+'</p>'+
+                                        '<p class="bg-4m-t2">'+value.description.substring(0,20)+'</p>'+
+                                        '<p class="bg-4m-t3">'+value.add_date+'</p>'+
+                                        '</div>'+
+                                        '</a>';
+                                        if((n+1)%4==0){
+                                            newhtml_mobile +='</div><div class="bg-4-c flex-show flex-row mobile-show">';
+                                        }
+
+
+
+                                });
+
+                                
+                                newhtml_mobile +='</div>';
+
+
+
+
+                                $('#pc_show').attr('data-page',e.data.page);
+                                $('#mobile_show').attr('data-page',e.data.page);
+
+                                $("#pc_show").append(newhtml);
+                                $("#mobile_show").append(newhtml_mobile);
+                                
+                            }else{
+                            i=0;
+                            //$('#pc_show').attr('data-page',e.data.page);
+                            //$('#mobile_show').attr('data-page',e.data.page);
+                                
+                                
+                            }
+                    }
+                });
+            
         }
-        else{
-            if (scrollTop + windowHeight == scrollHeight) {
-                add_div1();
-                console.log(mb);
-                //alert(mb+'test');
-
-              }
-        }
-
-
-      
-
-
-
     });
+})
+
+    // $(window).scroll(function () {
+    //     var mb = myBrowser();
+    //     var scrollHeight = $(document).height();
+        
+    //   var scrollTop = $(this).scrollTop();
+      
+    //   var windowHeight = $(this).height();
+
+
+    //   if ("Safari" == mb) {
+    //         if (scrollTop + windowHeight == scrollHeight-20) {
+    //             add_div1();
+    //             console.log(mb);
+    //             //alert(mb+'test');
+
+    //         }
+    //     }
+    //     else{
+    //         if (scrollTop + windowHeight == scrollHeight) {
+    //             add_div1();
+    //             console.log(mb);
+    //             //alert(mb+'test');
+
+    //           }
+    //     }
+
+
+      
+
+
+
+    // });
 
     //add_div1();
     function myBrowser(){

@@ -242,7 +242,7 @@ body {
 
 .mobile-navbar-menu > li {
     /*border-bottom: 1px solid rgba(255, 255, 255, .1);*/
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .mobile-navbar-menu > li:last-child {

@@ -3,7 +3,7 @@
 .container .con-l ul{display: block;text-align: right;padding: 7px}
 .container .con-l ul li{margin: 0px 0px 26px}
 .container .con-l ul a{font-size: 13px;color: #717071;font-weight: bold}
-.container .con-l{width: 230px;margin-right: 100px}
+.container .con-l{width: 250px;margin-right: 100px}
 
 .container .con-r{width: 820px;margin-right: 300px;margin-bottom: 110px}
 .container .con-r .title-s{color: #bebfc0;font-size: 21px}
@@ -23,6 +23,7 @@
     .bottm-tool{justify-content: space-around;width: 490px;margin: 0px auto 90px;}
     /*.container .con-img-div{margin-top: 30px}*/
     .container .con-r p{font-size: 32px;line-height: 58px;margin: 50px auto;}
+	.container .con-r p  img{width:100%}
     .container .con-r .title-m{margin-bottom: 0px}
 }
 
@@ -34,7 +35,7 @@
 .right-tool{
     position: fixed;
     right: 100px;
-    top: 250px;
+    top: 230px;
     z-index: 9999;
 }
 .tool-item a{

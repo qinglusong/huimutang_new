@@ -101,12 +101,12 @@ $('.tool-item .top').click(function (e) {
 
 
 
-consultbanner.el.onmouseout=function a(){
-    consultbanner.navigation.$nextEl.addClass('hide');
-    consultbanner.navigation.$prevEl.addClass('hide');
-}
+// consultbanner.el.onmouseout=function a(){
+//     consultbanner.navigation.$nextEl.addClass('hide');
+//     consultbanner.navigation.$prevEl.addClass('hide');
+// }
 
-consultbanner.el.onmouseover=function b(){
-    consultbanner.navigation.$nextEl.removeClass('hide');
-    consultbanner.navigation.$prevEl.removeClass('hide');
-}
+// consultbanner.el.onmouseover=function b(){
+//     consultbanner.navigation.$nextEl.removeClass('hide');
+//     consultbanner.navigation.$prevEl.removeClass('hide');
+// }
