@@ -25,6 +25,9 @@ $file = new File('images/friend/'); // 实例化类文件(文件上传路径，�
 // 赋值给模板
 $smarty->assign('rec', $rec);
 $smarty->assign('cur', 'friend');
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN2' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], 'manager.php');
+}
 
 /**
  * +----------------------------------------------------------

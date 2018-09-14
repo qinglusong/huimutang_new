@@ -25,6 +25,10 @@ $rec = $check->is_rec($_REQUEST['rec']) ? $_REQUEST['rec'] : 'default';
 // 赋值给模板
 $smarty->assign('cur', 'system');
 
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], '');
+}
+
 /**
  * +----------------------------------------------------------
  * 系统设置

@@ -28,6 +28,11 @@ $backup = new Backup($sqlcharset);
 $smarty->assign('rec', $rec);
 $smarty->assign('cur', 'backup');
 
+
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], '');
+}
+
 /**
  * +----------------------------------------------------------
  * 数据备份

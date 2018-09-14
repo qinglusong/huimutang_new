@@ -22,6 +22,10 @@ $rec = $check->is_rec($_REQUEST['rec']) ? $_REQUEST['rec'] : 'default';
 $smarty->assign('rec', $rec);
 $smarty->assign('cur', $cur = 'nav');
 
+
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN2' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], 'manager.php');
+}
 /**
  * +----------------------------------------------------------
  * 导航列表

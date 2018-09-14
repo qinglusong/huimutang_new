@@ -25,6 +25,10 @@ $file = new File('images/page/'); // 实例化类文件(文件上传路径，结
 $smarty->assign('rec', $rec);
 $smarty->assign('cur', 'page');
 
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN2' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], 'manager.php');
+}
+
 /**
  * +----------------------------------------------------------
  * 单页面列表

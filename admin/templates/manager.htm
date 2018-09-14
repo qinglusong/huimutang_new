@@ -45,6 +45,18 @@
         <input type="text" name="user_name" size="40" class="inpMain" />
        </td>
       </tr>
+
+
+      <tr>
+       <td width="100" align="right">权限</td>
+       <td>
+      <label><input type="radio" name="prem" value='ADMIN'/>全站管理</label>
+      <label><input name="prem"  type="radio" value="ADMIN2"/>编辑管理（非编辑系统设置与客户）</label>
+      <label><input name="prem"  type="radio" value="ADMIN3"/>客户管理</label>
+       </td>
+      </tr>
+
+
       <tr>
        <td width="100" align="right">{$lang.manager_email}</td>
        <td>
@@ -80,6 +92,14 @@
        <td width="100" align="right">{$lang.manager_username}</td>
        <td>
         <input type="text" name="user_name" value="{$manager_info.user_name}" size="40" class="inpMain" {if $user.action_list neq 'ALL'}readonly="true"{/if}/>
+       </td>
+      </tr>
+      <tr>
+       <td width="100" align="right">权限</td>
+       <td>
+      <label><input type="radio" name="prem" {if $manager_info.action_list=='ADMIN'}checked{/if} value='ADMIN'/>全站管理</label>
+      <label><input name="prem" {if $manager_info.action_list=='ADMIN2'}checked{/if} type="radio" value="ADMIN2"/>编辑管理（非编辑系统设置与客户）</label>
+      <label><input name="prem" {if $manager_info.action_list=='ADMIN3'}checked{/if} type="radio" value="ADMIN3"/>客户管理</label>
        </td>
       </tr>
       <tr>

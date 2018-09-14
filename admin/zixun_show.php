@@ -27,6 +27,9 @@ $smarty->assign('rec', $rec);
 $smarty->assign('cur', 'zixun_show');
 $smarty->assign('ur_here', 'PC项目咨询幻灯');
 $smarty->assign('show_list', $dou->get_show_list($systems));
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN2' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], 'manager.php');
+}
 
 /**
  * +----------------------------------------------------------

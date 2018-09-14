@@ -31,6 +31,9 @@ $smarty->assign('cur', 'customer');
  * 文章列表
  * +----------------------------------------------------------
  */
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN3' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], 'manager.php');
+}
 if ($rec == 'default') {
     $smarty->assign('ur_here', '客户信息');
     $smarty->assign('action_link', array (

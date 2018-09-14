@@ -25,6 +25,9 @@ $file = new File('images/fuwu/'); // 实例化类文件(文件上传路径，结
 // 赋值给模板
 $smarty->assign('rec', $rec);
 $smarty->assign('cur', 'fuwu');
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN2' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], 'manager.php');
+}
 
 /**
  * +----------------------------------------------------------

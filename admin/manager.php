@@ -19,6 +19,9 @@ require (dirname(__FILE__) . '/include/init.php');
 $rec = $check->is_rec($_REQUEST['rec']) ? $_REQUEST['rec'] : 'default';
 
 $smarty->assign('rec', $rec);
+    if ($_USER['action_list'] != 'ALL') {
+        $dou->dou_msg($_LANG['without'], '');
+    }
 
 /**
  * +----------------------------------------------------------
@@ -109,8 +112,8 @@ elseif ($rec == 'insert') {
     
     // CSRF防御令牌验证
     $firewall->check_token($_POST['token']);
-    
-    $sql = "INSERT INTO " . $dou->table('admin') . " (user_id, user_name, email, password, action_list, add_time)" . " VALUES (NULL, '$_POST[user_name]', '$_POST[email]', '$password', 'ADMIN', '$add_time')";
+    $prem = $_POST['prem'];
+    $sql = "INSERT INTO " . $dou->table('admin') . " (user_id, user_name, email, password, action_list, add_time)" . " VALUES (NULL, '$_POST[user_name]', '$_POST[email]', '$password', '$prem', '$add_time')";
     $dou->query($sql);
     $dou->create_admin_log($_LANG['manager_add'] . ': ' . $_POST['user_name']);
     $dou->dou_msg($_LANG['manager_add_succes'], 'manager.php');
@@ -195,8 +198,8 @@ elseif ($rec == 'update') {
     
     // CSRF防御令牌验证
     $firewall->check_token($_POST['token']);
-    
-    $sql = "UPDATE " . $dou->table('admin') . " SET user_name = '$_POST[user_name]',  email = '$_POST[email]'" . $update_password . " WHERE user_id = '$_POST[id]'";
+    $prem = $_POST['prem'];
+    $sql = "UPDATE " . $dou->table('admin') . " SET user_name = '$_POST[user_name]', action_list='$prem',  email = '$_POST[email]'" . $update_password . " WHERE user_id = '$_POST[id]'";
     $dou->query($sql);
     
     $dou->create_admin_log($_LANG['manager_edit'] . ': ' . $_POST['user_name']);

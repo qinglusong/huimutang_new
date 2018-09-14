@@ -2,7 +2,15 @@
 
 
   <link href="theme/huimutangs/images/css/cases.css" rel="stylesheet">
+  <link rel="stylesheet" href="theme/huimutangs/images/css/share.css"/>
+    <script src="theme/huimutangs/images/js/ZeroClipboard.js"></script>
+    <script>
+    var titles = '{$product.name}';
+    {literal}
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":titles,"bdMini":"1","bdMiniList":["bdxc","tqf","douban","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","h163","evernotecn","copy","print"],"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
     
+    {/literal}
+  </script>
 
   <div class="case-gallery">
         <div class="pc-show case-list-special bg-col-01 swiper-container">
@@ -55,7 +63,27 @@
                           <div class="clearfix"></div>
                           <h3>{$product.price}</h3>
                           <p class="subtitle">{foreach from=$product_cate_list item=item}<a href='case_{$item.parent_id}_{$item.cat_id}_1.html'>{$item.cat_name}</a>&nbsp;{/foreach}</p>
-                          <div class="title-top"><p class="tip pc-share"><span>分享</span></p></div>
+                          <div class="title-top"><div onclick='show_share();' class="tip pc-share"><span>分享</span>
+							
+							
+							<div class="cases share-dialog" style='display:none;'>
+							<div class="share-close"></div>
+							<div class="share-dialog-title">分享</div>
+								<div class="share-platform">
+									<div class="share-platform-r">
+										<div class="bdsharebuttonbox">
+											<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+											<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+											<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+											<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+										</div>
+										
+									</div>
+								</div>
+						</div>
+							
+							
+						  </div></div>
                           <div class="description">
                             {$product.content}
                           </div>
@@ -114,3 +142,16 @@
   <!-- footer -->
   {include file='inc/footer.tpl'}
   <script type="text/javascript" src="theme/huimutangs/images/js/cases.js"></script>
+  <script type="text/javascript">
+    {literal}
+    function show_share(){
+
+         $('.share-dialog').toggle(100);
+     }
+    function hide_share(){
+
+        $('.share-dialog').hide(100);
+    }
+	
+    {/literal}
+    </script>

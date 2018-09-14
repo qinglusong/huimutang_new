@@ -28,6 +28,10 @@ $smarty->assign('cur', 'show');
 $smarty->assign('ur_here', $_LANG['show']);
 $smarty->assign('show_list', $dou->get_show_list());
 
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN2' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], 'manager.php');
+}
+
 /**
  * +----------------------------------------------------------
  * 幻灯列表

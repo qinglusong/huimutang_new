@@ -24,15 +24,26 @@ $cat_id_str = $dou->get_one("SELECT cat_id FROM " . $dou->table('product') . " W
 //取出来cat_id的第一个id
 $cat_id_arr = explode(',', $cat_id_str);
 $cat_id = trim($cat_id_arr[0],'|');//分类id去掉竖线保留分类数字
+$cat_info_hangye_arr = array();
 foreach($cat_id_arr as $k=>$v){//循环案例分类获取对应分类信息
 	$cat_info = array();
 	$cat_id_flag = trim($v,'|');
-	$cat_info = $dou->fetch_assoc($dou->query("SELECT cat_name,parent_id FROM " . $dou->table('product_category') . " WHERE cat_id = '" . $cat_id_flag . "'"));
+	$cat_info = $dou->fetch_assoc($dou->query("SELECT cat_id,cat_name,parent_id FROM " . $dou->table('product_category') . " WHERE cat_id = '" . $cat_id_flag . "'"));
 	//print_r($cat_info);exit;
 	$cat_id_name_arr[$k]['cat_name'] = $cat_info['cat_name'];
 	$cat_id_name_arr[$k]['parent_id'] = $cat_info['parent_id'];
 	$cat_id_name_arr[$k]['cat_id'] = $cat_id_flag;
+
+    //找对应的行业分类
+    if($cat_info['parent_id']=='2'){
+        $cat_info_hangye_arr[] = $cat_info['cat_id'];
+    }
 }
+$where_str_flag = ' and ( ';
+foreach($cat_info_hangye_arr as $k=>$v){
+    $where_str_flag .=" cat_id like '%|".$v."|%' or";
+}
+$where_str_flag = trim($where_str_flag,'or').' )';
 //print_r($cat_id_name_arr);//案例详情对应案例分类
 $parent_id = $dou->get_one("SELECT parent_id FROM " . $dou->table('product_category') . " WHERE cat_id = '" . $cat_id . "'");
 if ($id == -1)
@@ -61,10 +72,11 @@ foreach (explode(',', $product['defined']) as $row) {
     }
 }
 
-$where = "where cat_f_id in(2,3) and id<>'".$id."'  ";//同行业分类下 排除当前案例
+$where = "where 1=1 ".$where_str_flag." and id<>'".$id."'  ";//同行业分类下 排除当前案例
 
 /* 获取产品列表 */
 $sql_list = "SELECT id, cat_id, name, price, content, image, add_time, description FROM " . $dou->table('product') . $where . " ORDER BY sort_list ASC,id DESC limit 3";
+//echo $sql_list;exit;
 $query_list = $dou->query($sql_list);
 
 while ($row_list = $dou->fetch_array($query_list)) {

@@ -28,6 +28,9 @@ $smarty->assign('cur', 'zixun_mshow');
 $smarty->assign('ur_here', '移动端项目咨询幻灯');
 $systems = 'zixun_mshow';
 $smarty->assign('show_list', $dou->get_show_list($systems));
+if ($_USER['action_list'] != 'ALL' && $_USER['action_list']!='ADMIN2' && $_USER['action_list']!='ADMIN') {
+        $dou->dou_msg($_LANG['without'], 'manager.php');
+}
 
 /**
  * +----------------------------------------------------------

@@ -211,7 +211,6 @@
 .class-con .bg-4m-t2{font-weight: normal}
 /* media ///////////////////////////////////////////// */
 @media (max-width: 750px) {
-    img{width: 100%}
     .class-con .bg-4-c{flex-direction:column;}
     .class-con .bg-4-c-m{width: 750px}
     .class-con .bg-4-c-m .bg-4m-img>img{width: 100%}
@@ -225,6 +224,7 @@
 @media (max-width: 750px) {
   .content.bg-3{margin-bottom: 0px}
   .case-gallery .swiper-slide img{height: 660px}
+  .mobile-show.swiper-container img{width:100%}
   .case-gallery{padding-top: 210px}
   .class-con .bg-4-c{margin-bottom: 0px}
 

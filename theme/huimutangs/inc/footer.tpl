@@ -153,7 +153,7 @@
 {/if}
 
 
-<script type="text/javascript" src="theme/huimutangs/images/js/zoom.js"></script>
+<script type="text/javascript" src="theme/huimutangs/images/js/zoom.js?v=123"></script>
 <script type="text/javascript" src="theme/huimutangs/images/js/tool.js"></script>
 <script type="text/javascript" src="theme/huimutangs/images/js/global.js"></script>
 </body>

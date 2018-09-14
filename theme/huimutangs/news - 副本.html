@@ -15,54 +15,17 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div>
-              <div class="title-top wow fadeInRight"><div>{$article.en_title}</div> <h2>{$article.title}</h2><div class="tip">{$article.add_date} <span onclick='show_share_wap();'>分享</span>
-			  
-			  
-			   <div class="share-dialog" style='display:none;'>
-					<div class="share-close"></div>
-					<div class="share-dialog-title">分享</div>
-						<div class="share-platform">
-							<div class="share-platform-r">
-								<div class="bdsharebuttonbox">
-									<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-									<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-									<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-									<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-								</div>
-								
-							</div>
-						</div>
-				</div>
-			  
-			  
-			  
-			  </div></div>
+              <div class="title-top wow fadeInRight"><div>{$article.en_title}</div> <h2>{$article.title}</h2><p class="tip">{$article.add_date} <span onclick='show_share();'>分享</span></p></div>
                 <div class="flex-show flex-row pc-tip pc-show">
                     <div>{$article.add_date}</div>
-                    <a  onmouseenter='show_share();' class="share-but flex-show flex-row">
+                    <a onclick='show_share();' class="share-but flex-show flex-row">
                         <div><img src="theme/huimutangs/images/imgs/share.png"> </div>
-                        <div>分享</div>
+                        <div>
+
+                            分享  
+
+                        </div>
                     </a>
-					
-					
-					 <div onmouseleave='show_share();' class="share-dialog" style='display:none;'>
-						<div class="share-close"></div>
-						<div class="share-dialog-title">分享</div>
-							<div class="share-platform">
-								<div class="share-platform-r">
-									<div class="bdsharebuttonbox">
-										<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-										<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-										<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-										<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-									</div>
-									
-								</div>
-							</div>
-					</div>
-					
-					
-					
                 </div>
               <div class="content wow fadeIn">
                 <div class="txt-cont">
@@ -93,19 +56,31 @@
 
     <!-- footer -->
       {include file='inc/footer.tpl'}
-	 
     <script type="text/javascript" src="theme/huimutangs/images/js/news.js"></script>
     <script type="text/javascript">
     {literal}
-	function show_share_wap(){
-
-         $('.share-dialog').toggle(100);
-     }
     function show_share(){
 
-         $('.share-dialog').toggle(100);
-     }
-    
+        $('.share-dialog').show(100);
+    }
+    function hide_share(){
+
+        $('.share-dialog').hide(100);
+    }
     {/literal}
     </script>
-    
+    <div class="share-dialog" style='display:none;'>
+    <div onclick='hide_share()' class="share-close"></div>
+    <div class="share-dialog-title">分享</div>
+        <div class="share-platform">
+            <div class="share-platform-r">
+                <div class="bdsharebuttonbox">
+                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                </div>
+                
+            </div>
+        </div>
+</div>
