@@ -15,7 +15,7 @@
 .share-dialog .bds_qzone:hover{background: url("../imgs/share/qz_2.png") no-repeat;}
 .share-dialog .bds_tsina{background: url("../imgs/share/wb_1.png") no-repeat;}
 .share-dialog .bds_tsina:hover{background: url("../imgs/share/wb_2.png") no-repeat;}
-
+.cases.share-dialog{left:45px;}
 
 @media (max-width: 750px) {
     .share-dialog{width: 685px;height: 188px;background: url("../imgs/share/news_share_bg.png") no-repeat;position: absolute;top:30px;left: 0px;padding-top: 15px;}

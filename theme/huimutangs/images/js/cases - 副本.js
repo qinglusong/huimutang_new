@@ -8,7 +8,7 @@ function show_r() {
     if($(window).width()>750){
         // console.log($(window).scrollTop())
 
-        if( $(window).scrollTop()<hh || $(window).scrollTop() >1050*wow.zoom){
+        if( $(window).scrollTop()<hh || $(window).scrollTop() >1220*wow.zoom){
             $(".fixed").hide();
         }else{
             $(".fixed").show();

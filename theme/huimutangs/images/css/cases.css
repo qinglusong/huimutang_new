@@ -519,3 +519,22 @@
 /*-----------*/
 .swiper-button-next{right: 100px}
 .swiper-button-prev{left: 100px}
+
+/*--------9.14------*/
+.pctip.title-top .tip{display: block;margin-left: 40px}
+.pctip.title-top .tip span{color: #666666}
+
+.pctip.title-top .tip span:before {
+  content: '';
+  background: url(../imgs/share.png) no-repeat;
+  background-size: 26px;
+  width: 26px;
+  height: 26px;
+  margin-right: 38px;
+  position: absolute;
+  left: -34px;
+  top: 1px;
+}
+.pctip.title-top{display:block;cursor: pointer;}
+.pctip.title-top{padding-top: 50px}
+.pctip.en-title{display: block;font-size: 21px;color: #bebfc0}
