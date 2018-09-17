@@ -27,7 +27,7 @@
 .bg_1 ul li>a{display:block;color:#aaaaab;}
 .bg_1 ul li .active{color: #ff5d3d;font-weight: 800}
 .bg_1 ul li{margin: 0px auto;}
-.class-con{margin-top: 60px;overflow-y: auto;overflow-x: hidden}
+.class-con{margin-top: 60px;}
 .class-con .bg-4-c{display: flex;margin-bottom: 15px;justify-content:center;}
 
 .class-con .bg-4-c-m{visiblity:visible!important;}

@@ -78,7 +78,7 @@ $where = "where 1=1 ".$where_str_flag." and id<>'".$id."'  ";//同行业分类�
 $sql_list = "SELECT id, cat_id, name, price, content, image, add_time, description FROM " . $dou->table('product') . $where . " ORDER BY sort_list ASC,id DESC limit 3";
 //echo $sql_list;exit;
 $query_list = $dou->query($sql_list);
-
+$ii = 0;
 while ($row_list = $dou->fetch_array($query_list)) {
     //$url = $dou->rewrite_url('product', $row_list['id']); // 获取经过伪静态产品链接
     $add_time = date("Y-m-d", $row_list['add_time']);
@@ -105,6 +105,34 @@ while ($row_list = $dou->fetch_array($query_list)) {
             //"img_pc_list"=>$img_pc_list,
             //"img_wap_list"=>$img_wap_list,
     );
+    $ii++;
+}
+if($ii< 3){
+    $sqls = "SELECT id, cat_id, name, price, content, image, add_time, description FROM " . $dou->table('product') . " where 1=1 ORDER BY sort_list ASC,id DESC limit ".(3-$ii);
+    //echo $sql_list;exit;
+    $querys = $dou->query($sqls);
+    while ($rows = $dou->fetch_array($querys)) {
+        //$url = $dou->rewrite_url('product', $rows['id']); // 获取经过伪静态产品链接
+        $add_time = date("Y-m-d", $rows['add_time']);
+        
+        // 如果描述不存在则自动从详细介绍中截取
+        $description = $rows['description'] ? $rows['description'] : $dou->dou_substr($rows['content'], 150, false);
+        
+        // 格式化价格
+        $price = $rows['price'];
+        $product_related_list[$ii] = array (
+                "id" => $rows['id'],
+                "cat_id" => $rows['cat_id'],
+                "name" => $rows['name'],
+                "price" => $price,
+                "image" => $dou->dou_file($rows['image']),
+                "add_time" => $add_time,
+                "description" => $description,
+                "url" => $url,
+        );
+        $ii++;
+    }
+
 }
 
 //print_r($product_related_list);// 相关案例 规则 取出相同行业分类的前三个 如果不满足 则从全部案例取

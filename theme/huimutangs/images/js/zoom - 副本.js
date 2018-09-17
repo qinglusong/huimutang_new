@@ -6,8 +6,7 @@ $(window).resize(function () {
 function zoom_fun(){
     var cw =$(window).width();
     // console.log(cw);
-    var ch=$(".container.zoom-div").height();
-    // console.log(ch);
+    var ch=$(".zoom-div").height();
     if(cw>1920)return;
     if(cw>750){
         znum=cw/1920;
@@ -18,12 +17,9 @@ function zoom_fun(){
     // console.log(znum,ch);
     $("html").css({"width":cw+"px"});
     var h=Math.floor(ch*znum);
-    // console.log("h="+h)
-    $(".container.zoom-div").css("height",h+"px");
+    $(".zoom-div").css("height",h+"px");
 
-    // console.log($(window).height());
-
-    $(".zoom-div").css({"transform":"scale(" + znum + ")","transform-origin":"0 0","-ms-transform:":"(" + znum + ")"});
+    $(".zoom-div").css({"transform":"scale(" + znum + ")","transform-origin":"0 0"});
     wow.zoom=znum;
 }
 // wow
