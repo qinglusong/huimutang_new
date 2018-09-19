@@ -18,17 +18,13 @@
     <link href="theme/huimutangs/images/css/animate.min.css" rel="stylesheet">
     <link href="theme/huimutangs/images/css/swiper.css" rel="stylesheet">
     <link href="theme/huimutangs/images/css/tool.css" rel="stylesheet">
-	{literal}
 	<script>
-	var _hmt = _hmt || [];
-	(function() {
+	  var _hmt = _hmt || [];
 	  var hm =  = document.createElementment("script");
 	  hm.src = " = "= "https://hm.baidu.com/hm.js?c653807cfb7cac372b0211c5f2e13c68";
 	  var s =  = document.getElementsBytsByTagName("script")[0]; 
 	  s.parentNode.insertBefore(ore(hm, s);
-	})();
 	</script>
-	{/literal}
     
 </head>
 <body>
