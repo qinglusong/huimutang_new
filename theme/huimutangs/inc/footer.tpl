@@ -92,7 +92,7 @@
 </div>
 <!--慧目堂pages hmt.html 右侧浮层-->
 {if $is_l_r_buttom=='1'}
-<div class="right-tool pc-show zoom-div">
+<div class="right-tool pc-show">
     <div class="tool-item">
         <a class="back" href="/"><i></i></a>
         <a class="right" href="pages_{$pages_arr.list.$page_down.id}.html"><i></i></a>

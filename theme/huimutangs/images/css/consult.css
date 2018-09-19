@@ -177,3 +177,30 @@
 
 
 .swiper-pagination-bullet {background: rgba(255, 255, 255, .9);}
+
+
+/*----------------------------------------------------*/
+.bg_01 .swiper-container .swiper-button-black{width: 96px;
+    height: 96px;
+    margin-top: 0px;}
+
+.bg_01 .swiper-container .swiper-button-next.swiper-button-black{
+    background: url(../imgs/case-l.png) no-repeat 20px ;
+    right: 20px;
+}
+
+.bg_01 .swiper-container  .swiper-button-prev.swiper-button-black {
+    background: url(../imgs/case-r.png) no-repeat;
+    left:20px;
+}
+
+.bg_01 .swiper-container .swiper-button-next.swiper-button-black:hover{
+    background-color: rgba(0,0,0,0)!important;
+}
+
+.bg_01 .swiper-container .swiper-button-prev.swiper-button-black:hover {
+    background-color: rgba(0,0,0,0)!important;
+}
+
+.bg_01 .swiper-container .hide{opacity: 1;}
+.bg_01 .swiper-button-prev.swiper-button-disabled,.bg_01 .swiper-button-next.swiper-button-disabled {opacity: 1;}

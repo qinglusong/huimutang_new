@@ -33,7 +33,6 @@
 
 
 .right-tool{
-    transform: scale(0.9)!important;
     position: fixed;
     right: 100px;
     top: 295px;
