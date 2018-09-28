@@ -69,33 +69,33 @@
 .bg_05 .bg-4-c-m{width: 632px;height: 495px;margin: 0 3px}
 
 .bg_05 .bg-4-c-m{text-align: left;}
-.bg_05 .bg-4m-t1{font-size: 20px;color: #626262;font-weight: bold;margin: 5px 40px;
+.bg_05 .bg-4m-t1{font-size: 20px;color: #626262;font-weight: bold;margin: 20px 35px 5px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;}
 .bg_05 .bg-4m-t2,.class-con .bg-4m-t3{margin-bottom: 10px;font-size: 14px;color: #676767;margin-top: 5px;line-height: 25px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;}
-.bg_05 .bg-4m-t2{height: 45px;}
+.bg_05 .bg-4m-t2{height: 45px;padding: 0px 35px;}
 .bg_05 .bg-4m-t3{text-align: right;margin-right: 30px;margin-top: 0px;color: #676767}
 
 
 /*.bg_06{background:url(../imgs/consult-b2.jpg) no-repeat center bottom;width: 100%;height: 800px;border-top: white 1px solid}*/
 .bg_06{position: relative}
-.bg_06 .back-img >img{width: 100%;height: 100%}
+.bg_06 .back-img >img{height: 100%}
 .bg_06>div{position: absolute;top:0px;left: 0px;width: 100%;height: 100%;overflow: hidden}
 .bg_06{width: 100%;height: 800px;border-top: white 1px solid}
 
 .bg_06 .bg6-con-div{display: flex;justify-content: space-around;}
 .bg_06 .bg6-con{width: 474px;height: 474px;background: rgba(252,122,52,0.9);color: white;font-weight: bold;line-height: 40px;text-align: left;}
-.bg_06 .bg6-con h2{font-size: 34px;margin: 50px 100px;font-weight: bold;}
-.bg_06 .bg6-con >p{font-size: 16px;width: 290px;height: 125px;margin: 100px 100px;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 4;}
+.bg_06 .bg6-con h2{font-size: 34px;margin: 140px 100px 0px;font-weight: bold;}
+.bg_06 .bg6-con >p{font-size: 16px;width: 280px;height: 200px;margin: 25px 100px;overflow: hidden;-webkit-line-clamp: 5;}
 
 .bg_07{display: flex;border-top: white 1px solid}
 .bg_07 .video-div{width: 954px;height: 500px;background-color: #f9f9f9;margin: 50px}
 .bg_07 .v-btn{text-align: center;margin-top: 190px}
 .bg_07 .bg7-txt{text-align: center;margin-left: 125px}
 .bg_07 .bg7-txt h1{font-size: 34px;font-weight: bold}
-.bg_07 .bg7-txt p{font-size: 28px;letter-spacing: 5px;color: #303030;font-family: "Microsoft YaHei","微软雅黑";}
+.bg_07 .bg7-txt p{font-size: 28px;letter-spacing: 1px;color: #303030;font-family: "Microsoft YaHei","微软雅黑";line-height: 52px;}
 .bg_04 a{color: white;}
 .bg_05 .con-btn,.bg_04 .con-btn{cursor: pointer;}
 .bg_05 .con-btn:hover,.bg_04 .con-btn:hover{-webkit-transform: scale(1.1);
@@ -146,15 +146,15 @@
     .bg_06{height: 955px;background:url(../imgs/m/consult-b2-m.jpg) no-repeat center bottom;padding: 0 20px}
     .bg_06 .bg6-con-div{flex-wrap: wrap}
     .bg_06 .bg6-con {width: 346px;height: 346px;margin-bottom: 10px}
-    .bg_06 .bg6-con >p{margin: -30px 50px;width: 260px;height: 180px;
-        overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:5;line-height: 35px;word-break: break-all;font-size: 22px}
+    .bg_06 .bg6-con >p{margin: 15px 50px;width: 260px;height: 180px;
+        overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:5;line-height: 32px;word-break: break-all;font-size: 22px}
 
     .bg_06 .bg6-con h2{font-weight: bold;margin-left: 50px}
 
     .bg_07{flex-wrap: wrap}
     .bg_07 .bg7-txt{margin: auto auto}
 
-    .bg_07 .bg7-txt p{font-size: 28px;letter-spacing: 2px;text-align: center;margin-bottom: 50px}
+    .bg_07 .bg7-txt p{font-size: 28px;letter-spacing: 2px;text-align: center;margin-bottom: 50px;line-height: 52px;}
 
     .bg_07 .video-div{margin: 30px}
 
@@ -163,6 +163,12 @@
     .m-footer-nav div:nth-child(3){margin:20px 50px}
 
     .m-footer-nav p{color: white;font-size: 20px}
+
+
+    .bg_04 .bg-4m-img{height: 422px}
+    .bg_05 .bg-4m-t2{padding: 0px}
+
+    .bg_06 .bg6-con h2{margin: 60px 50px 0px;}
 
 }
 

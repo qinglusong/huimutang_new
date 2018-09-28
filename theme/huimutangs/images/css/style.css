@@ -365,7 +365,7 @@ body {
     text-align: center;                    
 }
 .inner .e2{
-    font-size: 20px;
+    font-size: 21px;
     line-height: 2.2;
     margin: 0;
     padding: 0 18%;
@@ -545,7 +545,7 @@ body {
     color: #fff;
     margin-bottom: 50px;
     font-weight: normal;
-    text-align: center;
+    text-align: left;
 }
 .news-panel-list-text p{
     font-size: 22px;
@@ -695,7 +695,7 @@ body {
 }
 
 .footer-l{
-    margin-top: 25px;
+    margin-top: 47px;
     padding-left: 100px;
     width: 50%;
 }
@@ -736,8 +736,8 @@ body {
     z-index: 1050;
 }
 .tt-toolbar-item {
-    width: 51px;
-    height: 49px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
     z-index: 1051;
 }
@@ -758,6 +758,9 @@ body {
 }
 .tt-toolbar-item.toolbar-lx i {
     background-position: -58px -56px;
+}
+.tt-toolbar-item.toolbar-ly i {
+    background-position: -2px -110px;
 }
 .tt-toolbar-item.toolbar-top{border-bottom: none}
 .tt-toolbar-item.toolbar-top i {

@@ -23,7 +23,7 @@ a:hover {
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
     transform: scale(1.1);}
-.con-btn{width: 200px;height: 55px;margin: 10px auto;color: white;line-height: 55px;font-size: 24px;text-align: center;}
+.con-btn{width: 200px;height: 55px;margin: 10px auto;color: white;line-height: 55px;font-size: 24px;text-align: center;cursor: pointer;}
 .con-btn a{color: white;}
 .pc-r-logo{color: white;display: flex;flex-direction: row;align-items: flex-end;margin-left: 554px;}
 .pc-r-logo .rlogo-l{display: flex;flex-direction: column;justify-content: space-between;height: 43px;font-size: 15px}
@@ -145,7 +145,7 @@ a:hover {
         font-size: 82px;
     }
     .home-bg-00 .inner .e2{
-        font-size: 25px;
+        font-size: 27px;
     }
     .home-bg-00 .inner .e3{
         font-size: 48px;
@@ -162,33 +162,34 @@ a:hover {
     .home-bg-01 .home-case .case-special-item{padding-top: 0px}
     .home-bg-01 .media-right{display: block;margin: auto auto;width: 70%;margin-top: 35px;}
     .home-bg-01 .media-left{display: block;vertical-align:inherit;    width: 70%; margin: auto auto;}
-    .home-bg-01 .case-special-item .subtitle{font-size: 32px}
+    .home-bg-01 .case-special-item .subtitle{font-size: 32px;height: 100px;overflow: hidden}
     .home-bg-01 .sw2_r{right: -35px}
     .home-bg-01 .sw2_l{left: 25px}
     .home-bg-01 .sw2_r,.home-bg-01 .sw2_l{width: 100px;height: 100px;margin-top: 105px;zoom: 1.5;z-index: 9}
     .home-bg-01 .home-case .media-right{padding-left: 0px}
-    .case-special-item h3{font-size: 48px}
+    .case-special-item h3{font-size: 48px;height: 55px;overflow: hidden;}
     .case-special-item .description{font-size: 24px;margin-top: 15px;
-        overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 6;}
+        overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 6;line-height: 39px;}
 
     .bg2-bk{display: none}
     .home-bg-02{width:100%;height:1105px;background: url(../imgs/m/m-bg3.jpg) no-repeat top center;}
     .bg-02-mask{background-color:#231815;border-top-left-radius: 25px;border-top-right-radius: 25px;position: absolute;bottom: 0px;height: 567px}
     .bg-02-mask .content-wrap{padding: 170px 0px 10px}
     .home-bg-02 .section-title{position: absolute;top:43%;width: 750px;z-index: 3}
-    .home-bg-02 .company-detail{margin: auto auto}
+    .home-bg-02 .company-detail{margin: auto auto;width: 510px;}
     .home-bg-02 .news-panel-list-text{height: 420px;}
-    .home-bg-02 .news-panel-list-text h2{font-size: 35px;margin-bottom: 25px}
-    .home-bg-02 .news-panel-list-text p{font-size: 27px;text-overflow:ellipsis;line-height: 41px}
+    .home-bg-02 .news-panel-list-text h2{font-size: 32px;margin-bottom: 25px;letter-spacing: -1.7px}
+    .home-bg-02 .news-panel-list-text p{font-size: 24px;text-overflow:ellipsis;line-height: 39px}
     .home-bg-02 .news-panel-list-text p:nth-child(3){height: 75px;overflow: hidden;
         text-overflow:ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;}
 
     .home-bg-03{height: 1104px;background-color: #ff0000}
     .home-bg-03 .section-title{padding: 80px 0 30px}
     .home-bg-03 .pinpai-txt{width: 42%;}
-    .home-bg-03 .content-wrap{padding: 0px}
-    .home-bg-03 .pinpai-txt h2{font-size: 30px}
-    .home-bg-03 p{margin: 10px auto;font-size: 17px}
+    .home-bg-03 .content-wrap{padding: 0px;margin-top: -40px}
+    .section-title p{font-size: 14px!important;}
+    .home-bg-03 .pinpai-txt h2{font-size: 26px}
+    .home-bg-03 p{margin: 10px auto;font-size: 26px;width: 182px;}
 
 
     .home-bg-04{height: 1104px;background-color: black}
@@ -197,9 +198,9 @@ a:hover {
     .home-bg-04 .absolute-l h2{font-size: 56px;text-align: center;width: 100%}
     .home-bg-04 .absolute-r{top:300px;right: -80px}
     .home-bg-04 .boss-more{margin-top: 370px;margin-left: 455px;width: 142px;height: 55px;font-size: 22px}
-    .home-bg-04 .boss{width: 750px}
-    .home-bg-04 .boss-txt{right: 90px;top:28px;}
-    .home-bg-04 .boss-txt p{font-size: 22px;}
+    .home-bg-04 .boss{width: 750px;margin-left: -20px}
+    .home-bg-04 .boss-txt{right: 90px;top:60px;}
+    .home-bg-04 .boss-txt p{font-size: 22px;margin-bottom: 0px;line-height: 37.5px;}
 
 
     .bg-col-06 .section-title p{padding: 0px}
@@ -213,7 +214,7 @@ a:hover {
     .bg-col-06 .m-news-img{width: 100%;height:211px;overflow: hidden;}
     .bg-col-06 .m-news p{margin-top: 10px}
     .bg-col-06 .m-news p:nth-child(2){font-size: 24px;font-weight: bold;}
-    .bg-col-06 .m-news p:nth-child(3){font-size: 20px;height: 50px;overflow: hidden;text-overflow:ellipsis;-webkit-line-clamp: 2;display: -webkit-box;-webkit-box-orient: vertical;margin: 10px 5px}
+    .bg-col-06 .m-news p:nth-child(3){font-size: 20px;height: 60px;overflow: hidden;text-overflow:ellipsis;-webkit-line-clamp: 2;display: -webkit-box;-webkit-box-orient: vertical;margin: 10px 5px}
 
     .bg-col-07{display: block;background-color: #333333;width: 750px;height: 1550px;}
     .bg-col-07 .tel-div{padding: 10px 125px}

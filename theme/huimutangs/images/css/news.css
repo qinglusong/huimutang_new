@@ -24,7 +24,7 @@
   color: #717071;
   font-size: 19px;
   margin-bottom: 30px;
-  line-height: 35px;
+  line-height: 33px;
 }
 .img-cont img{
   margin-bottom: 10px;
@@ -82,7 +82,7 @@
 
 
 /*---yzy---*/
-.pc-tip{color: #666;font-size: 22px;margin-bottom: 100px;line-height: 0px}
+.pc-tip{color: #666;font-size: 19px;margin-bottom: 100px;line-height: 0px}
 .pc-tip>div:nth-child(1){margin-right: 30px;}
 .pc-tip .share-but div:nth-child(1){margin-right: 5px;}
 .pc-tip .share-but{cursor: pointer;color: #666}
@@ -90,13 +90,14 @@
 /*---yzy---*/
 
 @media (max-width: 750px) {
+
   .txt-cont p>img{width: 100%!important;}
   .fixed{display: none;}
   .wap-show{
     display: block;
   }
   /*---yzy---*/
-  .txt-cont p{font-size: 32px;line-height: 58px;margin-bottom: 85px}
+  .txt-cont p{font-size: 32px;line-height: 60px;margin-bottom: 85px}
     /*---yzy---*/
 
     .info_bg{
@@ -104,13 +105,16 @@
       padding: 0 0.48rem;
     }
   .title-top h2{
-    margin-bottom: 20px;
+    font-size: 56px;
+    line-height: 59px;
+    margin-bottom: 17px;
   }
   .title-top .tip{
     display: block;
     font-size: 22px;
     color: #666;
-    margin-bottom: 40px;
+    margin-bottom: 65px;
+    /*background-color: yellow;*/
   }
   .title-top .tip span{
     margin-left: 60px;
@@ -176,4 +180,7 @@
   .tool-item a.top{
     margin-top: 0;
   }
+
+  .title-top{padding-top: 105px}
+  .title-top>div:nth-child(1){margin-top: 105px}
 }

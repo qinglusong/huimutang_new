@@ -121,7 +121,7 @@
 
 
                 <div {if $item.show_link!=''}onclick="location.href='{$item.show_link}'"{/if} class="swiper-slide">
-                    <img class="mobile-show" src="theme/huimutangs/images/imgs/m/consult-t.jpg">
+                    <img class="mobile-show" src="{$item.show_img}">
                     <div class="w-p {if $item.style_banner==2}w-p-l {/if} {if $item.style_banner==3}w-p-r {/if} {if $item.style_banner==1}w-p-m{/if}">
                     <p class="m-rl-e1 mobile-show">{$item.show_name}</p>
                         <p class="rl-e2 ani wow fadeInDown">{$item.contents}</p>
@@ -163,20 +163,20 @@
     <div class="bg_03">
         <p class="t-p1 wow fadeInUp">核心产品</p>
         <p class="t-p2 wow fadeInUp">CORE PRODUCT</p>
-        <div class="b3-bg1 wow fadeInUp">
-            <div class="b3-con news-panel-focus">
+        <div  class="b3-bg1 wow fadeInUp">
+            <div onclick="location.href='case_1_10_1.html';" class="b3-con news-panel-focus">
                 <div class="b3-con-c1 news-panel-focus-img"><img src="theme/huimutangs/images/imgs/con-s1.png"></div>
                 <p class="b3-con-c2">{$site.core_product_arr.0}</p>
                 <p class="b3-con-c3 pc-show">STRATEGIC POSITIONING</p>
             </div>
-            <div class="b3-con news-panel-focus">
+            <div onclick="location.href='case_1_11_1.html';" class="b3-con news-panel-focus">
                 <div class="b3-con-c1 news-panel-focus-img"><img src="theme/huimutangs/images/imgs/con-s2.png"></div>
                 <p class="b3-con-c2">{$site.core_product_arr.1}</p>
                 <p class="b3-con-c2-1 pc-show">(VI形象，产品包装，SI店面)</p>
                 <p class="b3-con-c2-1 mobile-show">VI形象 产品包装 SI店面</p>
                 <p class="b3-con-c3 pc-show">VI IMAGE DESIGN</p>
             </div>
-            <div class="b3-con news-panel-focus">
+            <div onclick="location.href='case_1_13_1.html';" class="b3-con news-panel-focus">
                 <div class="b3-con-c1 news-panel-focus-img"><img src="theme/huimutangs/images/imgs/con-s3.png"></div>
                 <p class="b3-con-c2">{$site.core_product_arr.2}</p>
                 <p class="b3-con-c3 pc-show">GROUND PROMOTION</p>
@@ -253,20 +253,9 @@
 
         {foreach from=$recommend_article item=item name=foo}
             {if $smarty.foreach.foo.index < 3}
-            <div onclick="location.href='news_info_{$item.id}.html';" class="bg-4-c-m wow fadeInUp news-panel-focus" data-wow-delay="{$smarty.foreach.foo.index}00ms">
+            <div onclick="location.href='news_info_{$item.id}.html';" class="pc-show bg-4-c-m wow fadeInUp news-panel-focus">
                 <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
-                <p class="bg-4m-t1">{$item.title|truncate:12:""}</p>
-                <p class="bg-4m-t2">{$item.description|truncate:40}</p>
-                <p class="bg-4m-t3">{$item.add_date}</p>
-            </div>
-            {else}
-
-
-
-
-            <div onclick="location.href='news_info_{$item.id}.html';" class="bg-4-c-m wow fadeInUp news-panel-focus mobile-show flex-column" data-wow-delay="{$smarty.foreach.foo.index}00ms">
-                <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
-                <p class="bg-4m-t1">{$item.title|truncate:12:""}</p>
+                <p class="bg-4m-t1">{$item.title|truncate:26}</p>
                 <p class="bg-4m-t2">{$item.description|truncate:40}</p>
                 <p class="bg-4m-t3">{$item.add_date}</p>
             </div>
@@ -274,6 +263,18 @@
 
         {/foreach}
 
+
+         {foreach from=$recommend_article item=item name=foo}
+            {if $smarty.foreach.foo.index < 4}
+            <div onclick="location.href='news_info_{$item.id}.html';" class="bg-4-c-m wow fadeInUp news-panel-focus mobile-show flex-column" data-wow-delay="{$smarty.foreach.foo.index}00ms">
+                <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
+                <p class="bg-4m-t1">{$item.title|truncate:14}</p>
+                <p class="bg-4m-t2">{$item.description|truncate:40}</p>
+                <p class="bg-4m-t3">{$item.add_date}</p>
+            </div>
+            {/if}
+
+        {/foreach}
 
 
 
@@ -456,13 +457,16 @@
             </div>
         </div>
     </div>
+    <div class="tt-toolbar-item toolbar-ly">
+        <a href="http://p.qiao.baidu.com/cps/chat?siteId=3508683&userId=913196"><i></i></a>
+    </div>
     <div class="tt-toolbar-item toolbar-top">
         <a href="####"><i></i></a>
     </div>
 </div>
 
 
-<div id="J_MobileNavBar">
+<div id="J_MobileNavBar" class="mobile-show">
     <div id="alert-cls2" class="cls-btn"><img src="theme/huimutangs/images/imgs/m/close_img.png"></div>
     <ul class="flex-column">
         <li class="">

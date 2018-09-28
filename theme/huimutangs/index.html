@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>{$page_title}</title>
+    <meta name="keywords" content="{$keywords}" />
+    <meta name="description" content="{$description}" />
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <!--<script src="https://cdn.bootcss.com/popper.js/1.14.3/esm/popper.min.js"></script>-->
     <!--<script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
@@ -39,11 +41,11 @@
 <header class="main-header wap-header fixed" style="display: none;">
     <div class="container zoom-div">
         <div class="row">
-            <div class="pull-left main-header-logo hidden-sm hidden-xs">
+            <div class="pull-left main-header-logo pc-show">
                 <a href="/"><img width='237px' height='88px' src="theme/huimutangs/images/imgs/logo.png" alt="慧目堂" title="慧目堂"></a>
             </div>
 
-            <div class="pull-left main-header-logo-mobile hidden-lg hidden-md">
+            <div class="pull-left main-header-logo-mobile mobile-show">
                 <a href="/" class="flex"><img src="theme/huimutangs/images/imgs/logov.png" alt="慧目堂" title="慧目堂"><img class="m-logotxt"
                 src="theme/huimutangs/images/imgs/m/title-img-rw.png"></a>
             </div>
@@ -94,22 +96,22 @@
         <header class="main-header pc-header">
             <div class="container">
                 <div class="row">
-                    <div class="pull-left main-header-logo hidden-sm hidden-xs">
+                    <div class="pull-left main-header-logo pc-show">
                         <a href="/"><img src="theme/huimutangs/images/imgs/logo.png" alt="慧目堂" title="慧目堂"></a>
                     </div>
 
-                    <div class="pull-left main-header-logo-mobile hidden-lg hidden-md wow fadeInLeft"
+                    <div class="pull-left main-header-logo-mobile  wow fadeInLeft mobile-show"
                          data-wow-delay="3000ms">
                         <a href="/" class="flex"><img src="theme/huimutangs/images/imgs/logov.png" alt="慧目堂" title="慧目堂"><img class="m-logotxt"
                         src="theme/huimutangs/images/imgs/m/logotxt.png"></a>
                     </div>
                     <div class="pull-right main-header-right">
                         <div class="pull-right main-header-extra wow fadeInRight" data-wow-delay="100ms">
-                            <div class="mobile-toggle hidden-lg">
+                            <div class="mobile-toggle mobile-show">
                                 <span><a href="tel:02158878218"><img src="theme/huimutangs/images/imgs/phone.png" alt=""></a></span>
                                 <span id="J_MobileNavTrigger2"><img src="theme/huimutangs/images/imgs/burger.png" alt=""></span>
                             </div>
-                            <div class="pull-right hidden-md hidden-sm hidden-xs">
+                            <div class="pull-right pc-show">
                                 <div class="hhbank">
                                     <!--<img src="theme/huimutangs/images/imgs/h_right.png">-->
                                     <div class="pc-r-logo">
@@ -123,7 +125,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <nav class="hidden-md hidden-sm hidden-xs nav">
+                                <nav class="nav">
                                     <div class="row">
                                         <div class="main-header-nav">
                                             <ul class="j-navbar-menu list-unstyled navbar-menu clearfix">
@@ -542,7 +544,7 @@
                     <div onclick="location.href='news_info_{$item.id}.html'" class="bg-4-c-m wow fadeInUp news-panel-focus" data-wow-delay="100ms">
                         <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
                         <div class="hn-w-b">
-                            <p class="bg-4m-t1">{$item.title|truncate:12}</p>
+                            <p class="bg-4m-t1">{$item.pc_title}</p>
                             <p class="bg-4m-t2">{$item.description|truncate:60}</p>
                             <p class="bg-4m-t3">{$item.add_date}</p>
                         </div>
@@ -564,7 +566,7 @@
                         <div class="m-news-img">
                             <a href="/news_info_{$item.id}.html"><img src="{$item.image}" alt=""></a>
                         </div>
-                        <p>{$item.title|truncate:12}</p>
+                        <p>{$item.wap_title}</p>
                         <p>{$item.description|truncate:40}</p>
                     </div>
                     
@@ -595,14 +597,14 @@
             <div class="tel-1">
                 <div class="tel-1-s wow fadeInLeft"><img src="theme/huimutangs/images/imgs/m/s2.png"></div>
                 <div class="tel-t wow fadeInRight">
-                    <div class="tel-name">客户咨询</div>
+                    <div class="tel-name">客户咨询：</div>
                     <div class="tel-num">{$site.tel}</div>
                 </div>
             </div>
             <div class="tel-2">
                 <div class="tel-1-s wow fadeInLeft" data-wow-delay="100ms"><img src="theme/huimutangs/images/imgs/m/s1.png"></div>
                 <div class="tel-t wow fadeInRight" data-wow-delay="100ms">
-                    <div class="tel-name">客户咨询</div>
+                    <div class="tel-name">供应合作：</div>
                     <div class="tel-num">{$site.tel_commerce}</div>
                 </div>
             </div>
@@ -696,7 +698,7 @@
 
 
 </div>
-<div class="tt-toolbar hidden-md hidden-sm hidden-xs">
+<div class="tt-toolbar pc-show">
     <div class="tt-toolbar-item toolbar-wx">
         <a href="####"><i></i></a>
         <div class="showDetail wx-detail">
@@ -726,10 +728,14 @@
             </div>
         </div>
     </div>
+    <div class="tt-toolbar-item toolbar-ly">
+        <a href="http://p.qiao.baidu.com/cps/chat?siteId=3508683&userId=913196"><i></i></a>
+    </div>
     <div class="tt-toolbar-item toolbar-top">
         <a href="####"><i></i></a>
     </div>
 </div>
+
 <div id="J_MobileNavBar" class="mobile-navbar hidden-lg">
 
     <ul class="list-unstyled mobile-navbar-menu">

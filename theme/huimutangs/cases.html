@@ -145,7 +145,7 @@
 
         {foreach from=$product_related_list key=key item=item name=foo}
         <a href="case_info_{$item.id}.html">
-          <div class="bg-4-c-m wow fadeInUp news-panel-focus" data-wow-delay="{$key+1}00ms">
+          <div class="bg-4-c-m wow fadeInUp news-panel-focus">
             <div class="bg-4m-img news-panel-focus-img"><img src="{$item.image}"></div>
             <p class="bg-4m-t1">{$item.name|truncate:24}</p>
             <p class="bg-4m-t2">{$item.price|truncate:24}</p>

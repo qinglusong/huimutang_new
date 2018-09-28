@@ -199,20 +199,21 @@ ul{display: flex;}
 .footer-nav li a:hover{margin-top: 0px!important;color: #ff5a00;cursor: pointer;}
 
 .footer-nav .footer-div2{
-    /*margin-top: -25px;*/
+    margin-top: 10px;
     width: 100%;
     justify-content: space-around;
 }
 .footer-nav .footer-div2 .footer2-l{
+    padding-top: 3px;
     margin-left: 15px;
     text-align: left;
     width: 49%;
     font-size: 14px;
     /*font-weight: bold;*/
-    margin-top: 8px;
+    margin-top: 25px;
 }
 .footer-nav .footer-div2 .footer2-r{
-    margin-top: 90px;
+    margin-top: 79px;
     margin-left: 130px;
 }
 .footer-nav .footer-div2 .footer2-r div:nth-child(1){
@@ -222,7 +223,7 @@ ul{display: flex;}
     margin-bottom: 3px;
 }
 
-.footer-nav .footer-div2 ul{display: inline-block;padding-left: 0px;line-height: 3px;margin: 0px;margin-bottom: 15px}
+.footer-nav .footer-div2 ul{display: inline-block;padding-left: 0px;line-height: 3px;margin: 0px;margin-bottom: 5px}
 .footer-nav .footer-div2 ul a{font-size: 14px}
 .footer-nav .footer-div2 li{
     display: inline-block;
@@ -243,8 +244,8 @@ ul{display: flex;}
 .tt-toolbar-item {
     border-bottom: 1px solid #fff;
     border-top: 1px solid #fff;
-    width: 51px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
     z-index: 1051;
 }
@@ -266,6 +267,11 @@ ul{display: flex;}
 .tt-toolbar-item.toolbar-lx i {
     background-position: -58px -56px;
 }
+
+.tt-toolbar-item.toolbar-ly i {
+    background-position: -2px -110px;
+}
+
 .tt-toolbar-item.toolbar-top{border-bottom: none}
 .tt-toolbar-item.toolbar-top i {
     background-position: -58px -2px

@@ -1,4 +1,4 @@
-   <div class="footer-nav flex-column pc-show flex-show is_show_push">
+   <div class="footer-nav flex-column pc-show flex-show">
         <div class="footer-div1 wow fadeInRight">
             <ul class="">
                 <li class="">
@@ -57,7 +57,7 @@
             </div>
         </nav>
     </div>
-    <nav class="m-footer-nav mobile-show is_show_push">
+    <nav class="m-footer-nav mobile-show">
         <div class="wow fadeInLeft"><img src="theme/huimutangs/images/imgs/m/b-tit-img.png"></div>
         <div class="wow fadeInLeft" data-wow-delay="100ms"><img src="theme/huimutangs/images/imgs/m/b-img2.png"></div>
         <div class="wow fadeInRight" data-wow-delay="200ms"><img src="theme/huimutangs/images/imgs/m/qianming.png"></div>
@@ -66,8 +66,7 @@
         <p class="wow fadeInLeft" data-wow-delay="400ms">{$site.icp}</p>
         <p class="wow fadeInLeft"data-wow-delay="450ms">沪公网安备 31011202002497号</p>
     </nav>
-</div>
-<div id="J_MobileNavBar" class="mobile-show is_show_push">
+<div id="J_MobileNavBar" class="mobile-show">
     <div id="alert-cls2" class="cls-btn"><img src="theme/huimutangs/images/imgs/m/close_img.png"></div>
     <ul class="flex-column">
         <li class="">
@@ -133,7 +132,7 @@
 {if $cases==1}
 <div class="right-tool fixed pc-show zoom-div">
   <div class="tool-item">
-    <a class="back" href="case_1_0_1.html"><i></i></a>
+    <a class="back" href="/"><i></i></a>
         <a class="right" {if $lifts.previous.id}href="case_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="left" {if $lifts.next.id}href="case_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="top" href="####"><i></i></a>
@@ -144,7 +143,7 @@
 {if $news==1}
 <div class="right-tool fixed zoom-div">
   <div class="tool-item">
-    <a class="back" href="news_0_1.html"><i></i></a>
+    <a class="back" href="/"><i></i></a>
         <a class="right" {if $lifts.previous.id}href="news_info_{$lifts.previous.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="left" {if $lifts.next.id}href="news_info_{$lifts.next.id}.html" {else} href='javascript:;'{/if}><i></i></a>
         <a class="top" href="#"><i></i></a>
@@ -153,7 +152,7 @@
 {/if}
 
 
-<script type="text/javascript" src="theme/huimutangs/images/js/zoom.js?v=123"></script>
+<script type="text/javascript" src="theme/huimutangs/images/js/zoom.js"></script>
 <script type="text/javascript" src="theme/huimutangs/images/js/tool.js"></script>
 <script type="text/javascript" src="theme/huimutangs/images/js/global.js"></script>
 </body>

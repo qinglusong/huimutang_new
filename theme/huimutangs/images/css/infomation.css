@@ -28,8 +28,9 @@
     .class-con .bg-4-c{flex-direction: row;flex-wrap: wrap}
     .class-con .bg-4-c .bg-4-c-m{width: 375px}
     .class-con .bg-4m-img{height: 205px;background-color: #333333}
-    .class-con .bg-4-c-m{height: 320px;margin: 0px;overflow: hidden}
-    .class-con .bg-4m-t1{font-size: 24px;text-align: center}
+    .class-con .bg-4-c-m{height: 330px;margin: 0px;overflow: hidden}
+    .class-con .bg-4m-t1{font-size: 24px;text-align: center;height: 35px;overflow: hidden;}
     .class-con .bg-4m-t2{margin-top: 0px;padding: 0px 5px;text-align: center;height: 60px}
-    .class-con .bg-4m-t2, .class-con .bg-4m-t3{font-size: 20px;line-height: 30px}
+    .class-con .bg-4m-t2, .class-con .bg-4m-t3{font-size: 20px;line-height: 21px;height: 44px;overflow: hidden}
+    .class-con .bg-4m-t3{margin-top: -10px;}
 }

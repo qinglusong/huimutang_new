@@ -25,7 +25,7 @@
 .bg_03 p:nth-child(2){font-size: 34px;color: #ff5a00;margin-bottom: 50px;font-weight: bold}
 
 .bg_04{justify-content: space-around;width: 1000px;margin: 0px auto 100px}
-.bg_04 .bg4-txt{align-items: start;margin-left: 10px}
+.bg_04 .bg4-txt{align-items: start;margin-left: 15px}
 .bg_04 .bg4-txt p:nth-child(1){font-size: 17px;margin: 0px;color:#717071}
 .bg_04 .bg4-txt p:nth-child(2){font-size: 45px;color: #ff5a00;margin: 0px}
 
@@ -73,9 +73,9 @@
     .bg_01 .case-link span{font-size: 26px;margin: auto 4px}
     .bg_01 .case-link span:nth-child(3){font-size: 26px;margin-left: 8px}
 
-    .bg_02 .bg-p1,.bg_02 .bg-p2{align-items: flex-start;margin: 90px auto;width: 400px}
-    .bg_02 .bg-p1 div:nth-child(1),.bg_02 .bg-p2 div:nth-child(1){font-size: 101px;color: #ff5a00;line-height: 1;margin-right: 10px;font-weight: bold}
-    .bg_02 .bg-p1 div:nth-child(2),.bg_02 .bg-p2 div:nth-child(2){width: 350px;font-size: 32px;color: #595757;text-align: left;letter-spacing: 5px;line-height: 40px}
+    .bg_02 .bg-p1,.bg_02 .bg-p2{align-items: flex-start;margin: 95px auto;width: 645px}
+    .bg_02 .bg-p1 div:nth-child(1),.bg_02 .bg-p2 div:nth-child(1){font-size: 101px;color: #ff5a00;line-height: 1;margin-right: 40px;font-weight: bold}
+    .bg_02 .bg-p1 div:nth-child(2),.bg_02 .bg-p2 div:nth-child(2){width: 510px;font-size: 27px;color: #595757;text-align: left;letter-spacing: 2px;line-height: 40px}
     .bg_02 .bg2-img-div{width: 750px;overflow: hidden;height: 540px}
     .bg_02 .bg2-img-div img{width: 120%;margin-left: -10%;}
 

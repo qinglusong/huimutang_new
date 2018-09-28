@@ -143,7 +143,25 @@
 /*}*/
 
 .bd_weixin_popup .bd_weixin_popup_main {
-	margin-top: -8px!important;
-    margin-left: -30px!important;
+    /*margin-top: -8px!important;*/
+    /*margin-left: -30px!important;*/
 
 }
+
+.bd_weixin_popup .bd_weixin_popup_head{
+    padding-top: 12px;
+    margin-left: 16px;
+}
+
+.bd_weixin_popup .bd_weixin_popup_foot {
+    margin-top: -10px!important;
+    margin-left: 15px!important;
+    font-size: 12.5px!important;
+    text-align: left!important;
+    line-height: 19px!important;
+    color: #000!important;
+    width: 188px!important;
+    letter-spacing: 0.5px!important;
+}
+
+.bd_weixin_popup{height: 292px!important;}
